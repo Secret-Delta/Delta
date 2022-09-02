@@ -3,4 +3,11 @@
 
     <string name="openNav">Navigation Open</string>
     <string name="closeNav">Navigation Close</string>
+    <string name="menu_calendar">Calendar</string>
+    <string name="menu_task">Task</string>
+    <string name="menu_pomodoro">Pomodoro</string>
+    <string name="menu_habbit">Habbit</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

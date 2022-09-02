@@ -10,6 +10,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.SecretDelta.delta.Fragments.CalendarFragment;
+import com.SecretDelta.delta.Fragments.TaskFragment;
+import com.SecretDelta.delta.databinding.ActivityMainBinding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -17,6 +22,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Toolbar mToolbar;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
+
+    BottomNavigationView bottomNavigationView;
+
+    CalendarFragment calendarFragment = new CalendarFragment();
+    TaskFragment taskFragment = new TaskFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +50,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+//        bottomNavigationView = findViewById(R.id.bottom_navigation);
+//
+//        getSupportFragmentManager().beginTransaction().replace(R.id.container, calendarFragment).commit();
+//
+//        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(MenuItem item) {
+//                switch (item.getItemId()){
+//                    case R.id.calendar:
+//                        getSupportFragmentManager().beginTransaction().replace(R.id.container, calendarFragment).commit();
+//                        return true;
+//                    case R.id.task:
+//                        getSupportFragmentManager().beginTransaction().replace(R.id.container, taskFragment).commit();
+//                        return true;
+//                }
+//                return false;
+//            }
+//        });
 
     }
 

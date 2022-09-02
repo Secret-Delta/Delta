@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/calendar"
+        android:icon="@drawable/baseline_calendar_24"
+        android:title="Calendar" />
+    <item
+        android:id="@+id/task"
+        android:icon="@drawable/baseline_task_24"
+        android:title="Task" />
+    <item
+        android:id="@+id/pomodoro"
+        android:icon="@drawable/baseline_pomodoro_24"
+        android:title="pomodoro" />
+    <item
+        android:id="@+id/habbit"
+        android:icon="@drawable/baseline_habbit_24"
+        android:title="Habbit" />
+
+</menu>
