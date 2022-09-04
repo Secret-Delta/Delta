@@ -3,18 +3,18 @@
     <item
         android:id="@+id/calendar"
         android:icon="@drawable/baseline_calendar_24"
-        android:title="Calendar" />
+        android:title="@string/menu_calendar" />
     <item
         android:id="@+id/task"
         android:icon="@drawable/baseline_task_24"
-        android:title="Task" />
+        android:title="@string/menu_task" />
     <item
         android:id="@+id/pomodoro"
         android:icon="@drawable/baseline_pomodoro_24"
-        android:title="pomodoro" />
+        android:title="@string/menu_pomodoro" />
     <item
         android:id="@+id/habbit"
         android:icon="@drawable/baseline_habbit_24"
-        android:title="Habbit" />
+        android:title="@string/menu_habbit" />
 
 </menu>
