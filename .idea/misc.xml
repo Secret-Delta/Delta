@@ -3,17 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/baseline_calendar_24.xml" value="0.1625" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/baseline_habbit_24.xml" value="0.1625" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.1625" />
+        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/ic_baseline_plus_24.xml" value="0.1625" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/ic_circle.xml" value="0.1625" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/activity_bottom_nav.xml" value="0.2359375" />
-        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/activity_main.xml" value="0.10185185185185185" />
+        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/bottom_nav_layout.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/fragment_calendar.xml" value="0.24615384615384617" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/fragment_habbit.xml" value="0.2359375" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/fragment_pomodoro.xml" value="0.25" />
-        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/fragment_task.xml" value="0.13620071684587814" />
+        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/fragment_task.xml" value="0.264" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/nav_layout.xml" value="0.25" />
+        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/recyclerview_layout.xml" value="0.264" />
+        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/retask_layout.xml" value="0.2" />
+        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/task_layout.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/menu/main_menu.xml" value="0.24615384615384617" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/menu/nav_menu.xml" value="0.25" />

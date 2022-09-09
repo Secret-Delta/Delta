@@ -1,4 +1,4 @@
-package com.SecretDelta.delta;
+package com.SecretDelta.delta.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,7 +15,7 @@ import com.SecretDelta.delta.Fragments.CalendarFragment;
 import com.SecretDelta.delta.Fragments.HabbitFragment;
 import com.SecretDelta.delta.Fragments.PomodoroFragment;
 import com.SecretDelta.delta.Fragments.TaskFragment;
-import com.SecretDelta.delta.databinding.ActivityMainBinding;
+import com.SecretDelta.delta.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
@@ -59,8 +60,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         getSupportFragmentManager().beginTransaction().replace(R.id.container, calendarFragment).commit();
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @SuppressLint("NonConstantResourceId")
             @Override
-            public boolean onNavigationItemSelected(MenuItem item) {
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.calendar:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, calendarFragment).commit();
