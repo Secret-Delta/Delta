@@ -6,8 +6,22 @@
     <string name="menu_calendar">Calendar</string>
     <string name="menu_task">Task</string>
     <string name="menu_pomodoro">Pomodoro</string>
-    <string name="menu_habbit">Habbit</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu_habit">Habit</string>
 
+    <string name="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nisl erat, placerat id imperdiet nec, viverra a eros. Fusce fringilla cursus nulla, nec euismod purus lacinia sed. Maecenas commodo enim risus, tincidunt convallis enim tempus eu. Ut cursus egestas ipsum, vel hendrerit sapien.</string>
+    <string name="task_calendar">Calendar</string>
+    <string name="task_checklist">Task List</string>
+    <string name="task_tag">Tags</string>
+    <string name="task_priority">Priority</string>
+    <string name="task_save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="done">Done</string>
+    <string name="set_time">⏰ Set Time 12:00</string>
+    <string name="set_reminder">🔔 Set Reminder 5 mins early</string>
+
+    <string-array name="priority">
+        <item>🚩 High</item>
+        <item>🚩 Medium</item>
+        <item>🚩 Low</item>
+    </string-array>
 </resources>

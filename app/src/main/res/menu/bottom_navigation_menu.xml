@@ -15,6 +15,6 @@
     <item
         android:id="@+id/habbit"
         android:icon="@drawable/baseline_habbit_24"
-        android:title="@string/menu_habbit" />
+        android:title="@string/menu_habit" />
 
 </menu>

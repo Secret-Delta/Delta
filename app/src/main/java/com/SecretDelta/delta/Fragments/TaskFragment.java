@@ -1,6 +1,7 @@
 package com.SecretDelta.delta.Fragments;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,10 +13,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.SecretDelta.delta.Activities.AddTaskActivity;
 import com.SecretDelta.delta.Adapters.TaskAdapter;
 import com.SecretDelta.delta.Models.SubTaskModel;
 import com.SecretDelta.delta.Models.TaskModel;
 import com.SecretDelta.delta.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -47,7 +50,7 @@ public class TaskFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         Log.d(TAG, "onCreateView: started");
-        View view = inflater.inflate(R.layout.recyclerview_layout, container, false);
+        View view = inflater.inflate(R.layout.main_recyclerview_layout, container, false);
 
         recyclerView = (RecyclerView) view.findViewById(R.id.taskRecyclerView);   // get reference to recyclerView
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));  // set layoutManger
@@ -55,6 +58,10 @@ public class TaskFragment extends Fragment {
         taskAdapter = new TaskAdapter(getActivity(), taskList);    //  create task adapter
 
         recyclerView.setAdapter(taskAdapter);   // set task adapter
+
+
+        FloatingActionButton actionButton = view.findViewById(R.id.fab);
+        actionButton.setOnClickListener(v -> startActivity(new Intent(getActivity(), AddTaskActivity.class)));
 
         return view;
     }

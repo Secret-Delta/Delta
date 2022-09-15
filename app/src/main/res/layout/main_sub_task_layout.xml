@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingStart="20sp">
+
+    <CheckBox
+        android:id="@+id/addTaskCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:buttonTint="@android:color/black"
+        android:paddingStart="2sp"
+        tools:text="Sub Task" />
+
+    <ImageButton
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="235dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="0dp"
+        android:background="?android:attr/selectableItemBackground"
+        app:srcCompat="@drawable/baseline_cancel_24" />
+
+</RelativeLayout>
