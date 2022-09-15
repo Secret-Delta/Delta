@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/My Projects/MAD Secret Delta/app/src/main/res/drawable/calendar_background.xml" value="0.1" />
+        <entry key="..\:/My Projects/MAD Secret Delta/app/src/main/res/layout/fragment_calendar.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/baseline_habbit_24.xml" value="0.1625" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.1625" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/ic_circle.xml" value="0.1625" />
