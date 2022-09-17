@@ -237,6 +237,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:text="@string/btnSave"
+                    android:onClick="openSignUp"
                     android:textColor="@color/White" />
             </LinearLayout>
         </LinearLayout>

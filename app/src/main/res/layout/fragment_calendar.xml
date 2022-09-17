@@ -49,7 +49,7 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="32dp"
         android:layout_marginBottom="10dp"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/White"
         android:src="@drawable/ic_baseline_plus_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

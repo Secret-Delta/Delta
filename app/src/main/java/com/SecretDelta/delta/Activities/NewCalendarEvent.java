@@ -3,6 +3,7 @@ package com.SecretDelta.delta.Activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.view.View;
@@ -36,6 +37,8 @@ public class NewCalendarEvent extends AppCompatActivity {
 
         dateTxt = (EditText) findViewById(R.id.editTextDate);
         btnDate = (ImageButton) findViewById(R.id.btnDate);
+        btnSave = (Button) findViewById(R.id.btnSave);
+
 
         btnDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,8 +66,10 @@ public class NewCalendarEvent extends AppCompatActivity {
             }
         };
 
-
     }
 
-
+    public void openSignUp(View view) {
+        Intent i1 = new Intent(this, SignUp.class);
+        startActivity(i1);
+    }
 }

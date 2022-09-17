@@ -23,6 +23,11 @@
     <string name="btnSave">Save</string>
     <string name="add_description">Add Description</string>
     <string name="dateFormatEvent">EEEE, dd MMM yyyy</string>
+    <string name="txtWelcome">Welcome</string>
+    <string name="have_an_acoount">Have an Account? Sign in</string>
+    <string name="sign_up">Sign up</string>
+    <string name="example_email">example@hotmail.com</string>
+    <string name="your_name">Your Name</string>
 
 
 </resources>
