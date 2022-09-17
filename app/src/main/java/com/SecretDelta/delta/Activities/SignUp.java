@@ -20,8 +20,8 @@ public class SignUp extends AppCompatActivity {
         btnSignup = (Button) findViewById(R.id.btnSignup);
     }
 
-//    public void openLogin(View view) {
-//        Intent i1 = new Intent(this, SignUp.class);
-//        startActivity(i1);
-//    }
+    public void openLogin(View view) {
+        Intent i1 = new Intent(this, SignIn.class);
+        startActivity(i1);
+    }
 }
