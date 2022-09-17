@@ -14,7 +14,13 @@
         android:theme="@style/Theme.Delta"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".EditEvent"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.NewCalendarEvent"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

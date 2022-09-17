@@ -10,4 +10,19 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!-- Calendar -->
+    <string name="currentDate">Current Date</string>
+    <string name="new_eventTitle">New Event</string>
+    <string name="select_date">Select Date</string>
+    <string name="txtTImeTo">To</string>
+    <string name="txtTimeFrom">From</string>
+    <string name="txtEventName">Name</string>
+    <string name="txtEnteredName" />
+    <string name="hntEventName">New Event</string>
+    <string name="eventDescription" />
+    <string name="btnSave">Save</string>
+    <string name="add_description">Add Description</string>
+    <string name="dateFormatEvent">EEEE, dd MMM yyyy</string>
+
+
 </resources>

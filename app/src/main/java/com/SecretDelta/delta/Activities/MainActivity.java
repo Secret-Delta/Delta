@@ -1,4 +1,4 @@
-package com.SecretDelta.delta;
+package com.SecretDelta.delta.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -14,6 +14,7 @@ import com.SecretDelta.delta.Fragments.CalendarFragment;
 import com.SecretDelta.delta.Fragments.HabbitFragment;
 import com.SecretDelta.delta.Fragments.PomodoroFragment;
 import com.SecretDelta.delta.Fragments.TaskFragment;
+import com.SecretDelta.delta.R;
 import com.SecretDelta.delta.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
