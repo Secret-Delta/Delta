@@ -7,5 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="richBlack">#0D1B2A</color>
+    <color name="candyPink">#DD7373</color>
+    <color name="metallicSeaweed">#028090</color>
+    <color name="lightGray">#CCCCCC</color>
     <color name="DarkBlueEvent">#FF0F4197</color>
+    <color name="White">#FFFFFFFF</color>
 </resources>
