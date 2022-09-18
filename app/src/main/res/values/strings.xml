@@ -32,6 +32,8 @@
     <string name="forgot_password">Forgot Password?</string>
     <string name="no_account_sign_up">No Account? Sign up</string>
     <string name="agree_to_terms_and_conditions">Agree to Terms and Conditions</string>
+    <string name="your_achievements">Your Achievements</string>
+    <string name="emailAcc">Email</string>
 
 
 </resources>

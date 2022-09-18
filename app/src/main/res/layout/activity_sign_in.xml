@@ -184,6 +184,7 @@
                         android:id="@+id/btnSignup"
                         android:layout_width="250dp"
                         android:layout_height="60dp"
+                        android:onClick="openAccount"
                         android:text="@string/sign_in"
                         android:textColor="@color/White"
                         android:textSize="16sp" />

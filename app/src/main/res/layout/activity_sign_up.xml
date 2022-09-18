@@ -64,6 +64,8 @@
                 android:textColor="@color/White"
                 android:textSize="40sp" />
 
+
+
             <RelativeLayout
                 android:id="@+id/group_56_ek1"
                 android:layout_width="wrap_content"
@@ -89,7 +91,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="58dp"
-                android:layout_marginTop="190dp">
+                android:layout_marginTop="150dp">
+
+                <RelativeLayout
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp">
+
+                    <ImageView
+                        android:id="@+id/vector"
+                        android:layout_width="250dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="10.65dp"
+                        android:layout_marginTop="8.72dp"
+                        android:background="@drawable/img_customs"
+                        android:src="@drawable/google_signin_button" />
+                </RelativeLayout>
 
 
                 <RelativeLayout
@@ -97,7 +116,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="0dp"
-                    android:layout_marginTop="0dp">
+                    android:layout_marginTop="90dp">
 
                     <TextView
                         android:id="@+id/enter_your_username_or_email_address_ek1"
@@ -137,14 +156,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="0dp"
-                    android:layout_marginTop="218dp">
+                    android:layout_marginTop="260dp">
 
                     <TextView
                         android:id="@+id/enter_your_password_ek1"
                         android:layout_width="183dp"
-                        android:layout_height="35dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="0dp"
-                        android:layout_marginTop="-2.08dp"
+                        android:layout_marginTop="2.08dp"
                         android:text="Enter your Password"
                         android:textColor="@color/White"
                         android:textSize="16sp" />
@@ -177,7 +196,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="0dp"
-                    android:layout_marginTop="310dp">
+                    android:layout_marginTop="350dp">
 
                     <TextView
                         android:id="@+id/enter_your_passwordcpw"
@@ -216,11 +235,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
-                    android:layout_marginTop="400dp">
+                    android:layout_marginTop="440dp">
 
                     <CheckBox
                         android:id="@+id/checkBox"
-                        android:layout_width="183dp"
+                        android:layout_width="250dp"
                         android:layout_height="35dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginEnd="0dp"
@@ -238,7 +257,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="0dp"
-                    android:layout_marginTop="110dp">
+                    android:layout_marginTop="170dp">
 
 
                     <RelativeLayout
@@ -251,9 +270,9 @@
                         <TextView
                             android:id="@+id/user_name"
                             android:layout_width="154.45dp"
-                            android:layout_height="31dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginLeft="0dp"
-                            android:layout_marginTop="0dp"
+                            android:layout_marginTop="6dp"
                             android:text="@string/your_name"
                             android:textColor="@color/White"
                             android:textSize="14sp" />
@@ -281,12 +300,12 @@
                         <TextView
                             android:id="@+id/contact_number"
                             android:layout_width="153.95dp"
-                            android:layout_height="29.5dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginLeft="0dp"
-                            android:layout_marginTop="0dp"
+                            android:layout_marginTop="6dp"
                             android:text="Contact Number"
                             android:textColor="@color/White"
-                            android:textSize="13sp" />
+                            android:textSize="14sp" />
 
                         <EditText
                             android:id="@+id/rectangle_19_ek1"
