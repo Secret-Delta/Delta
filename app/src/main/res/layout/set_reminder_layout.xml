@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/rounded_shape"
+    tools:context=".Activities.TaskRemindActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="280dp"
+        android:layout_height="140dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="8dp"
+        android:backgroundTint="@color/oxford_blue"
+        app:cardCornerRadius="20sp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25sp"
+            android:layout_marginTop="14sp"
+            android:text="@string/remind"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/rounded_shape"
+            android:backgroundTint="@color/oxford_blue"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/remindInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70sp"
+                android:layout_marginTop="4sp"
+                android:background="@android:color/transparent"
+                android:hint="@string/hint_time"
+                android:inputType="number"
+                android:textColor="@color/light_gray"
+                android:textColorHint="@color/light_gray"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/remindSpinner"
+                android:layout_width="110sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40sp"
+                android:background="@color/white"
+                android:paddingStart="10sp"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="170sp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:layout_marginEnd="8sp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/cancelBtn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="70sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20sp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="@string/cancel"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/setBtn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="62sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="@string/set"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

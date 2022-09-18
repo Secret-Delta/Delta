@@ -9,4 +9,7 @@
         app:actionViewClass="android.widget.SearchView"
         app:showAsAction="always" />
     <item android:title="@string/settings" />
+    <item
+        android:id="@+id/taskReport"
+        android:title="@string/task_report" />
 </menu>

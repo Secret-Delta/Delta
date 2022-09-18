@@ -26,11 +26,24 @@
         <activity
             android:name=".Activities.AddTaskActivity"
             android:exported="false"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
         <activity
             android:name=".Activities.CalendarPopup"
             android:exported="false"
-            android:theme="@style/Theme.Delta.CustomTheme" />
+            android:theme="@style/Theme.Delta.PopUpTheme" />
+        <activity
+            android:name=".Activities.TaskRemindActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Delta.PopUpTheme"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".Activities.TaskOverviewActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Delta.PopUpTheme"  />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

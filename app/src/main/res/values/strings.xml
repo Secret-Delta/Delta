@@ -7,21 +7,44 @@
     <string name="menu_task">Task</string>
     <string name="menu_pomodoro">Pomodoro</string>
     <string name="menu_habit">Habit</string>
+    <string name="search">Search</string>
 
-    <string name="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nisl erat, placerat id imperdiet nec, viverra a eros. Fusce fringilla cursus nulla, nec euismod purus lacinia sed. Maecenas commodo enim risus, tincidunt convallis enim tempus eu. Ut cursus egestas ipsum, vel hendrerit sapien.</string>
+    <!-- Task Manager -->
+    <string name="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit, tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit, quia.</string>
     <string name="task_calendar">Calendar</string>
     <string name="task_checklist">Task List</string>
-    <string name="task_tag">Tags</string>
     <string name="task_priority">Priority</string>
     <string name="task_save">Save</string>
+
     <string name="cancel">Cancel</string>
     <string name="done">Done</string>
+
     <string name="set_time">⏰ Set Time 12:00</string>
     <string name="set_reminder">🔔 Set Reminder 5 mins early</string>
+    <string name="remind">Remind</string>
+    <string name="set">Set</string>
+    <string name="hint_time">10</string>
+
+    <string name="task_overview">Task Overview</string>
+    <string name="completed_tasks">Completed Tasks</string>
+    <string name="completedTasks">250</string>
+    <string name="completion_rate">Completion Rate</string>
+    <string name="completionRate">75%</string>
+    <string name="completion_distribution">Completion Distribution</string>
+    <string name="completion_rate_distribution">Completion Rate Distribution</string>
+
+    <string name="settings">Settings</string>
+    <string name="task_report">Task Report</string>
 
     <string-array name="priority">
         <item>🚩 High</item>
         <item>🚩 Medium</item>
         <item>🚩 Low</item>
+    </string-array>
+
+    <string-array name="remind">
+        <item>min</item>
+        <item>hours</item>
+        <item>days</item>
     </string-array>
 </resources>

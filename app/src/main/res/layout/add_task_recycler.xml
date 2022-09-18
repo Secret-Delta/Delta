@@ -4,8 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFE5E4"
-    tools:context=".Activities.MainActivity">
+    android:background="@color/rich_black"
+    tools:context=".Activities.AddTaskActivity">
+    <RelativeLayout
+        android:id="@+id/task_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/candy_pink">
 
     <ImageButton
         android:id="@+id/backButton"
@@ -13,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="7dp"
         android:layout_marginBottom="0dp"
         android:background="?android:attr/selectableItemBackground"
@@ -25,15 +31,14 @@
         android:layout_width="269dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="13dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="-329dp"
-        android:layout_toStartOf="@+id/backButton"
         android:layout_toEndOf="@+id/backButton"
         android:background="@android:color/transparent"
         android:text="🎯 Task"
-        android:textColor="@color/black"
-        android:textSize="18sp" />
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <ImageButton
         android:id="@+id/deleteButton"
@@ -48,18 +53,21 @@
         android:background="?android:attr/selectableItemBackground"
         app:srcCompat="@drawable/ic_baseline_delete_24" />
 
+    </RelativeLayout>
+
     <EditText
         android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/task_layout"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="17dp"
-        android:background="@android:color/transparent"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="22dp"
+        android:padding="15dp"
         android:text="@string/description"
+        android:textColor="@color/white"
         android:textSize="16sp" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -71,7 +79,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginBottom="95dp"
+        android:layout_marginBottom="2dp"
         android:nestedScrollingEnabled="true"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
@@ -81,8 +89,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
-        android:layout_marginBottom="10sp"
-        android:orientation="horizontal">
+        android:background="#33476C"
+        android:orientation="horizontal"
+        android:padding="10sp">
 
         <ImageButton
             android:id="@+id/calendarBtn"
@@ -92,7 +101,7 @@
             android:layout_marginStart="30sp"
             android:layout_marginEnd="40sp"
             android:background="@drawable/baseline_edit_calendar"
-            android:backgroundTint="@color/black"
+            android:backgroundTint="@color/white"
             android:insetTop="0dp"
             android:insetBottom="0dp" />
 
@@ -103,20 +112,9 @@
             android:layout_height="25sp"
             android:layout_marginEnd="40sp"
             android:background="@drawable/baseline_check_list"
-            android:backgroundTint="@color/black"
+            android:backgroundTint="@color/white"
             android:insetTop="0dp"
             android:insetBottom="0dp" />
-
-        <!--        <ImageButton-->
-        <!--            android:id="@+id/tagBtn"-->
-        <!--            style="?android:attr/borderlessButtonStyle"-->
-        <!--            android:layout_width="25sp"-->
-        <!--            android:layout_height="25sp"-->
-        <!--            android:layout_marginEnd="40sp"-->
-        <!--            android:background="@drawable/baseline_tag_24"-->
-        <!--            android:insetTop="0dp"-->
-        <!--            android:insetBottom="0dp"-->
-        <!--            android:backgroundTint="@color/black"/>-->
 
         <Spinner
             android:id="@+id/prioritySpinner"
@@ -124,29 +122,18 @@
             android:layout_height="25sp"
             android:layout_marginEnd="40sp"
             android:background="@drawable/baseline_priority_24"
-            android:backgroundTint="@color/black"
+            android:backgroundTint="@color/white"
             android:insetTop="0dp"
             android:insetBottom="0dp" />
-        <!--        -->
-        <!--        <ImageButton-->
-        <!--            android:id="@+id/priorityBtn"-->
-        <!--            style="?android:attr/borderlessButtonStyle"-->
-        <!--            android:layout_width="25sp"-->
-        <!--            android:layout_height="25sp"-->
-        <!--            android:layout_marginEnd="40sp"-->
-        <!--            android:background="@drawable/baseline_priority_24"-->
-        <!--            android:insetTop="0dp"-->
-        <!--            android:insetBottom="0dp"-->
-        <!--            android:backgroundTint="@color/black"/>-->
 
         <ImageButton
             android:id="@+id/saveBtn"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="25sp"
             android:layout_height="28sp"
-            android:layout_marginStart="110sp"
+            android:layout_marginStart="95sp"
             android:background="@drawable/baseline_save_24"
-            android:backgroundTint="@color/black"
+            android:backgroundTint="@color/white"
             android:insetTop="0dp"
             android:insetBottom="0dp" />
     </LinearLayout>

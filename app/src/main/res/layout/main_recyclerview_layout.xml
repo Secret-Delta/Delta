@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFE5E4"
+    android:background="@color/rich_black"
     tools:context=".Activities.MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -20,7 +20,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_margin="32dp"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/candy_pink"
         android:src="@drawable/ic_baseline_plus_24" />
 
 </RelativeLayout>

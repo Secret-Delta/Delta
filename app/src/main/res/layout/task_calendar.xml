@@ -5,8 +5,8 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
-    android:background="#FFE5E4"
     android:orientation="vertical"
+    android:background="@color/rich_black"
     tools:context=".Activities.CalendarPopup">
 
     <androidx.cardview.widget.CardView
@@ -22,8 +22,7 @@
         <CalendarView
             android:id="@+id/taskCalendar"
             android:layout_width="match_parent"
-            android:layout_height="309dp"
-            android:backgroundTint="@color/black" />
+            android:layout_height="309dp"/>
 
         <LinearLayout
             android:layout_width="270sp"
@@ -31,7 +30,7 @@
             android:layout_gravity="bottom|center"
             android:layout_marginBottom="60sp"
             android:background="@drawable/rounded_shape"
-            android:backgroundTint="@color/teal_200"
+            android:backgroundTint="@color/candy_pink"
             android:orientation="vertical">
 
             <Button
@@ -45,6 +44,7 @@
                 android:text="@string/set_time"
                 android:textAlignment="center"
                 android:textAllCaps="false"
+                android:textColor="@color/white"
                 app:cornerRadius="0dp" />
 
             <Button
@@ -57,6 +57,7 @@
                 android:text="@string/set_reminder"
                 android:textAlignment="center"
                 android:textAllCaps="false"
+                android:textColor="@color/white"
                 app:cornerRadius="0dp" />
         </LinearLayout>
 

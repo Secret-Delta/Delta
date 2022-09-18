@@ -10,8 +10,9 @@
         android:id="@+id/addTaskCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:buttonTint="@android:color/black"
+        android:buttonTint="@color/white"
         android:paddingStart="2sp"
+        android:textColor="@color/white"
         tools:text="Sub Task" />
 
     <ImageButton
