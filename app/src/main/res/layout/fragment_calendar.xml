@@ -49,30 +49,42 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="32dp"
         android:layout_marginBottom="10dp"
-        android:backgroundTint="@color/White"
+        android:backgroundTint="@color/candyPink"
         android:src="@drawable/ic_baseline_plus_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+         />
 
 
     <LinearLayout
         android:id="@+id/ll1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="65dp"
         android:layout_below="@+id/l1"
         android:layout_marginStart="23dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="23dp"
         android:background="@drawable/text_fields_cal"
-        android:gravity="center_horizontal"
+        android:gravity="left"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="25dp">
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="9dp"
+            android:text="Conference"
+            android:textColor="@color/black"
+            android:textSize="20sp">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:inputType="textImeMultiLine"
+            android:text="11:00 - 13:00"
+            android:textColor="@color/metallicSeaweed"
+            android:textSize="13sp">>
 
         </TextView>
     </LinearLayout>
@@ -80,7 +92,7 @@
     <LinearLayout
         android:id="@+id/ll2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="65dp"
         android:layout_below="@+id/ll1"
         android:layout_marginStart="23dp"
         android:layout_marginTop="20dp"
@@ -99,7 +111,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="65dp"
         android:layout_below="@+id/ll2"
         android:layout_marginStart="23dp"
         android:layout_marginTop="20dp"
