@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/richBlack"
+    android:background="@color/rich_black"
     tools:context=".Activities.SignUp">
 
     <androidx.core.widget.NestedScrollView
@@ -40,7 +40,7 @@
                     android:layout_marginLeft="0dp"
                     android:layout_marginTop="2dp"
                     android:text="@string/txtWelcome"
-                    android:textColor="@color/White"
+                    android:textColor="@color/white"
                     android:textSize="16sp" />
 
                 <TextView
@@ -50,7 +50,7 @@
                     android:layout_marginLeft="216dp"
                     android:layout_marginTop="0dp"
                     android:text="@string/have_an_acoount"
-                    android:textColor="@color/metallicSeaweed"
+                    android:textColor="@color/metallic_seaweed"
                     android:textSize="13sp" />
             </RelativeLayout>
 
@@ -61,9 +61,8 @@
                 android:layout_marginLeft="28dp"
                 android:layout_marginTop="80dp"
                 android:text="@string/sign_up"
-                android:textColor="@color/White"
+                android:textColor="@color/white"
                 android:textSize="40sp" />
-
 
 
             <RelativeLayout
@@ -78,9 +77,10 @@
                     android:id="@+id/btnSignup"
                     android:layout_width="250dp"
                     android:layout_height="60dp"
+                    android:backgroundTint="@color/candy_pink"
                     android:onClick="openLogin"
                     android:text="@string/sign_up"
-                    android:textColor="@color/White"
+                    android:textColor="@color/white"
                     android:textSize="16sp" />
 
             </RelativeLayout>
@@ -125,7 +125,7 @@
                         android:layout_marginLeft="0dp"
                         android:layout_marginTop="-2.08dp"
                         android:text="Enter your eMail address"
-                        android:textColor="@color/White"
+                        android:textColor="@color/white"
                         android:textSize="14sp" />
 
                     <View
@@ -165,7 +165,7 @@
                         android:layout_marginLeft="0dp"
                         android:layout_marginTop="2.08dp"
                         android:text="Enter your Password"
-                        android:textColor="@color/White"
+                        android:textColor="@color/white"
                         android:textSize="16sp" />
 
 
@@ -205,7 +205,7 @@
                         android:layout_marginLeft="0dp"
                         android:layout_marginTop="5dp"
                         android:text="Re-enter your Password"
-                        android:textColor="@color/White"
+                        android:textColor="@color/white"
                         android:textSize="16sp" />
 
                     <View
@@ -245,7 +245,7 @@
                         android:layout_marginEnd="0dp"
                         android:layout_marginBottom="15dp"
                         android:text="@string/agree_to_terms_and_conditions"
-                        android:textColor="@color/White"
+                        android:textColor="@color/white"
                         android:textSize="15sp" />
 
 
@@ -274,7 +274,7 @@
                             android:layout_marginLeft="0dp"
                             android:layout_marginTop="6dp"
                             android:text="@string/your_name"
-                            android:textColor="@color/White"
+                            android:textColor="@color/white"
                             android:textSize="14sp" />
 
                         <EditText
@@ -304,7 +304,7 @@
                             android:layout_marginLeft="0dp"
                             android:layout_marginTop="6dp"
                             android:text="Contact Number"
-                            android:textColor="@color/White"
+                            android:textColor="@color/white"
                             android:textSize="14sp" />
 
                         <EditText

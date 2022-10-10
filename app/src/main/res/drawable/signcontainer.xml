@@ -5,7 +5,7 @@
         android:radius="35dp"
         />
     <solid
-        android:color="@color/richBlack"
+        android:color="@color/rich_black"
         />
 
 </shape>

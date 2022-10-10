@@ -62,7 +62,6 @@
                 android:layout_alignParentBottom="true"
                 android:background="@color/rich_black"
                 android:backgroundTint="@color/black"
-                app:itemIconTint="@drawable/selector"
                 app:labelVisibilityMode="unlabeled"
                 app:menu="@menu/bottom_navigation_menu" />
         </RelativeLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    android:background="@color/richBlack"
+    android:background="@color/rich_black"
     tools:context=".Activities.UserProfile">
 
     <androidx.core.widget.NestedScrollView
@@ -14,14 +14,13 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="27dp">
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="20dp">
 
                 <View
                     android:id="@+id/rectangle_1"
@@ -46,7 +45,7 @@
                     android:layout_height="30dp"
                     android:layout_marginStart="120dp"
                     android:layout_marginTop="80dp"
-                    android:backgroundTint="@color/White"
+                    android:backgroundTint="@color/white"
                     android:src="@android:drawable/ic_menu_edit">
 
                 </ImageButton>
@@ -68,8 +67,8 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="130dp"
                     android:text="@string/emailAcc"
-                    android:textSize="10sp"
-                    android:textColor="@color/lightBlue" />
+                    android:textColor="@color/oxford_blue"
+                    android:textSize="10sp" />
 
 
                 <ImageView
@@ -88,13 +87,12 @@
                     android:layout_marginStart="45dp"
                     android:layout_marginTop="290dp"
                     android:background="@drawable/text_fields_cal"
-                    android:backgroundTint="@color/candyPink"
+                    android:backgroundTint="@color/candy_pink"
                     android:paddingBottom="2dp"
                     android:text="@string/your_achievements"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="22sp" />
-
 
 
             </RelativeLayout>
@@ -128,7 +126,7 @@
                         android:layout_marginStart="55dp"
                         android:layout_marginTop="40dp"
                         android:text="35"
-                        android:textColor="@color/metallicSeaweed"
+                        android:textColor="@color/metallic_seaweed"
                         android:textSize="50sp" />
 
                     <TextView
@@ -166,7 +164,7 @@
                         android:layout_marginStart="65dp"
                         android:layout_marginTop="40dp"
                         android:text="3"
-                        android:textColor="@color/metallicSeaweed"
+                        android:textColor="@color/metallic_seaweed"
                         android:textSize="50sp" />
 
                     <TextView
@@ -205,7 +203,7 @@
                         android:layout_marginStart="55dp"
                         android:layout_marginTop="40dp"
                         android:text="60"
-                        android:textColor="@color/metallicSeaweed"
+                        android:textColor="@color/metallic_seaweed"
                         android:textSize="50sp" />
 
                     <TextView
@@ -242,7 +240,7 @@
                         android:layout_marginStart="65dp"
                         android:layout_marginTop="40dp"
                         android:text="7"
-                        android:textColor="@color/metallicSeaweed"
+                        android:textColor="@color/metallic_seaweed"
                         android:textSize="50sp" />
 
                     <TextView
