@@ -6,19 +6,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.SecretDelta.delta.Fragments.CalendarFragment;
-import com.SecretDelta.delta.Fragments.HabbitFragment;
+import com.SecretDelta.delta.Fragments.HabitFragment;
 import com.SecretDelta.delta.Fragments.PomodoroFragment;
 import com.SecretDelta.delta.Fragments.TaskFragment;
 import com.SecretDelta.delta.R;
-import com.SecretDelta.delta.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
+import com.SecretDelta.delta.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -30,8 +30,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     CalendarFragment calendarFragment = new CalendarFragment();
     TaskFragment taskFragment = new TaskFragment();
     PomodoroFragment pomodoroFragment = new PomodoroFragment();
-    HabbitFragment habbitFragment = new HabbitFragment();
-
+    HabitFragment habitFragment = new HabitFragment();
+    
+    @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,35 +60,32 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         getSupportFragmentManager().beginTransaction().replace(R.id.container, calendarFragment).commit();
 
-        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.calendar:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, calendarFragment).commit();
-                        return true;
-                    case R.id.task:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, taskFragment).commit();
-                        return true;
-                    case R.id.pomodoro:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, pomodoroFragment).commit();
-                        return true;
-                    case R.id.habbit:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, habbitFragment).commit();
-                        return true;
-                }
-                return false;
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.calendar:
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container, calendarFragment).commit();
+                    return true;
+                case R.id.task:
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container, taskFragment).commit();
+                    return true;
+                case R.id.pomodoro:
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container, pomodoroFragment).commit();
+                    return true;
+                case R.id.habbit:
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container, habitFragment).commit();
+                    return true;
             }
+            return false;
         });
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(@NonNull Menu menu) {
-        super.onCreateOptionsMenu(menu);
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(@NonNull Menu menu) {
+//        super.onCreateOptionsMenu(menu);
+//        getMenuInflater().inflate(R.menu.main_menu, menu);
+//        return true;
+//    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {

@@ -29,7 +29,7 @@
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/candyPink"
+            android:backgroundTint="@color/candy_pink"
             android:theme="@style/ThemeOverlay.AppCompat.Light"
             app:liftOnScroll="true">
 
@@ -60,9 +60,10 @@
                 android:layout_height="wrap_content"
                 app:itemIconTint="@drawable/selector"
                 android:layout_alignParentBottom="true"
-                android:background="@color/richBlack"
+                android:background="@color/rich_black"
+                android:backgroundTint="@color/black"
+                app:itemIconTint="@drawable/selector"
                 app:labelVisibilityMode="unlabeled"
-
                 app:menu="@menu/bottom_navigation_menu" />
         </RelativeLayout>
 

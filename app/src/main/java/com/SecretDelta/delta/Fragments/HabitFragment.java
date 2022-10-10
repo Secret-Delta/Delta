@@ -10,11 +10,11 @@ import android.view.ViewGroup;
 
 import com.SecretDelta.delta.R;
 
-public class HabbitFragment extends Fragment {
+public class HabitFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_habbit, container, false);
+        return inflater.inflate(R.layout.fragment_habit, container, false);
     }
 }
