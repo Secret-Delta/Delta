@@ -35,7 +35,8 @@
         android:layout_marginTop="16dp"
         android:layout_toEndOf="@+id/backButton"
         android:background="@android:color/transparent"
-        android:text="🎯 Task"
+        android:hint="🎯 Enter Task..."
+        android:textColorHint="@color/white"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -66,7 +67,8 @@
         android:layout_marginTop="0dp"
         android:layout_marginEnd="22dp"
         android:padding="15dp"
-        android:text="@string/description"
+        android:hint="Enter Description..."
+        android:textColorHint="@color/light_gray"
         android:textColor="@color/white"
         android:textSize="16sp" />
 

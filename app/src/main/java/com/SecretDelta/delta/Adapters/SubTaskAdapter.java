@@ -56,7 +56,7 @@ public class SubTaskAdapter extends RecyclerView.Adapter<SubTaskAdapter.SubTaskV
     }
 
     @SuppressLint("NonConstantResourceId")
-    static class SubTaskViewHolder extends RecyclerView.ViewHolder {
+    public static class SubTaskViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.taskCheckBox)
         CheckBox subTask;
 
