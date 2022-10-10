@@ -5,12 +5,12 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Activities.MainActivity">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".Activities.MainActivity">
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -29,7 +29,7 @@
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@android:color/white"
+            android:backgroundTint="@color/candy_pink"
             android:theme="@style/ThemeOverlay.AppCompat.Light"
             app:liftOnScroll="true">
 
@@ -58,6 +58,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:background="@color/rich_black"
+                android:backgroundTint="@color/black"
+                app:itemIconTint="@drawable/selector"
                 app:labelVisibilityMode="unlabeled"
                 app:menu="@menu/bottom_navigation_menu" />
         </RelativeLayout>
