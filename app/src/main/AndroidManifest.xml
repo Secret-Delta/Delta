@@ -23,6 +23,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+       
+        <activity
+            android:name=".Activities.UserProfile"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.SignIn"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.SignUp"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.EditEvent"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.NewCalendarEvent"
+            android:exported="false" />
+        
         <activity
             android:name=".Activities.AddTaskActivity"
             android:exported="false"

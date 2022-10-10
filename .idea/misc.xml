@@ -3,12 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Navod/StudioProjects/Delta v3/app/src/main/res/layout/add_task_recycler.xml" value="0.25" />
-        <entry key="..\:/Users/Navod/StudioProjects/Delta v3/app/src/main/res/layout/new_task.xml" value="0.25" />
+        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/add_task_recycler.xml" value="0.25" />
+        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/new_task.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/baseline_calendar_24.xml" value="0.1625" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/baseline_cancel_24.xml" value="0.1625" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/baseline_check_list.xml" value="0.1" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/baseline_edit_calendar.xml" value="0.1" />
+        
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/baseline_habbit_24.xml" value="0.1625" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/baseline_priority_24.xml" value="0.1" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/baseline_save_24.xml" value="0.1" />
@@ -52,6 +53,26 @@
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/menu/main_menu.xml" value="0.24615384615384617" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/menu/nav_menu.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/menu/task_menu.xml" value="0.25" />
+        
+        <entry key="..\:/My Projects/MAD/Secret Delta/DeltaJ/app/src/main/res/drawable/baseline_calendar_24.xml" value="0.2405" />
+        <entry key="..\:/My Projects/MAD/Secret Delta/DeltaJ/app/src/main/res/drawable/calendar_background.xml" value="0.1" />
+        <entry key="..\:/My Projects/MAD/Secret Delta/DeltaJ/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.2405" />
+        <entry key="..\:/My Projects/MAD/Secret Delta/DeltaJ/app/src/main/res/drawable/ic_baseline_plus_24.xml" value="0.1485" />
+        <entry key="..\:/My Projects/MAD/Secret Delta/DeltaJ/app/src/main/res/drawable/img_customs.xml" value="0.2055" />
+        <entry key="..\:/My Projects/MAD/Secret Delta/DeltaJ/app/src/main/res/drawable/selector.xml" value="0.4" />
+        <entry key="..\:/My Projects/MAD/Secret Delta/DeltaJ/app/src/main/res/drawable/signcontainer.xml" value="0.2055" />
+        <entry key="..\:/My Projects/MAD/Secret Delta/DeltaJ/app/src/main/res/drawable/text_fields_cal.xml" value="0.1" />
+        <entry key="..\:/My Projects/MAD/Secret Delta/DeltaJ/app/src/main/res/layout/activity_edit_event.xml" value="0.25" />
+        <entry key="..\:/My Projects/MAD/Secret Delta/DeltaJ/app/src/main/res/layout/activity_main.xml" value="0.234375" />
+        <entry key="..\:/My Projects/MAD/Secret Delta/DeltaJ/app/src/main/res/layout/activity_new_calendar_event.xml" value="0.264" />
+        <entry key="..\:/My Projects/MAD/Secret Delta/DeltaJ/app/src/main/res/layout/activity_sign_in.xml" value="0.264" />
+        <entry key="..\:/My Projects/MAD/Secret Delta/DeltaJ/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
+        <entry key="..\:/My Projects/MAD/Secret Delta/DeltaJ/app/src/main/res/layout/activity_user_profile.xml" value="0.264" />
+        <entry key="..\:/My Projects/MAD/Secret Delta/DeltaJ/app/src/main/res/layout/fragment_calendar.xml" value="0.2222222222222222" />
+        <entry key="..\:/My Projects/MAD/Secret Delta/DeltaJ/app/src/main/res/layout/fragment_task.xml" value="0.25" />
+        <entry key="..\:/My Projects/MAD/Secret Delta/DeltaJ/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.234375" />
+        <entry key="..\:/My Projects/MAD/Secret Delta/DeltaJ/app/src/main/res/menu/main_menu.xml" value="0.234375" />
+        <entry key="..\:/My Projects/MAD/Secret Delta/DeltaJ/app/src/main/res/menu/nav_menu.xml" value="0.234375" />
       </map>
     </option>
   </component>
