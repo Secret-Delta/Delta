@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import com.SecretDelta.delta.R;
 
-public class HabbitFragment extends Fragment {
+public class HabitFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

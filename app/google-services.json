@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "939587300224",
+    "project_id": "delta-faaeb",
+    "storage_bucket": "delta-faaeb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:939587300224:android:6b826933145f6c73fb2f65",
+        "android_client_info": {
+          "package_name": "com.SecretDelta.delta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "939587300224-tnreejsfkd8p5qiaf7cjfjsb407a6515.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcRSIhOl5hT4pJkxZ1qQWr1xGUzvF7A2Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "939587300224-tnreejsfkd8p5qiaf7cjfjsb407a6515.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

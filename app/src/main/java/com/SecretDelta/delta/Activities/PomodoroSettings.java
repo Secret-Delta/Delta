@@ -1,8 +1,10 @@
-package com.SecretDelta.delta;
+package com.SecretDelta.delta.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.SecretDelta.delta.R;
 
 public class PomodoroSettings extends AppCompatActivity {
 

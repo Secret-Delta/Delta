@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/rich_black"
-    tools:context=".PomodoroSettings">
+    android:orientation="vertical"
+    tools:context=".Activities.PomodoroSettings">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -47,187 +47,185 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@color/metallic_seaweed"
+        android:layout_gravity="center"
         android:layout_marginTop="30dp"
-        android:layout_gravity="center">
+        android:background="@color/metallic_seaweed"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp" >
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
                 android:text="@string/short_focus_duration"
                 android:textColor="@color/white"
-                android:textSize="15sp"
-                android:layout_marginEnd="20dp" />
+                android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/editShortFocusDuration"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:textAlignment="center"
+                android:autofillHints="25"
                 android:ems="10"
                 android:hint="@string/short_focus_duration_hint"
-                android:textColorHint="@color/white"
+                android:inputType="number"
+                android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="15sp"
-                android:autofillHints="25" />
+                android:textColorHint="@color/white"
+                android:textSize="15sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
                 android:text="@string/timeUnits"
                 android:textColor="@color/white"
-                android:textSize="15sp"
-                android:layout_marginStart="20dp" />
+                android:textSize="15sp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp" >
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
                 android:text="@string/short_break_duration"
                 android:textColor="@color/white"
-                android:textSize="15sp"
-                android:layout_marginEnd="20dp" />
+                android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/editShortBreakDuration"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:textAlignment="center"
+                android:autofillHints="5"
                 android:ems="10"
                 android:hint="@string/short_break_duration_hint"
+                android:inputType="number"
+                android:textAlignment="center"
                 android:textColorHint="@color/white"
-                android:textSize="15sp"
-                android:autofillHints="5" />
+                android:textSize="15sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
                 android:text="@string/timeUnits"
                 android:textColor="@color/white"
-                android:textSize="15sp"
-                android:layout_marginStart="20dp" />
+                android:textSize="15sp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp" >
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
                 android:text="@string/long_focus_duration"
                 android:textColor="@color/white"
-                android:textSize="15sp"
-                android:layout_marginEnd="20dp" />
+                android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/editLongFocusDuration"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:textAlignment="center"
+                android:autofillHints="45"
                 android:ems="10"
                 android:hint="@string/long_focus_duration_hint"
+                android:inputType="number"
+                android:textAlignment="center"
                 android:textColorHint="@color/white"
-                android:textSize="15sp"
-                android:autofillHints="45" />
+                android:textSize="15sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
                 android:text="@string/timeUnits"
                 android:textColor="@color/white"
-                android:textSize="15sp"
-                android:layout_marginStart="20dp" />
+                android:textSize="15sp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp" >
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
                 android:text="@string/long_break_duration"
                 android:textColor="@color/white"
-                android:textSize="15sp"
-                android:layout_marginEnd="20dp" />
+                android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/editTextPomodoroLength"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:textAlignment="center"
+                android:autofillHints="15"
                 android:ems="10"
                 android:hint="@string/long_break_duration_hint"
+                android:inputType="number"
+                android:textAlignment="center"
                 android:textColorHint="@color/white"
-                android:textSize="15sp"
-                android:autofillHints="15" />
+                android:textSize="15sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
                 android:text="@string/timeUnits"
                 android:textColor="@color/white"
-                android:textSize="15sp"
-                android:layout_marginStart="20dp" />
+                android:textSize="15sp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="right">
+            android:gravity="right"
+            android:orientation="horizontal">
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/reset"
                 android:id="@+id/resetButton"
-                android:backgroundTint="@color/metallic_seaweed"
-                android:layout_margin="5dp"/>
-
-            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/save"
-                android:id="@+id/saveButton"
-                android:backgroundTint="@color/candy_pink"
-                android:layout_margin="5dp"/>
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/metallic_seaweed"
+                android:text="@string/reset" />
 
+            <Button
+                android:id="@+id/saveButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/candy_pink"
+                android:text="@string/save" />
 
 
         </LinearLayout>
     </LinearLayout>
-
 
 
 </LinearLayout>

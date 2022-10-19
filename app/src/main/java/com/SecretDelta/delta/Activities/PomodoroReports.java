@@ -1,4 +1,4 @@
-package com.SecretDelta.delta;
+package com.SecretDelta.delta.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentContainerView;
@@ -9,6 +9,7 @@ import com.SecretDelta.delta.Fragments.DailyPomodoroReport;
 import com.SecretDelta.delta.Fragments.MonthlyPomodoroReport;
 import com.SecretDelta.delta.Fragments.WeeklyPomodoroReport;
 import com.SecretDelta.delta.Fragments.YearlyPomodoroReport;
+import com.SecretDelta.delta.R;
 import com.google.android.material.tabs.TabLayout;
 
 public class PomodoroReports extends AppCompatActivity {

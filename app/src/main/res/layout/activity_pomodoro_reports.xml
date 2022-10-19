@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/rich_black"
-    tools:context=".PomodoroReports">
+    tools:context=".Activities.PomodoroReports">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -56,7 +56,7 @@
             android:background="@color/rich_black"
             app:tabSelectedTextColor="@color/candy_pink"
             app:tabIndicatorColor="@color/candy_pink"
-            app:tabTextColor="@color/white">>
+            app:tabTextColor="@color/white">
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/tabItemDailyReport"

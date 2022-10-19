@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/rich_black"
+    android:orientation="vertical"
     tools:context=".Fragments.DailyPomodoroReport">
 
     <TextView
@@ -12,8 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:background="@android:color/transparent"
-        android:text="@string/daily_pomodoro_report"
         android:gravity="center"
+        android:text="@string/daily_pomodoro_report"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -26,10 +26,10 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_margin="10dp"
             android:background="@color/metallic_seaweed"
             android:gravity="center"
-            android:layout_margin="10dp"
+            android:orientation="vertical"
             android:padding="10dp">
 
             <TextView
@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/total_focus_time"
                 android:textColor="@color/white"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -49,56 +49,56 @@
                     android:layout_height="wrap_content"
                     android:text="8"
                     android:textColor="@color/white"
-                    android:textSize="40sp"/>
+                    android:textSize="40sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
                     android:text="@string/hours"
                     android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="10dp"/>
+                    android:textSize="20sp" />
 
             </LinearLayout>
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@color/metallic_seaweed"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/total_break_time"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="10dp"
-                android:padding="10dp"
-                android:background="@color/metallic_seaweed"
-                android:gravity="center">
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/total_break_time"
+                    android:text="2"
                     android:textColor="@color/white"
-                    android:textSize="20sp"/>
+                    android:textSize="40sp" />
 
-                <LinearLayout
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/hours"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="2"
-                        android:textColor="@color/white"
-                        android:textSize="40sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/hours"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        android:layout_marginLeft="10dp"/>
-
-                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
@@ -106,6 +106,5 @@
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:layout_margin="10dp"
-        android:background="@color/white">
-    </FrameLayout>
+        android:background="@color/white"></FrameLayout>
 </LinearLayout>
