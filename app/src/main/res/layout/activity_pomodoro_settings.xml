@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/rich_black"
+    tools:context=".PomodoroSettings">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/candy_pink">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="2dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:padding="10sp"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+
+        <TextView
+            android:id="@+id/overviewText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="16dp"
+            android:layout_toEndOf="@+id/backButton"
+            android:background="@android:color/transparent"
+            android:text="@string/pomodoro_settings"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/metallic_seaweed"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/short_focus_duration"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:layout_marginEnd="20dp" />
+
+            <EditText
+                android:id="@+id/editShortFocusDuration"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:ems="10"
+                android:hint="@string/short_focus_duration_hint"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:autofillHints="25" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/timeUnits"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:layout_marginStart="20dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/short_break_duration"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:layout_marginEnd="20dp" />
+
+            <EditText
+                android:id="@+id/editShortBreakDuration"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:ems="10"
+                android:hint="@string/short_break_duration_hint"
+                android:textColorHint="@color/white"
+                android:textSize="15sp"
+                android:autofillHints="5" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/timeUnits"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:layout_marginStart="20dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/long_focus_duration"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:layout_marginEnd="20dp" />
+
+            <EditText
+                android:id="@+id/editLongFocusDuration"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:ems="10"
+                android:hint="@string/long_focus_duration_hint"
+                android:textColorHint="@color/white"
+                android:textSize="15sp"
+                android:autofillHints="45" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/timeUnits"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:layout_marginStart="20dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/long_break_duration"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:layout_marginEnd="20dp" />
+
+            <EditText
+                android:id="@+id/editTextPomodoroLength"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:ems="10"
+                android:hint="@string/long_break_duration_hint"
+                android:textColorHint="@color/white"
+                android:textSize="15sp"
+                android:autofillHints="15" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/timeUnits"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:layout_marginStart="20dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reset"
+                android:id="@+id/resetButton"
+                android:backgroundTint="@color/metallic_seaweed"
+                android:layout_margin="5dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/save"
+                android:id="@+id/saveButton"
+                android:backgroundTint="@color/candy_pink"
+                android:layout_margin="5dp"/>
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>
+
