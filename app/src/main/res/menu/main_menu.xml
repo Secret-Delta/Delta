@@ -8,6 +8,10 @@
         android:title="Search"
         app:actionViewClass="android.widget.SearchView"
         app:showAsAction="always" />
-    <item android:title="Settings" />
-    <item android:title="About" />
+    <item
+        android:id="@+id/settingsPomodoroMenu"
+        android:title="Settings" />
+    <item
+        android:id="@+id/reportPomodoroMenu"
+        android:title="Pomodoro Reports" />
 </menu>

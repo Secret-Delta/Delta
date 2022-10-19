@@ -10,4 +10,49 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!-- Strings for the Pomodoro Timer -->
+    <string name="focus_timer">Focus timer</string>
+    <string name="stopwatch">Stopwatch</string>
+    <string name="start_timer">Start timer</string>
+    <string name="flip_mode">Flip Mode</string>
+    <string name="background_music">Music</string>
+    <string name="choose_focus">Choose Focus</string>
+    <string name="default_timer_value">00:00</string>
+    <string name="take_a_break">Take a Break</string>
+    <string name="start_break">Start Break</string>
+    <string name="break_timer">Break Timer</string>
+    <string name="skip_break">Skip Break</string>
+    <string-array name="arrayChooseFocus">
+        <item>Todo Task 1</item>
+        <item>Todo Task 2</item>
+        <item>Todo Task 3</item>
+        <item>Todo Task 4</item>
+        <item>Todo Task 5</item>
+    </string-array>
+    <string name="pomodoro_settings">Pomodoro Settings</string>
+    <string name="short_break_duration">Short break duration</string>
+    <string name="short_break_duration_hint">5</string>
+    <string name="timeUnits">minutes</string>
+    <string name="short_focus_duration">Short focus duration</string>
+    <string name="short_focus_duration_hint">25</string>
+    <string name="long_focus_duration_hint">45</string>
+    <string name="long_focus_duration">Long focus duration</string>
+    <string name="long_break_duration_hint">15</string>
+    <string name="long_break_duration">Long break duration</string>
+    <string name="pomodoro_reports">Pomodoro Reports</string>
+    <string name="daily_pomodoro_report">Daily Pomodoro Report</string>
+    <string name="back_button">Back Button</string>
+    <string name="daily">Daily</string>
+    <string name="weekly">Weekly</string>
+    <string name="monthly">Monthly</string>
+    <string name="yearly">Yearly</string>
+    <string name="total_focus_time">Total Focus Time :</string>
+    <string name="total_break_time">Total Break Time :</string>
+    <string name="hours">hours</string>
+    <string name="yearly_pomodoro_report">Yearly Pomodoro Report</string>
+    <string name="weekly_pomodoro_report">Weekly Pomodoro Report</string>
+    <string name="monthly_pomodoro_report">Monthly Pomodoro Report</string>
+    <string name="save">Save</string>
+    <string name="reset">Reset</string>
+
 </resources>

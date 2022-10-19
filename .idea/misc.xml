@@ -17,6 +17,28 @@
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/menu/main_menu.xml" value="0.24615384615384617" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/menu/nav_menu.xml" value="0.25" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.249" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta/app/src/main/res/drawable/baseline_calendar_24.xml" value="0.249" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta/app/src/main/res/drawable/baseline_habbit_24.xml" value="0.249" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta/app/src/main/res/drawable/dailyReportPNG_background.xml" value="0.199" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.199" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta/app/src/main/res/drawable/ic_launcher_background.xml" value="0.249" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta/app/src/main/res/drawable/selector.xml" value="0.249" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta/app/src/main/res/layout/activity_pomodoro.xml" value="0.176" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta/app/src/main/res/layout/activity_pomodoro_reports.xml" value="0.1" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta/app/src/main/res/layout/activity_pomodoro_settings.xml" value="0.2" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta/app/src/main/res/layout/fragment_break_timer.xml" value="0.1717896174863388" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta/app/src/main/res/layout/fragment_daily_pomodoro_report.xml" value="0.136" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta/app/src/main/res/layout/fragment_focus_timer.xml" value="0.1875" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta/app/src/main/res/layout/fragment_monthly_pomodoro_report.xml" value="0.1717896174863388" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta/app/src/main/res/layout/fragment_stopwatch.xml" value="0.1717896174863388" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta/app/src/main/res/layout/fragment_weekly_pomodoro_report.xml" value="0.18757327080890973" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta/app/src/main/res/layout/fragment_yearly_pomodoro_report.xml" value="0.1717896174863388" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.25" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta/app/src/main/res/menu/main_menu.xml" value="0.25" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta/app/src/main/res/menu/nav_menu.xml" value="0.25" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta/app/src/main/res/mipmap-anydpi-v26/dailyReportPNG.xml" value="0.199" />
       </map>
     </option>
   </component>
