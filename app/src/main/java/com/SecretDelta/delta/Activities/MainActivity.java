@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     TaskFragment taskFragment = new TaskFragment();
     PomodoroFragment pomodoroFragment = new PomodoroFragment();
     HabitFragment habitFragment = new HabitFragment();
-    
+
     @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {

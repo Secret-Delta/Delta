@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Delta"
         tools:targetApi="31">
+       
         <activity
             android:name=".Activities.MainActivity"
             android:exported="true"
@@ -58,6 +59,13 @@
             android:exported="false"
             android:theme="@style/Theme.Delta.PopUpTheme"  />
 
+        <activity
+            android:name=".Activities.PomodoroReports"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.PomodoroSettings"
+            android:exported="false" />
+            
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
