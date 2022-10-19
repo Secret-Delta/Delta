@@ -13,21 +13,62 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Delta"
         tools:targetApi="31">
-        <activity
-            android:name=".Activities.PomodoroReports"
-            android:exported="false" />
-        <activity
-            android:name=".Activities.PomodoroSettings"
-            android:exported="false" />
+       
         <activity
             android:name=".Activities.MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+       
+        <activity
+            android:name=".Activities.UserProfile"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.SignIn"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.SignUp"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.EditEvent"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.NewCalendarEvent"
+            android:exported="false" />
+        
+        <activity
+            android:name=".Activities.AddTaskActivity"
+            android:exported="false"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".Activities.CalendarPopup"
+            android:exported="false"
+            android:theme="@style/Theme.Delta.PopUpTheme" />
+        <activity
+            android:name=".Activities.TaskRemindActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Delta.PopUpTheme"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".Activities.TaskOverviewActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Delta.PopUpTheme"  />
+
+        <activity
+            android:name=".Activities.PomodoroReports"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.PomodoroSettings"
+            android:exported="false" />
+            
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

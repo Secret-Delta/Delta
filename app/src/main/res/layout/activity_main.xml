@@ -5,18 +5,23 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Activities.MainActivity">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".Activities.MainActivity">
 
         <androidx.core.widget.NestedScrollView
-            android:id="@+id/nestedScrollView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="512dp"
+                android:paddingBottom="512dp" />
 
         </androidx.core.widget.NestedScrollView>
 
@@ -24,7 +29,7 @@
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@android:color/white"
+            android:backgroundTint="@color/candy_pink"
             android:theme="@style/ThemeOverlay.AppCompat.Light"
             app:liftOnScroll="true">
 
@@ -40,24 +45,26 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <FrameLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/bottom_navigation"
+                android:layout_marginTop="56dp"
+
+                android:layout_marginBottom="56dp" />
+
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/bottom_navigation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:itemIconTint="@drawable/selector"
                 android:layout_alignParentBottom="true"
+                android:background="@color/rich_black"
+                android:backgroundTint="@color/black"
                 app:labelVisibilityMode="unlabeled"
                 app:menu="@menu/bottom_navigation_menu" />
         </RelativeLayout>
-
-        <!-- Main content -->
-        <FrameLayout
-            android:id="@+id/container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="56dp"
-            android:layout_marginBottom="56dp"
-            app:layout_anchor="@+id/nestedScrollView"
-            app:layout_anchorGravity="center" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

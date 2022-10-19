@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/rich_black"
+    tools:context=".Activities.UserProfile">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="20dp">
+
+                <View
+                    android:id="@+id/rectangle_1"
+                    android:layout_width="339dp"
+                    android:layout_height="254dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/text_fields_cal" />
+
+                <TextView
+                    android:id="@+id/your_name"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Your  Name"
+                    android:textColor="@color/black"
+                    android:textSize="32sp" />
+
+                <ImageButton
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="80dp"
+                    android:backgroundTint="@color/white"
+                    android:src="@android:drawable/ic_menu_edit">
+
+                </ImageButton>
+
+                <TextView
+                    android:id="@+id/example_gmail_com"
+                    android:layout_width="185dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="144dp"
+                    android:text="@string/example_email"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="62.5dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="130dp"
+                    android:text="@string/emailAcc"
+                    android:textColor="@color/oxford_blue"
+                    android:textSize="10sp" />
+
+
+                <ImageView
+                    android:id="@+id/__img___avatar"
+                    android:layout_width="200dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="187dp"
+                    android:layout_marginTop="20dp"
+                    android:contentDescription="__img___avatar"
+                    android:src="@drawable/profile_avatar" />
+
+                <TextView
+                    android:id="@+id/rectangle_3"
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="290dp"
+                    android:background="@drawable/text_fields_cal"
+                    android:backgroundTint="@color/candy_pink"
+                    android:paddingBottom="2dp"
+                    android:text="@string/your_achievements"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="22sp" />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="360dp">
+
+                <RelativeLayout
+                    android:id="@+id/group_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp">
+
+                    <View
+                        android:id="@+id/rectangle_5_ek1"
+                        android:layout_width="162dp"
+                        android:layout_height="187dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/text_fields_cal" />
+
+                    <TextView
+                        android:id="@+id/tasks_completed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="55dp"
+                        android:layout_marginTop="40dp"
+                        android:text="35"
+                        android:textColor="@color/metallic_seaweed"
+                        android:textSize="50sp" />
+
+                    <TextView
+
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="38dp"
+                        android:layout_marginTop="100dp"
+                        android:gravity="center"
+                        android:text="Tasks Completed"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/group_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="202dp">
+
+                    <View
+                        android:id="@+id/rectangle_7_ek1"
+                        android:layout_width="162dp"
+                        android:layout_height="187dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/text_fields_cal" />
+
+                    <TextView
+                        android:id="@+id/projects_done"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="65dp"
+                        android:layout_marginTop="40dp"
+                        android:text="3"
+                        android:textColor="@color/metallic_seaweed"
+                        android:textSize="50sp" />
+
+                    <TextView
+
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginLeft="13dp"
+                        android:layout_marginTop="100dp"
+                        android:gravity="center"
+                        android:text="On going Habits"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/group_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="177dp"
+                    android:layout_marginTop="0dp">
+
+                    <View
+                        android:id="@+id/rectangle_6_ek1"
+                        android:layout_width="162dp"
+                        android:layout_height="187dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/text_fields_cal" />
+
+                    <TextView
+                        android:id="@+id/hours_focused"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="55dp"
+                        android:layout_marginTop="40dp"
+                        android:text="60"
+                        android:textColor="@color/metallic_seaweed"
+                        android:textSize="50sp" />
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="39dp"
+                        android:layout_marginTop="100dp"
+                        android:gravity="center"
+                        android:text="Hours Focused"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/group_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="177dp"
+                    android:layout_marginTop="202dp">
+
+                    <View
+                        android:id="@+id/rectangle_8"
+                        android:layout_width="162dp"
+                        android:layout_height="187dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/text_fields_cal" />
+
+                    <TextView
+                        android:id="@+id/no_Badges"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="65dp"
+                        android:layout_marginTop="40dp"
+                        android:text="7"
+                        android:textColor="@color/metallic_seaweed"
+                        android:textSize="50sp" />
+
+                    <TextView
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="35dp"
+                        android:layout_marginLeft="13dp"
+                        android:layout_marginTop="100dp"
+                        android:gravity="center"
+                        android:text="Badges Achieved"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

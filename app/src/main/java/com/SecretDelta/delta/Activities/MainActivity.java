@@ -18,6 +18,7 @@ import com.SecretDelta.delta.Fragments.TaskFragment;
 import com.SecretDelta.delta.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.SecretDelta.delta.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 

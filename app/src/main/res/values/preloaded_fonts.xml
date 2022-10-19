@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/lexend</item>
+        <item>@font/lexend_medium</item>
+        <item>@font/lexend_semibold</item>
+    </array>
+</resources>
