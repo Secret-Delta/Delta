@@ -10,7 +10,6 @@
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/baseline_check_list.xml" value="0.1" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/baseline_edit_calendar.xml" value="0.1" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/baseline_habbit_24.xml" value="0.1625" />
-
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/baseline_habit_24.xml" value="0.1" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/baseline_pomodoro_24.xml" value="0.1" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/baseline_priority_24.xml" value="0.1" />
@@ -18,17 +17,11 @@
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/baseline_tag_24.xml" value="0.1" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/baseline_task_24.xml" value="0.1" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/calendar_background.xml" value="0.1" />
-
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.1625" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.1015" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.1625" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/ic_baseline_plus_24.xml" value="0.177" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/ic_circle.xml" value="0.1625" />
-
-        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/activity_pomodoro.xml" value="0.1" />
-        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/activity_pomodoro_reports.xml" value="0.25" />
-        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/activity_pomodoro_settings.xml" value="0.25" />
-
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/img_customs.xml" value="0.1" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/left_border_style.xml" value="0.1015" />
@@ -41,31 +34,28 @@
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/activity_edit_event.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/activity_new_calendar_event.xml" value="0.25" />
+        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/activity_pomodoro.xml" value="0.1" />
+        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/activity_pomodoro_reports.xml" value="0.25" />
+        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/activity_pomodoro_settings.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/activity_sign_in.xml" value="0.264" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/activity_user_profile.xml" value="0.25" />
-
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/add_task_recycler.xml" value="0.264" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/baseline_cancel_24.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/bottom_nav_layout.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/fragment_add_task.xml" value="0.264" />
-
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/fragment_break_timer.xml" value="0.25" />
-
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/fragment_calendar.xml" value="0.24615384615384617" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/fragment_daily_pomodoro_report.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/fragment_focus_timer.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/fragment_habbit.xml" value="0.2359375" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/fragment_habit.xml" value="0.25" />
-
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/fragment_monthly_pomodoro_report.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/fragment_pomodoro.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/fragment_stopwatch.xml" value="0.25" />
+        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/fragment_task.xml" value="0.21388367729831145" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/fragment_weekly_pomodoro_report.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/fragment_yearly_pomodoro_report.xml" value="0.25" />
-
-        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/fragment_task.xml" value="0.2" />
-
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/ic_baseline_delete_24.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/main_recyclerview_layout.xml" value="0.2074074074074074" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/main_sub_task_layout.xml" value="0.22037037037037038" />
@@ -84,7 +74,6 @@
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/menu/bottom_task_nav_menu.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/menu/main_menu.xml" value="0.24615384615384617" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/menu/nav_menu.xml" value="0.25" />
-
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/menu/pomodoro_menu.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/menu/task_menu.xml" value="0.25" />
       </map>

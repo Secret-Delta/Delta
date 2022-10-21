@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,14 +17,19 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.SecretDelta.delta.Activities.AddTaskActivity;
 import com.SecretDelta.delta.Activities.TaskOverviewActivity;
 import com.SecretDelta.delta.Adapters.TaskAdapter;
-import com.SecretDelta.delta.Models.SubTaskModel;
 import com.SecretDelta.delta.Models.TaskModel;
 import com.SecretDelta.delta.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -43,8 +48,9 @@ public class TaskFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        Log.d(TAG, "TaskFragment onCreate: started");
         super.onCreate(savedInstanceState);
-        ButterKnife.bind(getActivity());
+        ButterKnife.bind(requireActivity());
 
         if (taskLoad) {
             initTasks();
@@ -75,27 +81,21 @@ public class TaskFragment extends Fragment {
     @SuppressLint("NotifyDataSetChanged")
     private void initTasks() {
         Log.d(TAG, "initTasks: started");
-        for (int i = 1; i <= 3; i++) {
-
-            TaskModel taskModel = new TaskModel();
-
-            taskModel.setTask("🎯  Task " + i);
-
-            ArrayList<SubTaskModel> subTask = new ArrayList<>();
-
-            for (int j = 1; j <= 3; j++) {
-                SubTaskModel subTaskModel = new SubTaskModel();
-                subTaskModel.setTask("Sub Task " + j);
-                subTaskModel.setCheck(0);
-                subTask.add(subTaskModel);
+        DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Task");
+        readRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot dataSnap : dataSnapshot.getChildren()) {
+                    TaskModel taskModel = dataSnap.getValue(TaskModel.class);
+                    taskList.add(taskModel);
+                }
             }
 
-            taskModel.setArrayList(subTask);
-
-            taskList.add(taskModel);
-
-        }
-        // taskAdapter.notifyDataSetChanged();
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(getContext(), "No Source to Display", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
