@@ -2,6 +2,7 @@ package com.SecretDelta.delta.Adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.SecretDelta.delta.Activities.TaskOverviewActivity;
 import com.SecretDelta.delta.Models.SubTaskModel;
 import com.SecretDelta.delta.Models.TaskModel;
 import com.SecretDelta.delta.R;
@@ -48,10 +50,12 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskRecyclerVi
 
         final TaskModel model = taskList.get(position);
         final String task = model.getTask();
+        final String priority = model.getPriority();
 
         ArrayList<SubTaskModel> subTaskList = model.getArrayList();
 
         holder.taskName.setText(task);
+        holder.priority.setText(priority);
 
         SubTaskAdapter subTaskAdapter = new SubTaskAdapter(context, subTaskList);
 
@@ -74,6 +78,9 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskRecyclerVi
     static class TaskRecyclerViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.taskName)
         TextView taskName;
+
+        @BindView(R.id.priority)
+        TextView priority;
 
         @BindView(R.id.tasksRecyclerView)
         RecyclerView taskRecycler;
