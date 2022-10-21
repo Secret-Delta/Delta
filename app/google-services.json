@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "939587300224",
+    "firebase_url": "https://delta-faaeb-default-rtdb.firebaseio.com",
     "project_id": "delta-faaeb",
     "storage_bucket": "delta-faaeb.appspot.com"
   },
