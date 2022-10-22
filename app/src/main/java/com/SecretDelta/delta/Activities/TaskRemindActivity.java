@@ -1,6 +1,7 @@
 package com.SecretDelta.delta.Activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,16 +11,16 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.SecretDelta.delta.R;
-import com.google.firebase.database.FirebaseDatabase;
 
 
 public class TaskRemindActivity extends Activity {
 
     private static final String TAG = "TaskRemind";
     private Spinner spinner;
-    Button setBtn;
+    Button setBtn, cancelBtn;
     TextView remindTime;
     String reminder;
 
@@ -38,9 +39,31 @@ public class TaskRemindActivity extends Activity {
 
         Log.d(TAG, String.valueOf(spinner));
 
-        setBtn = findViewById(R.id.setBtn);
-        remindTime = findViewById(R.id.remindInput);
 
+        remindTime = findViewById(R.id.remindInput);
+        setBtn = findViewById(R.id.setBtn);
+        cancelBtn = findViewById(R.id.cancelBtn);
+
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        setBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String passTRemind = remindTime.getText().toString();
+                String passTSpin = reminder;
+
+                Intent intent = new Intent();
+                intent.putExtra("remindTime", passTRemind);
+                intent.putExtra("remind", passTSpin);
+                setResult(RESULT_OK, intent);
+                finish();
+            }
+        });
     }
 
     private void initRemindSpinner() {
