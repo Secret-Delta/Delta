@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Navod/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_spinner_dropdown_item.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta v3/app/src/main/res/layout/add_task_recycler.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta v3/app/src/main/res/layout/new_task.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/drawable/baseline_calendar_24.xml" value="0.1625" />
@@ -32,6 +33,7 @@
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout-v23/add_task_recycler.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/activity_bottom_nav.xml" value="0.2359375" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/activity_edit_event.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/activity_edit_task.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/activity_new_calendar_event.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/activity_pomodoro.xml" value="0.1" />

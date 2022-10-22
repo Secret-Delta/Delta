@@ -3,12 +3,14 @@ package com.SecretDelta.delta.Adapters;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,11 +18,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.SecretDelta.delta.Activities.EditTaskActivity;
 import com.SecretDelta.delta.Activities.TaskOverviewActivity;
 import com.SecretDelta.delta.Models.SubTaskModel;
 import com.SecretDelta.delta.Models.TaskModel;
 import com.SecretDelta.delta.R;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,6 +69,25 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskRecyclerVi
         holder.taskRecycler.setAdapter(subTaskAdapter);
 
         holder.taskRecycler.setNestedScrollingEnabled(false);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String mId = model.getId();
+                String mTask = model.getTask();
+                String mDes = model.getDescription();
+                String mPriority = model.getPriority();
+
+                Context context = v.getContext();
+                Intent intent = new Intent(context , EditTaskActivity.class);
+                intent.putExtra("mId", mId);
+                intent.putExtra("mTask", mTask);
+                intent.putExtra("mDes", mDes);
+                intent.putExtra("mPriority", mPriority);
+                context.startActivity(intent);
+
+            }
+        });
 
     }
 
