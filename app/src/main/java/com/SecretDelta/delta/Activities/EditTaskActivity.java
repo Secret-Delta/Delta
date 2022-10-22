@@ -1,11 +1,11 @@
 package com.SecretDelta.delta.Activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -21,17 +21,22 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.SecretDelta.delta.Adapters.AddTaskAdapter;
+import com.SecretDelta.delta.Fragments.TaskFragment;
 import com.SecretDelta.delta.Models.SubTaskModel;
 import com.SecretDelta.delta.Models.TaskModel;
 import com.SecretDelta.delta.R;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class AddTaskActivity extends AppCompatActivity {
+public class EditTaskActivity extends AppCompatActivity {
     private static final String TAG = "AddTaskActivity";
     private ArrayList<SubTaskModel> taskList = new ArrayList<>();
     private Spinner spinner;
@@ -40,7 +45,7 @@ public class AddTaskActivity extends AppCompatActivity {
     Button subTaskButton;
     TaskModel taskModel;
     SubTaskModel subTaskModel;
-    String priority;
+    String priority, iTask, iDes, iPriority, iId;
 
     DatabaseReference dbRef;
     BottomSheetDialog bottomSheetDialog;
@@ -50,12 +55,16 @@ public class AddTaskActivity extends AppCompatActivity {
         mDescription.setText("");
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_task_recycler);
+//
+//        UUID uuid = UUID.randomUUID();
+//        long taskID = uuid.getLeastSignificantBits() & Long.MAX_VALUE;
 
-        String taskID = UUID.randomUUID().toString();
+        // long to int
 
         RecyclerView recyclerView = findViewById(R.id.addTasksRecyclerView);   // get reference to recyclerView
         recyclerView.setLayoutManager(new LinearLayoutManager(this));  // set layoutManger
@@ -74,7 +83,7 @@ public class AddTaskActivity extends AppCompatActivity {
         delBtn = findViewById(R.id.deleteButton);
 
         calendarBtn = findViewById(R.id.calendarBtn);
-        calendarBtn.setOnClickListener(v -> startActivity(new Intent(AddTaskActivity.this, CalendarPopup.class)));
+        calendarBtn.setOnClickListener(v -> startActivity(new Intent(EditTaskActivity.this, CalendarPopup.class)));
 
         subBtn = findViewById(R.id.subTaskBtn);
 
@@ -86,39 +95,64 @@ public class AddTaskActivity extends AppCompatActivity {
 
 //        priority = spinner.getSelectedItem().toString();
 
-        btnSave = findViewById(R.id.saveBtn);
+//        taskModel = getIntent().getParcelableExtra("taskDetails");
+//
+//        if (taskModel != null) {
+//            // on below line we are setting data to our edit text from our modal class.
+//            mTask.setText(taskModel.getTask());
+//            mDescription.setText(taskModel.getDescription());
+////            courseID = courseRVModal.getCourseId();
+//        }
 
+
+        Bundle intent = getIntent().getExtras();
+        if (intent != null) {
+            iId = intent.getString("mId");
+            iTask = intent.getString("mTask");
+            iDes = intent.getString("mDes");
+            iPriority = intent.getString("mPriority");
+
+            mTask.setText(iTask);
+            mDescription.setText(iDes);
+            priority = iPriority;
+        }
+
+        btnSave = findViewById(R.id.saveBtn);
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dbRef = FirebaseDatabase.getInstance().getReference().child("Task");
 
-                try {
-                    if (TextUtils.isEmpty(mTask.getText().toString()))
-                        Toast.makeText(getApplicationContext(), "Please enter a task", Toast.LENGTH_SHORT).show();
-                    else {
-                        taskModel.setId(taskID);
-                        taskModel.setTask(mTask.getText().toString().trim());
-                        taskModel.setDescription(mDescription.getText().toString().trim());
-                        taskModel.setPriority(priority);
-                        taskModel.setArrayList(taskList);
-                        dbRef.push().setValue(taskModel);
+                final String imTask = mTask.getText().toString().trim();
+                final String imDes = mDescription.getText().toString().trim();
+                final String imPri = priority;
 
-                        Toast.makeText(getApplicationContext(), "Data Saved Successfully", Toast.LENGTH_SHORT).show();
-                        clearControls();
+                Query query = dbRef.orderByChild("task").equalTo(iTask);
+                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for (DataSnapshot dataSnap : dataSnapshot.getChildren()) {
+                            dataSnap.getRef().child("task").setValue(imTask);
+                            dataSnap.getRef().child("description").setValue(imDes);
+                            dataSnap.getRef().child("priority").setValue(imPri);
+                        }
 
-                        Context context = v.getContext();
-                        Intent intent = new Intent(context, MainActivity.class);
-                        context.startActivity(intent);
+                        Toast.makeText(EditTaskActivity.this, "Task Updated Successfully", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(EditTaskActivity.this, MainActivity.class));
+                        finish();
                     }
-                } catch (NumberFormatException e) {
-                    Toast.makeText(getApplicationContext(), "Invalid Number", Toast.LENGTH_SHORT).show();
-                }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
             }
         });
 
 
         bottomSheetDialog = new BottomSheetDialog(this);
+
         createDialog();
 
         subBtn.setOnClickListener(new View.OnClickListener() {
@@ -132,6 +166,7 @@ public class AddTaskActivity extends AppCompatActivity {
         int height = WindowManager.LayoutParams.WRAP_CONTENT;
 
         bottomSheetDialog.getWindow().setLayout(width, height);
+
     }
 
     private void initTasks() {
@@ -196,9 +231,9 @@ public class AddTaskActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> arg0) {
+                // TODO Auto-generated method stub
 
             }
         });
     }
-
 }
