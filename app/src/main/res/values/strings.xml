@@ -73,8 +73,8 @@
         <item>hours</item>
         <item>days</item>
     </string-array>
-    
-    
+
+
     <!-- Strings for the Pomodoro Timer -->
     <string name="focus_timer">Focus timer</string>
     <string name="stopwatch">Stopwatch</string>
