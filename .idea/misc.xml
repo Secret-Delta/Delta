@@ -42,7 +42,7 @@
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/activity_sign_in.xml" value="0.264" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/activity_user_profile.xml" value="0.25" />
-        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/add_task_recycler.xml" value="0.264" />
+        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/add_task_recycler.xml" value="0.2" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/baseline_cancel_24.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/bottom_nav_layout.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/fragment_add_task.xml" value="0.264" />
@@ -65,10 +65,11 @@
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/new_task.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/recyclerview_layout.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/round.xml" value="0.1875" />
-        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/set_reminder_layout.xml" value="0.264" />
+        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/set_reminder_layout.xml" value="0.2" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/set_time_layout.xml" value="0.1" />
+        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/spinner_item.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/sub_task_layout.xml" value="0.22037037037037038" />
-        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/task_calendar.xml" value="0.2" />
+        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/task_calendar.xml" value="0.128" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/task_layout.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/task_overview.xml" value="0.2" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/top_rounded_corners.xml" value="0.25" />

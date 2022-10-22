@@ -7,9 +7,9 @@ import java.util.ArrayList;
 
 public class TaskModel {
     private String id;
-    private String task, description, priority;
+    private String task, description, priority, remindTime, remind;
     private ArrayList<SubTaskModel> subTasks;
-
+    private int year, month, day, hourOfDay, minute;
 
     public String getId() {
         return id;
@@ -49,5 +49,61 @@ public class TaskModel {
 
     public void setArrayList(ArrayList<SubTaskModel> subTasks) {
         this.subTasks = subTasks;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public void setMonth(int month) {
+        this.month = month;
+    }
+
+    public int getDay() {
+        return day;
+    }
+
+    public void setDay(int day) {
+        this.day = day;
+    }
+
+    public int getHourOfDay() {
+        return hourOfDay;
+    }
+
+    public void setHourOfDay(int hourOfDay) {
+        this.hourOfDay = hourOfDay;
+    }
+
+    public int getMinute() {
+        return minute;
+    }
+
+    public void setMinute(int minute) {
+        this.minute = minute;
+    }
+
+    public String getRemindTime() {
+        return remindTime;
+    }
+
+    public void setRemindTime(String remindTime) {
+        this.remindTime = remindTime;
+    }
+
+    public String getRemind() {
+        return remind;
+    }
+
+    public void setRemind(String remind) {
+        this.remind = remind;
     }
 }
