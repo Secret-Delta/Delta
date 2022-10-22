@@ -59,7 +59,7 @@
         <activity
             android:name=".Activities.TaskRemindActivity"
             android:exported="false"
-            android:theme="@style/Theme.Delta.PopUpTheme" />
+            android:theme="@style/Theme.Delta.TaskRemindTheme" />
         <activity
             android:name=".Activities.TaskOverviewActivity"
             android:exported="false"

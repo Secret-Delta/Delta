@@ -35,9 +35,9 @@
             android:layout_marginTop="16dp"
             android:layout_toEndOf="@+id/backButton"
             android:background="@android:color/transparent"
-            android:hint="🎯 Enter Task..."
+            android:hint="🎯 What would you like to do?"
             android:textColor="@color/white"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/light_gray"
             android:textSize="18sp"
             android:textStyle="bold" />
 

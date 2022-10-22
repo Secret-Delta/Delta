@@ -46,8 +46,8 @@
     <string name="cancel">Cancel</string>
     <string name="done">Done</string>
 
-    <string name="set_time">⏰ Set Time 12:00</string>
-    <string name="set_reminder">🔔 Set Reminder 5 mins early</string>
+    <string name="set_time">⏰ Set Time</string>
+    <string name="set_reminder">🔔 Set Reminder</string>
     <string name="remind">Remind</string>
     <string name="set">Set</string>
     <string name="hint_time">10</string>
@@ -69,7 +69,7 @@
     </string-array>
 
     <string-array name="remind">
-        <item>min</item>
+        <item>mins</item>
         <item>hours</item>
         <item>days</item>
     </string-array>
