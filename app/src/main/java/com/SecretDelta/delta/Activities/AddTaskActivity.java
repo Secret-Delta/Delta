@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -30,22 +31,19 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class AddTaskActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class AddTaskActivity extends AppCompatActivity {
     private static final String TAG = "AddTaskActivity";
     private ArrayList<SubTaskModel> taskList = new ArrayList<>();
     private Spinner spinner;
-
     ImageButton backBtn, delBtn, calendarBtn, subBtn, btnSave;
-    EditText mTask, mDescription;
+    EditText mTask, mDescription, subtask;
+    Button subTaskButton;
+    TaskModel taskModel;
+    SubTaskModel subTaskModel;
+    String priority;
 
     DatabaseReference dbRef;
-    TaskModel taskModel;
-
     BottomSheetDialog bottomSheetDialog;
-    Button subTaskButton;
-    EditText subtask;
-
-    SubTaskModel subTaskModel;
 
     private void clearControls() {
         mTask.setText("");
@@ -56,6 +54,8 @@ public class AddTaskActivity extends AppCompatActivity implements AdapterView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_task_recycler);
+
+        String taskID = UUID.randomUUID().toString();
 
         RecyclerView recyclerView = findViewById(R.id.addTasksRecyclerView);   // get reference to recyclerView
         recyclerView.setLayoutManager(new LinearLayoutManager(this));  // set layoutManger
@@ -71,25 +71,20 @@ public class AddTaskActivity extends AppCompatActivity implements AdapterView.On
         backBtn = findViewById(R.id.backButton);
         backBtn.setOnClickListener(v -> finish());
 
+        delBtn = findViewById(R.id.deleteButton);
+
         calendarBtn = findViewById(R.id.calendarBtn);
         calendarBtn.setOnClickListener(v -> startActivity(new Intent(AddTaskActivity.this, CalendarPopup.class)));
 
         subBtn = findViewById(R.id.subTaskBtn);
-//        subBtn.setOnClickListener(v -> startActivity(new Intent(AddTaskActivity.this, AddSubTask.class)));
 
         spinner = findViewById(R.id.prioritySpinner);
         initPrioritySpinner();
 
-        UUID uuid = UUID.randomUUID();
-        long taskID = uuid.getLeastSignificantBits() & Long.MAX_VALUE;
-        // long to int
-
         mTask = findViewById(R.id.taskName);
         mDescription = findViewById(R.id.description);
 
-        String priority = spinner.getSelectedItem().toString();
-
-        delBtn = findViewById(R.id.deleteButton);
+//        priority = spinner.getSelectedItem().toString();
 
         btnSave = findViewById(R.id.saveBtn);
 
@@ -99,10 +94,10 @@ public class AddTaskActivity extends AppCompatActivity implements AdapterView.On
                 dbRef = FirebaseDatabase.getInstance().getReference().child("Task");
 
                 try {
-                    if(TextUtils.isEmpty(mTask.getText().toString()))
+                    if (TextUtils.isEmpty(mTask.getText().toString()))
                         Toast.makeText(getApplicationContext(), "Please enter a task", Toast.LENGTH_SHORT).show();
                     else {
-                        taskModel.setId((int)taskID);
+                        taskModel.setId(taskID);
                         taskModel.setTask(mTask.getText().toString().trim());
                         taskModel.setDescription(mDescription.getText().toString().trim());
                         taskModel.setPriority(priority);
@@ -111,13 +106,17 @@ public class AddTaskActivity extends AppCompatActivity implements AdapterView.On
 
                         Toast.makeText(getApplicationContext(), "Data Saved Successfully", Toast.LENGTH_SHORT).show();
                         clearControls();
+
+                        Context context = v.getContext();
+                        Intent intent = new Intent(context, MainActivity.class);
+                        context.startActivity(intent);
                     }
-                }
-                catch (NumberFormatException e) {
+                } catch (NumberFormatException e) {
                     Toast.makeText(getApplicationContext(), "Invalid Number", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
 
         bottomSheetDialog = new BottomSheetDialog(this);
         createDialog();
@@ -133,32 +132,6 @@ public class AddTaskActivity extends AppCompatActivity implements AdapterView.On
         int height = WindowManager.LayoutParams.WRAP_CONTENT;
 
         bottomSheetDialog.getWindow().setLayout(width, height);
-    }
-
-    @SuppressLint("InflateParams")
-    private void createDialog() {
-        View view = getLayoutInflater().inflate(R.layout.sub_task_dialog, null, false);
-
-        subTaskButton = view.findViewById(R.id.subTaskButton);
-        subtask = view.findViewById(R.id.subTaskText);
-
-        subTaskModel = new SubTaskModel();
-        subTaskButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bottomSheetDialog.dismiss();
-                UUID uuid = UUID.randomUUID();
-                long taskID = uuid.getLeastSignificantBits() & Long.MAX_VALUE;
-
-                subTaskModel.setId((int)taskID);
-                subTaskModel.setTask(subtask.getText().toString().trim());
-                subTaskModel.setCheck(0);
-                taskList.add(subTaskModel);
-            }
-        });
-
-        bottomSheetDialog.setContentView(view);
-
     }
 
     private void initTasks() {
@@ -178,23 +151,54 @@ public class AddTaskActivity extends AppCompatActivity implements AdapterView.On
         }
     }
 
+    @SuppressLint("InflateParams")
+    private void createDialog() {
+        View view = getLayoutInflater().inflate(R.layout.sub_task_dialog, null, false);
+
+        subTaskButton = view.findViewById(R.id.subTaskButton);
+        subtask = view.findViewById(R.id.subTaskText);
+
+        subTaskModel = new SubTaskModel();
+        subTaskButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bottomSheetDialog.dismiss();
+                String taskID = UUID.randomUUID().toString();
+
+                subTaskModel.setId(taskID);
+                subTaskModel.setTask(subtask.getText().toString().trim());
+                subTaskModel.setCheck(0);
+                taskList.add(subTaskModel);
+            }
+        });
+
+        bottomSheetDialog.setContentView(view);
+
+    }
+
     private void initPrioritySpinner() {
         Log.d(TAG, "initPrioritySpinner: started");
         ArrayAdapter<CharSequence> spinAdapter = ArrayAdapter.createFromResource(this, R.array.priority, android.R.layout.simple_spinner_dropdown_item);
         spinAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(spinAdapter);
 
-        spinner.setOnItemSelectedListener(this);
+//        spinner.setOnItemSelectedListener(this);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> arg0, View view, int arg2, long arg3) {
+
+                priority = spinner.getSelectedItem().toString();
+
+//                Toast.makeText(getApplicationContext(), priority,
+//                        Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {
+
+            }
+        });
     }
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String choice = parent.getItemAtPosition(position).toString();
-//        Toast.makeText(getApplicationContext(), choice, Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
-    }
 }
