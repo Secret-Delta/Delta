@@ -89,6 +89,7 @@ public class TaskFragment extends Fragment {
                     TaskModel taskModel = dataSnap.getValue(TaskModel.class);
                     taskList.add(taskModel);
                 }
+                taskAdapter.notifyDataSetChanged();
             }
 
             @Override
