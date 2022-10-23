@@ -1,10 +1,15 @@
 package com.SecretDelta.delta.Activities;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -35,15 +40,16 @@ public class AddTaskActivity extends AppCompatActivity {
     private static final String TAG = "AddTaskActivity";
     private ArrayList<SubTaskModel> taskList = new ArrayList<>();
     private Spinner spinner;
-    ImageButton backBtn, delBtn, calendarBtn, subBtn, btnSave;
-    EditText mTask, mDescription, subtask;
-    Button subTaskButton;
-    TaskModel taskModel;
-    SubTaskModel subTaskModel;
-    String priority;
+    private ImageButton backBtn, delBtn, calendarBtn, subBtn, btnSave;
+    private EditText mTask, mDescription, subtask;
+    private Button subTaskButton;
+    private TaskModel taskModel;
+    private SubTaskModel subTaskModel;
+    private String priority, remindTime, remind;
+    private int year, month, day, hourOfDay, minute;
 
-    DatabaseReference dbRef;
     BottomSheetDialog bottomSheetDialog;
+    DatabaseReference dbRef;
 
     private void clearControls() {
         mTask.setText("");
@@ -74,7 +80,13 @@ public class AddTaskActivity extends AppCompatActivity {
         delBtn = findViewById(R.id.deleteButton);
 
         calendarBtn = findViewById(R.id.calendarBtn);
-        calendarBtn.setOnClickListener(v -> startActivity(new Intent(AddTaskActivity.this, CalendarPopup.class)));
+        calendarBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddTaskActivity.this, CalendarPopup.class);
+                ActivityResultLauncher.launch(intent);
+            }
+        });
 
         subBtn = findViewById(R.id.subTaskBtn);
 
@@ -101,6 +113,13 @@ public class AddTaskActivity extends AppCompatActivity {
                         taskModel.setTask(mTask.getText().toString().trim());
                         taskModel.setDescription(mDescription.getText().toString().trim());
                         taskModel.setPriority(priority);
+                        taskModel.setYear(year);
+                        taskModel.setMonth(month);
+                        taskModel.setDay(day);
+                        taskModel.setHourOfDay(hourOfDay);
+                        taskModel.setMinute(minute);
+                        taskModel.setRemindTime(remindTime);
+                        taskModel.setRemind(remind);
                         taskModel.setArrayList(taskList);
                         dbRef.push().setValue(taskModel);
 
@@ -133,6 +152,28 @@ public class AddTaskActivity extends AppCompatActivity {
 
         bottomSheetDialog.getWindow().setLayout(width, height);
     }
+
+    // https://stackoverflow.com/a/63654043
+    // This method is called when the CalendarPopup activity finishes
+    ActivityResultLauncher<Intent> ActivityResultLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        Intent data = result.getData();
+                        year = data.getIntExtra("year", 2000);
+                        month = data.getIntExtra("month", 1);
+                        day = data.getIntExtra("day", 1);
+
+                        hourOfDay = data.getIntExtra("hour", 1);
+                        minute = data.getIntExtra("minute", 1);
+
+                        remindTime = data.getStringExtra("remindTime");
+                        remind = data.getStringExtra("remind");
+                    }
+                }
+            });
 
     private void initTasks() {
         Log.d(TAG, "initTasks: started");

@@ -17,11 +17,11 @@ import java.util.Locale;
 
 public class CalendarPopup extends Activity {
 
-    CalendarView calendarView;
-    Button setTimeBtn, setRemindBtn, cancelBtn;
-    TextView timeText, remindText, remind;
-    int hour, minute;
-    String currentDate, receiveRemindTime, receiveRemind;
+    private CalendarView calendarView;
+    private Button setTimeBtn, setRemindBtn, cancelBtn, doneBtn;
+    private TextView timeText, remindText;
+    private int hour, minute, Day, Year, Month;
+    private String currentDate, receiveRemindTime, receiveRemind, reminder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +38,9 @@ public class CalendarPopup extends Activity {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month,
                                             int dayOfMonth) {
-                String Day = String.valueOf(dayOfMonth);
-                String Year = String.valueOf(year);
-                String Month = String.valueOf(month);
+                Day = dayOfMonth;
+                Year = year;
+                Month = month;
 
                 currentDate = Year + "/" + Month + "/" + Day;
             }
@@ -53,8 +53,6 @@ public class CalendarPopup extends Activity {
         setRemindBtn = findViewById(R.id.setRemindBtn);
         remindText = findViewById(R.id.remindText);
 
-        cancelBtn = findViewById(R.id.cancelBtn);
-
         setRemindBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,9 +61,31 @@ public class CalendarPopup extends Activity {
             }
         });
 
+        cancelBtn = findViewById(R.id.cancelBtn);
+        doneBtn = findViewById(R.id.doneBtn);
+
         cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
+            }
+        });
+
+        doneBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+
+                intent.putExtra("year", Year);
+                intent.putExtra("month", Month);
+                intent.putExtra("day", Day);
+
+                intent.putExtra("hour", hour);
+                intent.putExtra("minute", minute);
+
+                intent.putExtra("remindTime", receiveRemindTime);
+                intent.putExtra("remind", receiveRemind);
+                setResult(RESULT_OK, intent);
                 finish();
             }
         });
@@ -73,20 +93,19 @@ public class CalendarPopup extends Activity {
 
 
     // https://stackoverflow.com/a/40969871
-    // This method is called when the second activity finishes
+    // This method is called when the TaskRemindActivity activity finishes
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        // Check that it is the SecondActivity with an OK result
+        // Check that it is the TaskRemindActivity with an OK result
         if (requestCode == 1) {
             if (resultCode == RESULT_OK) {
-
                 // Get String data from Intent
                 receiveRemindTime = data.getStringExtra("remindTime");
                 receiveRemind = data.getStringExtra("remind");
 
-                String reminder = receiveRemindTime + " " + receiveRemind + " early";
+                reminder = receiveRemindTime + " " + receiveRemind + " early";
                 // Set text view with string
                 remindText.setText(reminder);
             }

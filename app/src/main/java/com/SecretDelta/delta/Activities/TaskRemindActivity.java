@@ -20,9 +20,9 @@ public class TaskRemindActivity extends Activity {
 
     private static final String TAG = "TaskRemind";
     private Spinner spinner;
-    Button setBtn, cancelBtn;
-    TextView remindTime;
-    String reminder;
+    private Button setBtn, cancelBtn;
+    private TextView remindTime;
+    private String reminder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
