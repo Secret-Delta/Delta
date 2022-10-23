@@ -78,6 +78,12 @@ public class AddTaskActivity extends AppCompatActivity {
         backBtn.setOnClickListener(v -> finish());
 
         delBtn = findViewById(R.id.deleteButton);
+        delBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         calendarBtn = findViewById(R.id.calendarBtn);
         calendarBtn.setOnClickListener(new View.OnClickListener() {

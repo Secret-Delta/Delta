@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -130,6 +131,35 @@ public class EditTaskActivity extends AppCompatActivity {
             priority = iPriority;
         }
 
+        delBtn = findViewById(R.id.deleteButton);
+
+        delBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dbRef = FirebaseDatabase.getInstance().getReference();
+                Query query = dbRef.child("Task").orderByChild("id").equalTo(iId);
+
+                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot delSnapshot: dataSnapshot.getChildren()) {
+                            delSnapshot.getRef().removeValue();
+                        }
+
+                        Toast.makeText(getApplicationContext(), "Task Deleted Successfully", Toast.LENGTH_SHORT).show();
+
+                        Context context = v.getContext();
+                        Intent intent = new Intent(context, MainActivity.class);
+                        context.startActivity(intent);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        Log.e(TAG, "onCancelled", databaseError.toException());
+                    }
+                });
+            }
+        });
 
         btnSave = findViewById(R.id.saveBtn);
         btnSave.setOnClickListener(new View.OnClickListener() {

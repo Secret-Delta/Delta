@@ -66,8 +66,13 @@ public class CalendarPopup extends Activity {
         receiveRemindTime = intent.getStringExtra("pRemindTime");
         receiveRemind = intent.getStringExtra("pRemind");
 
+        if(receiveRemindTime == null){
+            receiveRemindTime = "5";
+            receiveRemind = "mins";
+        }
+
         reminder = receiveRemindTime + " " + receiveRemind + " early";
-        // Set text view with string
+
         remindText.setText(reminder);
 
         setRemindBtn = findViewById(R.id.setRemindBtn);
