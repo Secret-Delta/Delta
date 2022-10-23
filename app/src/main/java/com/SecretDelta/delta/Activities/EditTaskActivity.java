@@ -75,7 +75,7 @@ public class EditTaskActivity extends AppCompatActivity {
 
 //        initTasks();
 
-        AddTaskAdapter taskAdapter = new AddTaskAdapter(taskList);    // create task adapter
+        AddTaskAdapter taskAdapter = new AddTaskAdapter(this, taskList);    // create task adapter
         taskAdapter.setTasks(taskList);     // set tasks
         recyclerView.setAdapter(taskAdapter);   // set task adapter
 

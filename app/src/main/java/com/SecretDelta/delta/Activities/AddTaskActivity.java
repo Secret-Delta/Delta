@@ -47,9 +47,10 @@ public class AddTaskActivity extends AppCompatActivity {
     private SubTaskModel subTaskModel;
     private String priority, remindTime, remind;
     private int year, month, day, hourOfDay, minute;
-
+    String staskID;
     BottomSheetDialog bottomSheetDialog;
     DatabaseReference dbRef;
+    AddTaskAdapter taskAdapter;
 
     private void clearControls() {
         mTask.setText("");
@@ -70,8 +71,8 @@ public class AddTaskActivity extends AppCompatActivity {
 
 //        initTasks();
 
-        AddTaskAdapter taskAdapter = new AddTaskAdapter(taskList);    // create task adapter
-        taskAdapter.setTasks(taskList);     // set tasks
+        taskAdapter = new AddTaskAdapter(this, taskList);    // create task adapter
+
         recyclerView.setAdapter(taskAdapter);   // set task adapter
 
         backBtn = findViewById(R.id.backButton);
@@ -149,6 +150,8 @@ public class AddTaskActivity extends AppCompatActivity {
         subBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                staskID = UUID.randomUUID().toString();
+
                 bottomSheetDialog.show();
             }
         });
@@ -210,17 +213,19 @@ public class AddTaskActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 bottomSheetDialog.dismiss();
-                String taskID = UUID.randomUUID().toString();
 
-                subTaskModel.setId(taskID);
+                subTaskModel.setId(staskID);
+                Log.e("di", staskID);
                 subTaskModel.setTask(subtask.getText().toString().trim());
                 subTaskModel.setCheck(0);
                 taskList.add(subTaskModel);
+
+                taskAdapter.setTasks(taskList);     // set tasks
+
             }
         });
 
         bottomSheetDialog.setContentView(view);
-
     }
 
     private void initPrioritySpinner() {
