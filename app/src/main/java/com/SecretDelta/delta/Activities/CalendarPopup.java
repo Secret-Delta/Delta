@@ -28,6 +28,21 @@ public class CalendarPopup extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.task_calendar);
 
+
+        setTimeBtn = findViewById(R.id.setTimeBtn);
+        timeText = findViewById(R.id.timeText);
+
+        // get values from EditTaskActivity
+        Intent intent = getIntent();
+        hour = intent.getIntExtra("pHourOfDay", 10);
+        minute = intent.getIntExtra("pMinute", 00);
+        timeText.setText(String.format(Locale.getDefault(), "%02d:%02d", hour, minute));
+
+        Year = intent.getIntExtra("pYear", 2022);
+        Month = intent.getIntExtra("pMonth", 1);
+        Day = intent.getIntExtra("pDay", 1);
+
+        // Calendar view
         int width = WindowManager.LayoutParams.WRAP_CONTENT;
         int height = WindowManager.LayoutParams.WRAP_CONTENT;
 
@@ -40,23 +55,31 @@ public class CalendarPopup extends Activity {
                                             int dayOfMonth) {
                 Day = dayOfMonth;
                 Year = year;
-                Month = month;
+                Month = month + 1;
 
                 currentDate = Year + "/" + Month + "/" + Day;
             }
         });
 
-
-        setTimeBtn = findViewById(R.id.setTimeBtn);
-        timeText = findViewById(R.id.timeText);
-
-        setRemindBtn = findViewById(R.id.setRemindBtn);
         remindText = findViewById(R.id.remindText);
 
+        receiveRemindTime = intent.getStringExtra("pRemindTime");
+        receiveRemind = intent.getStringExtra("pRemind");
+
+        reminder = receiveRemindTime + " " + receiveRemind + " early";
+        // Set text view with string
+        remindText.setText(reminder);
+
+        setRemindBtn = findViewById(R.id.setRemindBtn);
         setRemindBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(CalendarPopup.this, TaskRemindActivity.class);
+
+                // pass values to TaskRemindActivity activity
+                intent.putExtra("pRemindTime", receiveRemindTime);
+                intent.putExtra("pRemind", receiveRemind);
+
                 startActivityForResult(intent, 1);
             }
         });

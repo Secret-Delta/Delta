@@ -162,8 +162,8 @@ public class AddTaskActivity extends AppCompatActivity {
                 public void onActivityResult(ActivityResult result) {
                     if (result.getResultCode() == Activity.RESULT_OK) {
                         Intent data = result.getData();
-                        year = data.getIntExtra("year", 2000);
-                        month = data.getIntExtra("month", 1);
+                        year = data.getIntExtra("year", 2022);
+                        month = data.getIntExtra("month", 10);
                         day = data.getIntExtra("day", 1);
 
                         hourOfDay = data.getIntExtra("hour", 1);

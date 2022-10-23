@@ -1,11 +1,16 @@
 package com.SecretDelta.delta.Activities;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -37,18 +42,19 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 public class EditTaskActivity extends AppCompatActivity {
-    private static final String TAG = "AddTaskActivity";
+    private static final String TAG = "EditTaskActivity";
     private ArrayList<SubTaskModel> taskList = new ArrayList<>();
     private Spinner spinner;
-    ImageButton backBtn, delBtn, calendarBtn, subBtn, btnSave;
-    EditText mTask, mDescription, subtask;
-    Button subTaskButton;
-    TaskModel taskModel;
-    SubTaskModel subTaskModel;
-    String priority, iTask, iDes, iPriority, iId;
+    private ImageButton backBtn, delBtn, calendarBtn, subBtn, btnSave;
+    private EditText mTask, mDescription, subtask;
+    private Button subTaskButton;
+    private TaskModel taskModel;
+    private SubTaskModel subTaskModel;
+    private String priority, iTask, iDes, iPriority, iId, iRemindTime, iRemind;
+    private int iYear, iMonth, iDay, iHourOfDay, iMinute;
 
-    DatabaseReference dbRef;
     BottomSheetDialog bottomSheetDialog;
+    DatabaseReference dbRef;
 
     private void clearControls() {
         mTask.setText("");
@@ -60,11 +66,6 @@ public class EditTaskActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_task_recycler);
-//
-//        UUID uuid = UUID.randomUUID();
-//        long taskID = uuid.getLeastSignificantBits() & Long.MAX_VALUE;
-
-        // long to int
 
         RecyclerView recyclerView = findViewById(R.id.addTasksRecyclerView);   // get reference to recyclerView
         recyclerView.setLayoutManager(new LinearLayoutManager(this));  // set layoutManger
@@ -83,7 +84,22 @@ public class EditTaskActivity extends AppCompatActivity {
         delBtn = findViewById(R.id.deleteButton);
 
         calendarBtn = findViewById(R.id.calendarBtn);
-        calendarBtn.setOnClickListener(v -> startActivity(new Intent(EditTaskActivity.this, CalendarPopup.class)));
+        calendarBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // pass values to CalendarPopup activity
+                Intent iCalendar = new Intent(EditTaskActivity.this, CalendarPopup.class);
+                iCalendar.putExtra("pRemindTime", iRemindTime);
+                iCalendar.putExtra("pRemind", iRemind);
+                iCalendar.putExtra("pYear", iYear);
+                iCalendar.putExtra("pMonth", iMonth);
+                iCalendar.putExtra("pDay", iDay);
+                iCalendar.putExtra("pHourOfDay", iHourOfDay);
+                iCalendar.putExtra("pMinute", iMinute);
+                ActivityResultLauncher.launch(iCalendar);
+            }
+        });
+
 
         subBtn = findViewById(R.id.subTaskBtn);
 
@@ -95,27 +111,25 @@ public class EditTaskActivity extends AppCompatActivity {
 
 //        priority = spinner.getSelectedItem().toString();
 
-//        taskModel = getIntent().getParcelableExtra("taskDetails");
-//
-//        if (taskModel != null) {
-//            // on below line we are setting data to our edit text from our modal class.
-//            mTask.setText(taskModel.getTask());
-//            mDescription.setText(taskModel.getDescription());
-////            courseID = courseRVModal.getCourseId();
-//        }
-
-
         Bundle intent = getIntent().getExtras();
         if (intent != null) {
             iId = intent.getString("mId");
             iTask = intent.getString("mTask");
             iDes = intent.getString("mDes");
             iPriority = intent.getString("mPriority");
+            iRemindTime = intent.getString("mRemindTime");
+            iRemind = intent.getString("mRemind");
+            iYear = intent.getInt("mYear");
+            iMonth = intent.getInt("mMonth");
+            iDay = intent.getInt("mDay");
+            iHourOfDay = intent.getInt("mHourOfDay");
+            iMinute = intent.getInt("mMinute");
 
             mTask.setText(iTask);
             mDescription.setText(iDes);
             priority = iPriority;
         }
+
 
         btnSave = findViewById(R.id.saveBtn);
         btnSave.setOnClickListener(new View.OnClickListener() {
@@ -135,6 +149,14 @@ public class EditTaskActivity extends AppCompatActivity {
                             dataSnap.getRef().child("task").setValue(imTask);
                             dataSnap.getRef().child("description").setValue(imDes);
                             dataSnap.getRef().child("priority").setValue(imPri);
+
+                            dataSnap.getRef().child("day").setValue(iDay);
+                            dataSnap.getRef().child("month").setValue(iMonth);
+                            dataSnap.getRef().child("year").setValue(iYear);
+                            dataSnap.getRef().child("hourOfDay").setValue(iHourOfDay);
+                            dataSnap.getRef().child("minute").setValue(iMinute);
+                            dataSnap.getRef().child("remind").setValue(iRemind);
+                            dataSnap.getRef().child("remindTime").setValue(iRemindTime);
                         }
 
                         Toast.makeText(EditTaskActivity.this, "Task Updated Successfully", Toast.LENGTH_SHORT).show();
@@ -168,6 +190,28 @@ public class EditTaskActivity extends AppCompatActivity {
         bottomSheetDialog.getWindow().setLayout(width, height);
 
     }
+
+    // https://stackoverflow.com/a/63654043
+    // This method is called when the CalendarPopup activity finishes
+    ActivityResultLauncher<Intent> ActivityResultLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        Intent data = result.getData();
+                        iYear = data.getIntExtra("year", 2022);
+                        iMonth = data.getIntExtra("month", 10);
+                        iDay = data.getIntExtra("day", 1);
+
+                        iHourOfDay = data.getIntExtra("hour", 1);
+                        iMinute = data.getIntExtra("minute", 1);
+
+                        iRemindTime = data.getStringExtra("remindTime");
+                        iRemind = data.getStringExtra("remind");
+                    }
+                }
+            });
 
     private void initTasks() {
         Log.d(TAG, "initTasks: started");
@@ -231,7 +275,6 @@ public class EditTaskActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> arg0) {
-                // TODO Auto-generated method stub
 
             }
         });
