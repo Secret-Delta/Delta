@@ -44,13 +44,13 @@ public class AddTaskActivity extends AppCompatActivity {
     private EditText mTask, mDescription, subtask;
     private Button subTaskButton;
     private TaskModel taskModel;
-    private SubTaskModel subTaskModel;
     private String priority, remindTime, remind;
     private int year, month, day, hourOfDay, minute;
-    String staskID;
+
+    AddTaskAdapter taskAdapter;
+
     BottomSheetDialog bottomSheetDialog;
     DatabaseReference dbRef;
-    AddTaskAdapter taskAdapter;
 
     private void clearControls() {
         mTask.setText("");
@@ -72,7 +72,6 @@ public class AddTaskActivity extends AppCompatActivity {
 //        initTasks();
 
         taskAdapter = new AddTaskAdapter(this, taskList);    // create task adapter
-
         recyclerView.setAdapter(taskAdapter);   // set task adapter
 
         backBtn = findViewById(R.id.backButton);
@@ -150,8 +149,6 @@ public class AddTaskActivity extends AppCompatActivity {
         subBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                staskID = UUID.randomUUID().toString();
-
                 bottomSheetDialog.show();
             }
         });
@@ -184,22 +181,6 @@ public class AddTaskActivity extends AppCompatActivity {
                 }
             });
 
-    private void initTasks() {
-        Log.d(TAG, "initTasks: started");
-//        SubTaskModel task = new SubTaskModel();
-//        task.setTask("Task 1");
-//        task.setCheck(0);
-//        task.setId(1);
-//
-//        taskList.add(task);
-
-        for (int i = 1; i <= 7; i++) {
-            SubTaskModel subTaskModel = new SubTaskModel();
-            subTaskModel.setTask("Sub Task " + i);
-            subTaskModel.setCheck(0);
-            taskList.add(subTaskModel);
-        }
-    }
 
     @SuppressLint("InflateParams")
     private void createDialog() {
@@ -208,20 +189,20 @@ public class AddTaskActivity extends AppCompatActivity {
         subTaskButton = view.findViewById(R.id.subTaskButton);
         subtask = view.findViewById(R.id.subTaskText);
 
-        subTaskModel = new SubTaskModel();
         subTaskButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 bottomSheetDialog.dismiss();
 
-                subTaskModel.setId(staskID);
-                Log.e("di", staskID);
+                String taskID = UUID.randomUUID().toString();
+
+                SubTaskModel subTaskModel = new SubTaskModel();
+                subTaskModel.setId(taskID);
                 subTaskModel.setTask(subtask.getText().toString().trim());
                 subTaskModel.setCheck(0);
                 taskList.add(subTaskModel);
 
                 taskAdapter.setTasks(taskList);     // set tasks
-
             }
         });
 
