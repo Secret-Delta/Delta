@@ -185,7 +185,7 @@
                     android:paddingLeft="25dp"
                     android:paddingTop="3dp"
                     android:text="@string/txtEnteredName"
-                    android:textColor="@color/White"
+                    android:textColor="@color/black"
                     android:textColorHint="#979696"
                     android:textSize="20sp" />
             </LinearLayout>
