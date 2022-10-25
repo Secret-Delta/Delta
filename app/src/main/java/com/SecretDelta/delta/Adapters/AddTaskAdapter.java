@@ -1,6 +1,7 @@
 package com.SecretDelta.delta.Adapters;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,10 +17,12 @@ import com.SecretDelta.delta.R;
 import java.util.ArrayList;
 
 public class AddTaskAdapter extends RecyclerView.Adapter<AddTaskAdapter.ViewHolder> {
-    private static final String TAG = "TaskAdapter: called";
+    private static final String TAG = "AddTaskAdapter: called";
+    private Context context;
     private ArrayList<SubTaskModel> taskList;
 
-    public AddTaskAdapter(ArrayList<SubTaskModel> taskList) {
+    public AddTaskAdapter(Context context, ArrayList<SubTaskModel> taskList) {
+        this.context = context;
         this.taskList = taskList;
     }
 
@@ -35,7 +38,8 @@ public class AddTaskAdapter extends RecyclerView.Adapter<AddTaskAdapter.ViewHold
     @SuppressLint("LongLogTag")
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
-        Log.d(TAG, "onBindViewHolder: called");
+        Log.d(TAG, "AddTaskAdapter onBindViewHolder: called");
+
         final SubTaskModel item = taskList.get(position);
         holder.task.setText(item.getTask());
         holder.task.setChecked(toBoolean(item.getCheck()));
