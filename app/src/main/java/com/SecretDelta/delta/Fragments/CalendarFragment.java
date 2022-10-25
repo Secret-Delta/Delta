@@ -39,7 +39,7 @@ public class CalendarFragment extends Fragment {
         date = dateFormat.format(calendar.getTime());
         currentDate.setText(date);
 
-        button = (FloatingActionButton)view.findViewById(R.id.fab);
+        button = (FloatingActionButton) view.findViewById(R.id.fab);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/richBlack"
+    android:background="@color/rich_black"
     tools:context=".Activities.SignIn">
 
     <androidx.core.widget.NestedScrollView
@@ -44,7 +44,7 @@
                         android:layout_marginLeft="0dp"
                         android:layout_marginTop="0dp"
                         android:text="@string/txtWelcome"
-                        android:textColor="@color/White"
+                        android:textColor="@color/white"
                         android:textSize="16sp" />
 
                     <TextView
@@ -54,7 +54,7 @@
                         android:layout_marginLeft="188dp"
                         android:layout_marginTop="3dp"
                         android:text="@string/no_account_sign_up"
-                        android:textColor="@color/metallicSeaweed"
+                        android:textColor="@color/metallic_seaweed"
                         android:textSize="13sp" />
 
                 </RelativeLayout>
@@ -66,7 +66,7 @@
                     android:layout_marginLeft="28dp"
                     android:layout_marginTop="90dp"
                     android:text="@string/sign_in"
-                    android:textColor="@color/White"
+                    android:textColor="@color/white"
                     android:textSize="40sp" />
 
 
@@ -102,7 +102,7 @@
                         android:layout_marginLeft="0dp"
                         android:layout_marginTop="-2.08dp"
                         android:text="Enter your eMail address"
-                        android:textColor="@color/White"
+                        android:textColor="@color/white"
                         android:textSize="14sp" />
 
                     <View
@@ -140,7 +140,7 @@
                         android:layout_marginLeft="0dp"
                         android:layout_marginTop="2.08dp"
                         android:text="Enter your Password"
-                        android:textColor="@color/White"
+                        android:textColor="@color/white"
                         android:textSize="14sp" />
 
                     <View
@@ -169,7 +169,7 @@
                     android:layout_marginStart="250dp"
                     android:layout_marginTop="510dp"
                     android:text="@string/forgot_password"
-                    android:textColor="@color/metallicSeaweed"
+                    android:textColor="@color/metallic_seaweed"
                     android:textSize="11sp" />
 
 
@@ -186,13 +186,13 @@
                         android:layout_height="60dp"
                         android:onClick="openAccount"
                         android:text="@string/sign_in"
-                        android:textColor="@color/White"
+                        android:textColor="@color/white"
+                        android:backgroundTint="@color/candy_pink"
                         android:textSize="16sp" />
 
                 </RelativeLayout>
 
             </RelativeLayout>
-
 
 
         </RelativeLayout>

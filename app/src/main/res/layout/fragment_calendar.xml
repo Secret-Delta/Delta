@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="@string/currentDate"
-        android:textColor="@color/White"
+        android:textColor="@color/white"
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -49,7 +49,7 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="32dp"
         android:layout_marginBottom="10dp"
-        android:backgroundTint="@color/candyPink"
+        android:backgroundTint="@color/candy_pink"
         android:src="@drawable/ic_baseline_plus_24"
          />
 
@@ -83,8 +83,8 @@
             android:layout_marginStart="25dp"
             android:inputType="textImeMultiLine"
             android:text="11:00 - 13:00"
-            android:textColor="@color/metallicSeaweed"
-            android:textSize="13sp">>
+            android:textColor="@color/metallic_seaweed"
+            android:textSize="13sp">
 
         </TextView>
     </LinearLayout>
@@ -129,11 +129,5 @@
         <!--edit this for final-->
 
     </LinearLayout>
-
-
-
-
-
-
 
 </RelativeLayout>

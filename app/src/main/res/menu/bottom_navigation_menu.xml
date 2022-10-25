@@ -14,7 +14,7 @@
         android:title="@string/menu_pomodoro" />
     <item
         android:id="@+id/habbit"
-        android:icon="@drawable/baseline_habbit_24"
-        android:title="@string/menu_habbit" />
+        android:icon="@drawable/baseline_habit_24"
+        android:title="@string/menu_habit" />
 
 </menu>

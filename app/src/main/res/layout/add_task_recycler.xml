@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/rich_black"
+    tools:context=".Activities.AddTaskActivity">
+    <RelativeLayout
+        android:id="@+id/task_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/candy_pink">
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="0dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="10sp"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+
+        <EditText
+            android:id="@+id/taskName"
+            android:layout_width="269dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="16dp"
+            android:layout_toEndOf="@+id/backButton"
+            android:background="@android:color/transparent"
+            android:hint="🎯 What would you like to do?"
+            android:textColor="@color/white"
+            android:textColorHint="@color/light_gray"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    <ImageButton
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="235dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="0dp"
+        android:background="?android:attr/selectableItemBackground"
+        app:srcCompat="@drawable/ic_baseline_delete_24" />
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/task_layout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="22dp"
+        android:hint="Enter Description..."
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/light_gray"
+        android:textSize="16sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/addTasksRecyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="293dp"
+        android:layout_above="@+id/bottom_task_navigation"
+        android:layout_below="@+id/description"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="264dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="24dp"
+        android:nestedScrollingEnabled="true"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <LinearLayout
+        android:id="@+id/bottom_task_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="#33476C"
+        android:orientation="horizontal"
+        android:padding="10sp">
+
+        <ImageButton
+            android:id="@+id/calendarBtn"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="25sp"
+            android:layout_height="25sp"
+            android:layout_marginStart="30sp"
+            android:layout_marginEnd="40sp"
+            android:background="@drawable/baseline_edit_calendar"
+            android:backgroundTint="@color/white"
+            android:insetTop="0dp"
+            android:insetBottom="0dp" />
+
+        <ImageButton
+            android:id="@+id/subTaskBtn"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="25sp"
+            android:layout_height="25sp"
+            android:layout_marginEnd="40sp"
+            android:background="@drawable/baseline_check_list"
+            android:backgroundTint="@color/white"
+            android:insetTop="0dp"
+            android:insetBottom="0dp" />
+
+        <Spinner
+            android:id="@+id/prioritySpinner"
+            android:layout_width="25sp"
+            android:layout_height="25sp"
+            android:layout_marginEnd="40sp"
+            android:background="@drawable/baseline_priority_24"
+            android:backgroundTint="@color/white"
+            android:insetTop="0dp"
+            android:insetBottom="0dp" />
+
+        <ImageButton
+            android:id="@+id/saveBtn"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="25sp"
+            android:layout_height="28sp"
+            android:layout_marginStart="95sp"
+            android:background="@drawable/baseline_save_24"
+            android:backgroundTint="@color/white"
+            android:insetTop="0dp"
+            android:insetBottom="0dp" />
+    </LinearLayout>
+</RelativeLayout>
