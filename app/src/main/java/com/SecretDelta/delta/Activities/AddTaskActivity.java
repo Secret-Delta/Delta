@@ -47,7 +47,7 @@ public class AddTaskActivity extends AppCompatActivity {
     private String priority, remindTime, remind;
     private int year, month, day, hourOfDay, minute;
 
-    AddTaskAdapter taskAdapter;
+    AddTaskAdapter addTaskAdapter;
 
     BottomSheetDialog bottomSheetDialog;
     DatabaseReference dbRef;
@@ -69,10 +69,8 @@ public class AddTaskActivity extends AppCompatActivity {
 
         taskModel = new TaskModel();
 
-//        initTasks();
-
-        taskAdapter = new AddTaskAdapter(this, taskList);    // create task adapter
-        recyclerView.setAdapter(taskAdapter);   // set task adapter
+        addTaskAdapter = new AddTaskAdapter(this, taskList);    // create task adapter
+        recyclerView.setAdapter(addTaskAdapter);   // set task adapter
 
         backBtn = findViewById(R.id.backButton);
         backBtn.setOnClickListener(v -> finish());
@@ -202,7 +200,7 @@ public class AddTaskActivity extends AppCompatActivity {
                 subTaskModel.setCheck(0);
                 taskList.add(subTaskModel);
 
-                taskAdapter.setTasks(taskList);     // set tasks
+                addTaskAdapter.setTasks(taskList);     // set tasks
             }
         });
 

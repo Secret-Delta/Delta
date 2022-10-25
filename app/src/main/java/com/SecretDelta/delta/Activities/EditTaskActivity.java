@@ -14,7 +14,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -27,7 +26,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.SecretDelta.delta.Adapters.AddTaskAdapter;
-import com.SecretDelta.delta.Fragments.TaskFragment;
 import com.SecretDelta.delta.Models.SubTaskModel;
 import com.SecretDelta.delta.Models.TaskModel;
 import com.SecretDelta.delta.R;
@@ -50,9 +48,10 @@ public class EditTaskActivity extends AppCompatActivity {
     private EditText mTask, mDescription, subtask;
     private Button subTaskButton;
     private TaskModel taskModel;
-    private SubTaskModel subTaskModel;
     private String priority, iTask, iDes, iPriority, iId, iRemindTime, iRemind;
     private int iYear, iMonth, iDay, iHourOfDay, iMinute;
+
+    AddTaskAdapter addTaskAdapter;
 
     BottomSheetDialog bottomSheetDialog;
     DatabaseReference dbRef;
@@ -73,11 +72,8 @@ public class EditTaskActivity extends AppCompatActivity {
 
         taskModel = new TaskModel();
 
-//        initTasks();
-
-        AddTaskAdapter taskAdapter = new AddTaskAdapter(this, taskList);    // create task adapter
-        taskAdapter.setTasks(taskList);     // set tasks
-        recyclerView.setAdapter(taskAdapter);   // set task adapter
+        addTaskAdapter = new AddTaskAdapter(this, taskList);    // create task adapter
+        recyclerView.setAdapter(addTaskAdapter);   // set task adapter
 
         backBtn = findViewById(R.id.backButton);
         backBtn.setOnClickListener(v -> finish());
@@ -243,23 +239,6 @@ public class EditTaskActivity extends AppCompatActivity {
                 }
             });
 
-    private void initTasks() {
-        Log.d(TAG, "initTasks: started");
-//        SubTaskModel task = new SubTaskModel();
-//        task.setTask("Task 1");
-//        task.setCheck(0);
-//        task.setId(1);
-//
-//        taskList.add(task);
-
-        for (int i = 1; i <= 7; i++) {
-            SubTaskModel subTaskModel = new SubTaskModel();
-            subTaskModel.setTask("Sub Task " + i);
-            subTaskModel.setCheck(0);
-            taskList.add(subTaskModel);
-        }
-    }
-
     @SuppressLint("InflateParams")
     private void createDialog() {
         View view = getLayoutInflater().inflate(R.layout.sub_task_dialog, null, false);
@@ -267,22 +246,24 @@ public class EditTaskActivity extends AppCompatActivity {
         subTaskButton = view.findViewById(R.id.subTaskButton);
         subtask = view.findViewById(R.id.subTaskText);
 
-        subTaskModel = new SubTaskModel();
         subTaskButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 bottomSheetDialog.dismiss();
+
                 String taskID = UUID.randomUUID().toString();
 
+                SubTaskModel subTaskModel = new SubTaskModel();
                 subTaskModel.setId(taskID);
                 subTaskModel.setTask(subtask.getText().toString().trim());
                 subTaskModel.setCheck(0);
                 taskList.add(subTaskModel);
+
+                addTaskAdapter.setTasks(taskList);     // set tasks
             }
         });
 
         bottomSheetDialog.setContentView(view);
-
     }
 
     private void initPrioritySpinner() {
