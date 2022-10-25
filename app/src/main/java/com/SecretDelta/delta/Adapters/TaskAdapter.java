@@ -77,6 +77,13 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskRecyclerVi
                 String mTask = model.getTask();
                 String mDes = model.getDescription();
                 String mPriority = model.getPriority();
+                String mRemindTime = model.getRemindTime();
+                String mRemind = model.getRemind();
+                int mYear = model.getYear();
+                int mMonth = model.getMonth();
+                int mDay = model.getDay();
+                int mHourOfDay = model.getHourOfDay();
+                int mMinute = model.getMinute();
 
                 Context context = v.getContext();
                 Intent intent = new Intent(context , EditTaskActivity.class);
@@ -84,8 +91,14 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskRecyclerVi
                 intent.putExtra("mTask", mTask);
                 intent.putExtra("mDes", mDes);
                 intent.putExtra("mPriority", mPriority);
+                intent.putExtra("mRemindTime", mRemindTime);
+                intent.putExtra("mRemind", mRemind);
+                intent.putExtra("mYear", mYear);
+                intent.putExtra("mMonth", mMonth);
+                intent.putExtra("mDay", mDay);
+                intent.putExtra("mHourOfDay", mHourOfDay);
+                intent.putExtra("mMinute", mMinute);
                 context.startActivity(intent);
-
             }
         });
 

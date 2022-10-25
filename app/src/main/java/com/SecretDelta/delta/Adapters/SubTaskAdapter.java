@@ -41,9 +41,9 @@ public class SubTaskAdapter extends RecyclerView.Adapter<SubTaskAdapter.SubTaskV
     @Override
     public void onBindViewHolder(SubTaskViewHolder holder, int position) {
         Log.d(TAG, "onBindViewHolder: called");
-        final SubTaskModel item = subTaskList.get(position);
-        holder.subTask.setText(item.getTask());
-        holder.subTask.setChecked(toBoolean(item.getCheck()));
+        final SubTaskModel model = subTaskList.get(position);
+        holder.subTask.setText(model.getTask());
+        holder.subTask.setChecked(toBoolean(model.getCheck()));
     }
 
     private boolean toBoolean(int n) {

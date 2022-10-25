@@ -32,6 +32,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -88,6 +89,8 @@ public class TaskFragment extends Fragment {
                 for (DataSnapshot dataSnap : dataSnapshot.getChildren()) {
                     TaskModel taskModel = dataSnap.getValue(TaskModel.class);
                     taskList.add(taskModel);
+                    Collections.reverse(taskList);
+
                 }
                 taskAdapter.notifyDataSetChanged();
             }

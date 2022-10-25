@@ -17,12 +17,11 @@ import com.SecretDelta.delta.R;
 
 
 public class TaskRemindActivity extends Activity {
-
     private static final String TAG = "TaskRemind";
     private Spinner spinner;
-    Button setBtn, cancelBtn;
-    TextView remindTime;
-    String reminder;
+    private Button setBtn, cancelBtn;
+    private TextView remindTime;
+    private String reminder, passTRemind, passTSpin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +36,15 @@ public class TaskRemindActivity extends Activity {
         spinner = findViewById(R.id.remindSpinner);
         initRemindSpinner();
 
-        Log.d(TAG, String.valueOf(spinner));
-
-
         remindTime = findViewById(R.id.remindInput);
+
+        // get values from EditTaskActivity
+        Intent intent = getIntent();
+        passTRemind = intent.getStringExtra("pRemindTime");
+        reminder = intent.getStringExtra("pRemind");
+
+        remindTime.setText(passTRemind);
+
         setBtn = findViewById(R.id.setBtn);
         cancelBtn = findViewById(R.id.cancelBtn);
 
@@ -54,8 +58,8 @@ public class TaskRemindActivity extends Activity {
         setBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String passTRemind = remindTime.getText().toString();
-                String passTSpin = reminder;
+                passTRemind = remindTime.getText().toString();
+                passTSpin = reminder;
 
                 Intent intent = new Intent();
                 intent.putExtra("remindTime", passTRemind);
