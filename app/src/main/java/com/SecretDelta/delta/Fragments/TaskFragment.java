@@ -1,15 +1,19 @@
 package com.SecretDelta.delta.Fragments;
 
+import static android.app.Activity.RESULT_OK;
+
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.speech.RecognizerIntent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -33,6 +37,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Locale;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -41,6 +47,9 @@ public class TaskFragment extends Fragment {
     private static final String TAG = "TaskFragment";
     private final ArrayList<TaskModel> taskList = new ArrayList<>();
     private Boolean taskLoad = true;
+    private String speechText;
+    private static final int REQUEST_CODE_SPEECH_INPUT = 1;
+
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.tasksRecyclerView)
@@ -56,6 +65,26 @@ public class TaskFragment extends Fragment {
         if (taskLoad) {
             initTasks();
             taskLoad = false;
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode,
+                                 @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE_SPEECH_INPUT) {
+            if (resultCode == RESULT_OK && data != null) {
+                ArrayList<String> result = data.getStringArrayListExtra(
+                        RecognizerIntent.EXTRA_RESULTS);
+                speechText = Objects.requireNonNull(result).get(0);
+
+                String convert = speechText.substring(0, 1).toUpperCase() + speechText.substring(1);
+
+                Context context = getContext();
+                Intent i = new Intent(context, AddTaskActivity.class);
+                i.putExtra("speechText", convert);
+                context.startActivity(i);
+            }
         }
     }
 
@@ -76,6 +105,28 @@ public class TaskFragment extends Fragment {
         FloatingActionButton actionButton = view.findViewById(R.id.fab);
         actionButton.setOnClickListener(v -> startActivity(new Intent(getActivity(), AddTaskActivity.class)));
 
+
+        actionButton.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+
+                Intent intent
+                        = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+                        RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE,
+                        Locale.getDefault());
+                intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Speaking now");
+
+                try {
+                    startActivityForResult(intent, REQUEST_CODE_SPEECH_INPUT);
+
+                } catch (Exception e) {
+                }
+
+                return true;
+            }
+        });
         return view;
     }
 
@@ -90,7 +141,6 @@ public class TaskFragment extends Fragment {
                     TaskModel taskModel = dataSnap.getValue(TaskModel.class);
                     taskList.add(taskModel);
                     Collections.reverse(taskList);
-
                 }
                 taskAdapter.notifyDataSetChanged();
             }

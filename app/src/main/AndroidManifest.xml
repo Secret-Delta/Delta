@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.SecretDelta.delta">
 
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,7 +16,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Delta"
         tools:targetApi="31">
-
         <activity
             android:name=".Activities.MainActivity"
             android:exported="true"
@@ -46,7 +48,7 @@
         <activity
             android:name=".Activities.EditTaskActivity"
             android:exported="false"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
         <activity
             android:name=".Activities.AddSubTask"
             android:exported="false"
