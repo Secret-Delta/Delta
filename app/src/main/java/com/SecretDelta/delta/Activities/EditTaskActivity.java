@@ -106,8 +106,6 @@ public class EditTaskActivity extends AppCompatActivity {
         mTask = findViewById(R.id.taskName);
         mDescription = findViewById(R.id.description);
 
-//        priority = spinner.getSelectedItem().toString();
-
         Bundle intent = getIntent().getExtras();
         if (intent != null) {
             iId = intent.getString("mId");
