@@ -87,6 +87,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskRecyclerVi
 
                 Context context = v.getContext();
                 Intent intent = new Intent(context , EditTaskActivity.class);
+
                 intent.putExtra("mId", mId);
                 intent.putExtra("mTask", mTask);
                 intent.putExtra("mDes", mDes);
@@ -98,6 +99,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskRecyclerVi
                 intent.putExtra("mDay", mDay);
                 intent.putExtra("mHourOfDay", mHourOfDay);
                 intent.putExtra("mMinute", mMinute);
+
                 context.startActivity(intent);
             }
         });

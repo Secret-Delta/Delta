@@ -50,11 +50,6 @@
             android:exported="false"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
         <activity
-            android:name=".Activities.AddSubTask"
-            android:exported="false"
-            android:theme="@style/Theme.Delta.DialogStyle"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
-        <activity
             android:name=".Activities.CalendarPopup"
             android:exported="false"
             android:theme="@style/Theme.Delta.PopUpTheme" />
