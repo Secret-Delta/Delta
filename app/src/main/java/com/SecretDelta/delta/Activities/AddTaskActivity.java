@@ -46,6 +46,7 @@ public class AddTaskActivity extends AppCompatActivity {
     private TaskModel taskModel;
     private String priority, remindTime, remind;
     private int year, month, day, hourOfDay, minute;
+    private String speechText;
 
     AddTaskAdapter addTaskAdapter;
 
@@ -99,6 +100,13 @@ public class AddTaskActivity extends AppCompatActivity {
 
         mTask = findViewById(R.id.taskName);
         mDescription = findViewById(R.id.description);
+
+        Bundle intent = getIntent().getExtras();
+        if (intent != null) {
+            speechText = intent.getString("speechText");
+
+            mTask.setText(speechText);
+        }
 
 //        priority = spinner.getSelectedItem().toString();
 
