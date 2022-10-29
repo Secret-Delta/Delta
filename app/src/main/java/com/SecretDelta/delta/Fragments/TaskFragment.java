@@ -62,6 +62,7 @@ public class TaskFragment extends Fragment {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(requireActivity());
 
+        // method use to disable task recursion
         if (taskLoad) {
             initTasks();
             taskLoad = false;

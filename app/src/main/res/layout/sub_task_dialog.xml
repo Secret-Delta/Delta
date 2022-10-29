@@ -2,20 +2,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp"
     android:background="@color/rich_black"
-    tools:context=".Activities.AddSubTask">
+    android:padding="16dp"
+    tools:context=".Activities.AddTaskActivity">
 
     <EditText
         android:id="@+id/subTaskText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@null"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:hint="Enter a sub task.."
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/white"
         android:textColorHint="@color/light_gray"
-        android:textSize="16sp"/>
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/subTaskButton"

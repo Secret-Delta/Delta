@@ -113,6 +113,7 @@ public class AddTaskActivity extends AppCompatActivity {
 
         btnSave = findViewById(R.id.saveBtn);
 
+        // save task details to database
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -189,6 +190,7 @@ public class AddTaskActivity extends AppCompatActivity {
             });
 
 
+    // open bottomSheetDialog and insert sub tasks
     @SuppressLint("InflateParams")
     private void createDialog() {
         View view = getLayoutInflater().inflate(R.layout.sub_task_dialog, null, false);
@@ -216,6 +218,7 @@ public class AddTaskActivity extends AppCompatActivity {
         bottomSheetDialog.setContentView(view);
     }
 
+    // call priority spinner
     private void initPrioritySpinner() {
         Log.d(TAG, "initPrioritySpinner: started");
         ArrayAdapter<CharSequence> spinAdapter = ArrayAdapter.createFromResource(this, R.array.priority, android.R.layout.simple_spinner_dropdown_item);
