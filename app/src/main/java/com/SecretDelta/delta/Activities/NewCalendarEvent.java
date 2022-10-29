@@ -33,8 +33,8 @@ public class NewCalendarEvent extends AppCompatActivity {
 
     private int year, month, day, hourOfDayFrom, minuteFrom, hourOfDayTo, minuteTo;
     private EditText  eventName, eventDescription;
-    private TextView dateTxt, fromTime, toTime;
-    private ImageButton btnDate;
+    private TextView dateTxt, fromTime, toTime, eventTitle;
+    private ImageButton btnDate, backBtn;
     private Button btnSave;
     private LinearLayout layoutFrom, layoutTo;
     private CalEventModel calendarModel;
@@ -54,6 +54,7 @@ public class NewCalendarEvent extends AppCompatActivity {
         String eventID = UUID.randomUUID().toString();
 
         dateTxt = findViewById(R.id.dateView);
+        eventTitle = findViewById(R.id.txtEventTitle);
         fromTime = findViewById(R.id.editTextTimeFrom);
         toTime = findViewById(R.id.editTextTimeTo);
         btnDate = findViewById(R.id.btnDate);
@@ -64,6 +65,9 @@ public class NewCalendarEvent extends AppCompatActivity {
         eventDescription = findViewById(R.id.editTextDescription);
 
         calendarModel = new CalEventModel();
+
+        backBtn = findViewById(R.id.backButton);
+        backBtn.setOnClickListener(v -> finish());
 
         //DatePicker
         btnDate.setOnClickListener(new View.OnClickListener() {

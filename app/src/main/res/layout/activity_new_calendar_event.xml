@@ -20,15 +20,28 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/backButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="0dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:padding="10sp"
+                    app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
                 <TextView
                     android:id="@+id/txtEventTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="16dp"
-                    android:text="@string/new_eventTitle"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginStart="10dp"
+                    android:text="New Event"
+                    android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="25sp"
                     android:textStyle="bold" />
