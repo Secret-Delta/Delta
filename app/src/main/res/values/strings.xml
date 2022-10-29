@@ -119,4 +119,5 @@
     <string name="monthly_pomodoro_report">Monthly Pomodoro Report</string>
     <string name="save">Save</string>
     <string name="reset">Reset</string>
+    <string name="datepick">Select date</string>
 </resources>
