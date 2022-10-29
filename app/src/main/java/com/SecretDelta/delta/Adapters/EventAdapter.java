@@ -3,14 +3,12 @@ package com.SecretDelta.delta.Adapters;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.SecretDelta.delta.Activities.EditEvent;
@@ -35,8 +33,8 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventRecycle
 
     @NonNull
     @Override
-    public EventAdapter.EventRecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_calendar, parent, false);
+    public EventRecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.calendar_event, parent, false);
         return new EventRecyclerViewHolder(view);
     }
 
@@ -51,11 +49,11 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventRecycle
         holder.startTime.setText(startTime);
         holder.endTime.setText(endTime);
 
-        holder.eventRecycler.setHasFixedSize(true);
-        holder.eventRecycler.setLayoutManager(new LinearLayoutManager(context,
-                LinearLayoutManager.VERTICAL, false));
-
-        holder.eventRecycler.setNestedScrollingEnabled(false);
+//        holder.eventRecycler.setHasFixedSize(true);
+//        holder.eventRecycler.setLayoutManager(new LinearLayoutManager(context,
+//                LinearLayoutManager.VERTICAL, false));
+//
+//        holder.eventRecycler.setNestedScrollingEnabled(false);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,7 +75,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventRecycle
                 intent.putExtra("eveDes", eveDes);
                 intent.putExtra("eveYear", eveYear);
                 intent.putExtra("eveMonth", eveMonth);
-                intent.putExtra("eveDay", eveName);
+                intent.putExtra("eveDay", eveDay);
                 intent.putExtra("eveHourOfDayFrom", eveHourOfDayFrom);
                 intent.putExtra("eveMinuteFrom", eveMinuteFrom);
                 intent.putExtra("eveHourOfDayTo", eveHourOfDayTo);
@@ -94,6 +92,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventRecycle
         return eventList.size();
     }
 
+
     @SuppressLint("NonConstantResourceId")
     static class EventRecyclerViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.eventName)
@@ -104,9 +103,6 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventRecycle
 
         @BindView(R.id.endTime)
         TextView endTime;
-
-        @BindView(R.id.eventsRecyclerView)
-        RecyclerView eventRecycler;
 
         public EventRecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
