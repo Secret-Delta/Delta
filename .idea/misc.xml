@@ -4,12 +4,18 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/drawable/calendar_background.xml" value="0.1" />
+        <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/activity_edit_event.xml" value="0.25" />
+        <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/activity_event_view_recycler.xml" value="0.25" />
         <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/activity_new_calendar_event.xml" value="0.264" />
         <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
         <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/activity_user_profile.xml" value="0.25" />
         <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/add_task_recycler.xml" value="0.25" />
+        <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/eventviewrecycler.xml" value="0.25" />
+        <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/fragment_calendar.xml" value="0.2" />
         <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/fragment_task.xml" value="0.25" />
+        <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/main_recyclerview_layout.xml" value="0.25" />
+        <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/task_calendar.xml" value="0.2" />
         <entry key="..\:/Users/Navod/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_spinner_dropdown_item.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta v3/app/src/main/res/layout/add_task_recycler.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta v3/app/src/main/res/layout/new_task.xml" value="0.25" />
@@ -77,11 +83,9 @@
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/spinner_item.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/sub_task_dialog.xml" value="0.1" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/sub_task_layout.xml" value="0.22037037037037038" />
-        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/task_calendar.xml" value="0.264" />
+        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/task_calendar.xml" value="0.611353711790393" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/task_layout.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/task_overview.xml" value="0.2" />
-        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/task_remind_spinner.xml" value="0.25" />
-        <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/text.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/layout/top_rounded_corners.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/menu/bottom_task_nav_menu.xml" value="0.25" />
