@@ -84,11 +84,15 @@ public class AddTaskActivity extends AppCompatActivity {
             }
         });
 
+        mTask = findViewById(R.id.taskName);
+        mDescription = findViewById(R.id.description);
+
         calendarBtn = findViewById(R.id.calendarBtn);
         calendarBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AddTaskActivity.this, CalendarPopup.class);
+                intent.putExtra("aTask", mTask.getText().toString().trim());
                 ActivityResultLauncher.launch(intent);
             }
         });
@@ -97,9 +101,6 @@ public class AddTaskActivity extends AppCompatActivity {
 
         spinner = findViewById(R.id.prioritySpinner);
         initPrioritySpinner();
-
-        mTask = findViewById(R.id.taskName);
-        mDescription = findViewById(R.id.description);
 
         Bundle intent = getIntent().getExtras();
         if (intent != null) {
