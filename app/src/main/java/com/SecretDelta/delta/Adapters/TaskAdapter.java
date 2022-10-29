@@ -88,6 +88,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskRecyclerVi
                 Context context = v.getContext();
                 Intent intent = new Intent(context , EditTaskActivity.class);
 
+                // pass values to EditTaskActivity
                 intent.putExtra("mId", mId);
                 intent.putExtra("mTask", mTask);
                 intent.putExtra("mDes", mDes);

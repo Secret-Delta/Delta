@@ -168,6 +168,7 @@ public class CalendarPopup extends Activity {
         }
     }
 
+    // pop up TimePickerDialog
     public void popTime(View view) {
         TimePickerDialog.OnTimeSetListener onTimeSetListener = (timePicker, hourOfDay, minutes) -> {
             hour = hourOfDay;
@@ -181,6 +182,7 @@ public class CalendarPopup extends Activity {
 
     }
 
+    // set task reminder
     private void setAlarm() {
         alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
@@ -196,8 +198,8 @@ public class CalendarPopup extends Activity {
     }
 
 
+    // create notification for task
     private void createNotificationChannel() {
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             CharSequence name = "Reminder";
             String description = "";
