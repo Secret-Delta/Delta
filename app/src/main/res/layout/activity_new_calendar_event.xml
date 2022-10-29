@@ -40,25 +40,41 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/editTextDate"
-                    android:layout_width="345dp"
+                <!--                <EditText-->
+                <!--                    android:id="@+id/dateView"-->
+                <!--                    android:layout_width="345dp"-->
+                <!--                    android:layout_height="61dp"-->
+                <!--                    android:layout_alignParentStart="true"-->
+                <!--                    android:layout_alignParentTop="true"-->
+                <!--                    android:layout_marginStart="32dp"-->
+                <!--                    android:layout_marginTop="28dp"-->
+                <!--                    android:layout_marginEnd="32dp"-->
+                <!--                    android:background="@drawable/text_fields_cal"-->
+                <!--                    android:inputType="date"-->
+                <!--                    android:paddingStart="20dp"-->
+                <!--                    android:textColor="@color/black" />-->
+
+                <TextView
+                    android:id="@+id/dateView"
+                    android:layout_width="365dp"
                     android:layout_height="61dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="28dp"
                     android:layout_marginEnd="32dp"
                     android:background="@drawable/text_fields_cal"
-                    android:hint="@string/select_date"
-                    android:inputType="date"
+                    android:padding="13dp"
                     android:paddingStart="20dp"
+                    android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textColorHint="@color/light_gray" />
+                    android:textSize="25sp" />
 
                 <ImageButton
                     android:id="@+id/btnDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignEnd="@+id/editTextDate"
+                    android:layout_alignEnd="@+id/dateView"
                     android:layout_alignParentBottom="true"
                     android:layout_centerInParent="true"
                     android:layout_marginEnd="20dp"
@@ -79,12 +95,14 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
+                    android:id="@+id/layoutFrom"
                     android:layout_width="74dp"
                     android:layout_height="match_parent"
                     android:layout_marginRight="20dp"
                     android:layout_weight="1"
                     android:background="@drawable/text_fields_cal"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:clickable="true">
 
                     <TextView
                         android:id="@+id/textView11"
@@ -98,15 +116,14 @@
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
-                    <EditText
+                    <TextView
                         android:id="@+id/editTextTimeFrom"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="6"
                         android:background="@null"
                         android:ems="10"
-                        android:inputType="time"
-                        android:paddingLeft="25dp"
+                        android:paddingStart="25dp"
                         android:paddingTop="5dp"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
@@ -115,12 +132,14 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/layoutTo"
                     android:layout_width="74dp"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="21dp"
                     android:layout_weight="1"
                     android:background="@drawable/text_fields_cal"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:clickable="true">
 
                     <TextView
                         android:id="@+id/textView14"
@@ -134,14 +153,13 @@
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
-                    <EditText
+                    <TextView
                         android:id="@+id/editTextTimeTo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="6"
                         android:background="@null"
                         android:ems="10"
-                        android:inputType="time"
                         android:paddingStart="25dp"
                         android:paddingTop="5dp"
                         android:textColor="@color/black"
@@ -154,7 +172,7 @@
             <LinearLayout
                 android:id="@+id/linearLayout2"
                 android:layout_width="325dp"
-                android:layout_height="65dp"
+                android:layout_height="70dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="32dp"
@@ -173,7 +191,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/txtEventName"
+                    android:id="@+id/editEventName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
@@ -184,7 +202,7 @@
                     android:paddingLeft="25dp"
                     android:paddingTop="3dp"
                     android:text="@string/txtEnteredName"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textColorHint="#979696"
                     android:textSize="20sp" />
             </LinearLayout>
@@ -237,7 +255,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:backgroundTint="@color/candy_pink"
-                    android:onClick="openSignUp"
                     android:text="@string/btnSave"
                     android:textColor="@color/white" />
             </LinearLayout>
@@ -247,4 +264,4 @@
     </androidx.core.widget.NestedScrollView>
 
 
-</RelativeLayout>
+                </RelativeLayout>
