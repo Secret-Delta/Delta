@@ -61,6 +61,9 @@
             android:exported="false"
             android:theme="@style/Theme.Delta.TaskRemindTheme" />
         <activity
+            android:name=".Activities.DestinationActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.TaskOverviewActivity"
             android:exported="false"
             android:theme="@style/Theme.Delta.PopUpTheme" />
@@ -70,6 +73,8 @@
         <activity
             android:name=".Activities.PomodoroSettings"
             android:exported="false" />
+
+        <receiver android:name=".Activities.TaskRemindReceiver" />
 
         <meta-data
             android:name="preloaded_fonts"
