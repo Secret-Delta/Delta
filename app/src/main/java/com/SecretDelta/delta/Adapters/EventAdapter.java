@@ -58,6 +58,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventRecycle
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String eveId = eveModel.getId();
                 String eveName = eveModel.getEventName();
                 String eveDes = eveModel.getDescription();
                 int eveYear = eveModel.getYear();
@@ -70,7 +71,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventRecycle
 
                 Context context = view.getContext();
                 Intent intent = new Intent(context, EditEvent.class);
-
+                intent.putExtra("eveId", eveId);
                 intent.putExtra("eveName", eveName);
                 intent.putExtra("eveDes", eveDes);
                 intent.putExtra("eveYear", eveYear);
