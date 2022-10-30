@@ -47,11 +47,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_margin="32dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
         android:backgroundTint="@color/candy_pink"
-        android:src="@drawable/ic_baseline_plus_24"
-         />
+        android:src="@drawable/ic_baseline_plus_24" />
 
 
     <LinearLayout
