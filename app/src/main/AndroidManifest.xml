@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.SecretDelta.delta">
 
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,7 +16,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Delta"
         tools:targetApi="31">
-       
+        
+        <activity
+            android:name=".EventViewRecycler"
+            android:exported="false" />
+            
         <activity
             android:name=".Activities.MainActivity"
             android:exported="true"
@@ -24,7 +31,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-       
         <activity
             android:name=".Activities.UserProfile"
             android:exported="false" />
@@ -40,9 +46,12 @@
         <activity
             android:name=".Activities.NewCalendarEvent"
             android:exported="false" />
-        
         <activity
             android:name=".Activities.AddTaskActivity"
+            android:exported="false"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".Activities.EditTaskActivity"
             android:exported="false"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
         <activity
@@ -52,13 +61,14 @@
         <activity
             android:name=".Activities.TaskRemindActivity"
             android:exported="false"
-            android:theme="@style/Theme.Delta.PopUpTheme"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+            android:theme="@style/Theme.Delta.TaskRemindTheme" />
+        <activity
+            android:name=".Activities.DestinationActivity"
+            android:exported="false" />
         <activity
             android:name=".Activities.TaskOverviewActivity"
             android:exported="false"
-            android:theme="@style/Theme.Delta.PopUpTheme"  />
-
+            android:theme="@style/Theme.Delta.PopUpTheme" />
         <activity
             android:name=".Activities.PomodoroReports"
             android:exported="false" />
@@ -66,6 +76,13 @@
             android:name=".Activities.PomodoroSettings"
             android:exported="false" />
             
+        <receiver android:name=".Activities.TaskRemindReceiver" />
+        
+        <activity
+            android:name=".Activities.BreakTimer"
+            android:exported="false" />
+
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

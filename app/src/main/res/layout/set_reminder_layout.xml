@@ -6,6 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
     android:background="@drawable/rounded_shape"
+    android:orientation="vertical"
     tools:context=".Activities.TaskRemindActivity">
 
     <androidx.cardview.widget.CardView
@@ -19,7 +20,7 @@
         tools:ignore="MissingConstraints">
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/remindLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="25sp"
@@ -46,8 +47,8 @@
                 android:background="@android:color/transparent"
                 android:hint="@string/hint_time"
                 android:inputType="number"
-                android:textColor="@color/light_gray"
-                android:textColorHint="@color/light_gray"
+                android:textColor="@color/white"
+                android:textColorHint="#B8B8B8"
                 android:textSize="26sp"
                 android:textStyle="bold" />
 
@@ -55,10 +56,13 @@
                 android:id="@+id/remindSpinner"
                 android:layout_width="110sp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40sp"
-                android:background="@color/white"
-                android:paddingStart="10sp"
+                android:layout_marginStart="15sp"
+                android:layout_marginTop="2sp"
+                android:background="@color/oxford_blue"
+                android:textAlignment="center"
+                android:paddingStart="5dp"
                 android:textSize="25sp" />
+
         </LinearLayout>
 
         <LinearLayout

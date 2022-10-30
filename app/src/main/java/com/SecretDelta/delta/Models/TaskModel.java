@@ -1,17 +1,21 @@
 package com.SecretDelta.delta.Models;
 
+
+import android.widget.Spinner;
+
 import java.util.ArrayList;
 
 public class TaskModel {
-    private int id;
-    private String task;
-    private ArrayList<SubTaskModel> arrayList;
+    private String id;
+    private String task, description, priority, remindTime, remind;
+    private ArrayList<SubTaskModel> subTasks;
+    private int year, month, day, hourOfDay, minute;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -23,12 +27,83 @@ public class TaskModel {
         this.task = task;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getPriority() {
+        return priority;
+    }
+
+    public void setPriority(String priority) {
+        this.priority = priority;
+    }
+
     public ArrayList<SubTaskModel> getArrayList() {
-        return arrayList;
+        return subTasks;
     }
 
-    public void setArrayList(ArrayList<SubTaskModel> arrayList) {
-        this.arrayList = arrayList;
+    public void setArrayList(ArrayList<SubTaskModel> subTasks) {
+        this.subTasks = subTasks;
     }
 
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public void setMonth(int month) {
+        this.month = month;
+    }
+
+    public int getDay() {
+        return day;
+    }
+
+    public void setDay(int day) {
+        this.day = day;
+    }
+
+    public int getHourOfDay() {
+        return hourOfDay;
+    }
+
+    public void setHourOfDay(int hourOfDay) {
+        this.hourOfDay = hourOfDay;
+    }
+
+    public int getMinute() {
+        return minute;
+    }
+
+    public void setMinute(int minute) {
+        this.minute = minute;
+    }
+
+    public String getRemindTime() {
+        return remindTime;
+    }
+
+    public void setRemindTime(String remindTime) {
+        this.remindTime = remindTime;
+    }
+
+    public String getRemind() {
+        return remind;
+    }
+
+    public void setRemind(String remind) {
+        this.remind = remind;
+    }
 }

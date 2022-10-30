@@ -4,6 +4,7 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,7 +14,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -30,23 +30,26 @@ import com.SecretDelta.delta.Models.SubTaskModel;
 import com.SecretDelta.delta.Models.TaskModel;
 import com.SecretDelta.delta.R;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class AddTaskActivity extends AppCompatActivity {
-    private static final String TAG = "AddTaskActivity";
+public class EditTaskActivity extends AppCompatActivity {
+    private static final String TAG = "EditTaskActivity";
     private ArrayList<SubTaskModel> taskList = new ArrayList<>();
     private Spinner spinner;
     private ImageButton backBtn, delBtn, calendarBtn, subBtn, btnSave;
     private EditText mTask, mDescription, subtask;
     private Button subTaskButton;
     private TaskModel taskModel;
-    private String priority, remindTime, remind;
-    private int year, month, day, hourOfDay, minute;
-    private String speechText;
+    private String priority, iTask, iDes, iPriority, iId, iRemindTime, iRemind;
+    private int iYear, iMonth, iDay, iHourOfDay, iMinute;
 
     AddTaskAdapter addTaskAdapter;
 
@@ -58,12 +61,11 @@ public class AddTaskActivity extends AppCompatActivity {
         mDescription.setText("");
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_task_recycler);
-
-        String taskID = UUID.randomUUID().toString();
 
         RecyclerView recyclerView = findViewById(R.id.addTasksRecyclerView);   // get reference to recyclerView
         recyclerView.setLayoutManager(new LinearLayoutManager(this));  // set layoutManger
@@ -77,81 +79,128 @@ public class AddTaskActivity extends AppCompatActivity {
         backBtn.setOnClickListener(v -> finish());
 
         delBtn = findViewById(R.id.deleteButton);
-        delBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
-        mTask = findViewById(R.id.taskName);
-        mDescription = findViewById(R.id.description);
 
         calendarBtn = findViewById(R.id.calendarBtn);
         calendarBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AddTaskActivity.this, CalendarPopup.class);
-                intent.putExtra("aTask", mTask.getText().toString().trim());
-                ActivityResultLauncher.launch(intent);
+                // pass values to CalendarPopup activity
+                Intent iCalendar = new Intent(EditTaskActivity.this, CalendarPopup.class);
+                iCalendar.putExtra("pRemindTime", iRemindTime);
+                iCalendar.putExtra("pRemind", iRemind);
+                iCalendar.putExtra("pYear", iYear);
+                iCalendar.putExtra("pMonth", iMonth);
+                iCalendar.putExtra("pDay", iDay);
+                iCalendar.putExtra("pHourOfDay", iHourOfDay);
+                iCalendar.putExtra("pMinute", iMinute);
+                ActivityResultLauncher.launch(iCalendar);
             }
         });
+
 
         subBtn = findViewById(R.id.subTaskBtn);
 
         spinner = findViewById(R.id.prioritySpinner);
         initPrioritySpinner();
 
+        mTask = findViewById(R.id.taskName);
+        mDescription = findViewById(R.id.description);
+
+        // getting valued from task recyclerview
         Bundle intent = getIntent().getExtras();
         if (intent != null) {
-            speechText = intent.getString("speechText");
+            iId = intent.getString("mId");
+            iTask = intent.getString("mTask");
+            iDes = intent.getString("mDes");
+            iPriority = intent.getString("mPriority");
+            iRemindTime = intent.getString("mRemindTime");
+            iRemind = intent.getString("mRemind");
+            iYear = intent.getInt("mYear");
+            iMonth = intent.getInt("mMonth");
+            iDay = intent.getInt("mDay");
+            iHourOfDay = intent.getInt("mHourOfDay");
+            iMinute = intent.getInt("mMinute");
 
-            mTask.setText(speechText);
+            mTask.setText(iTask);
+            mDescription.setText(iDes);
+            priority = iPriority;
         }
 
-//        priority = spinner.getSelectedItem().toString();
+        delBtn = findViewById(R.id.deleteButton);
 
-        btnSave = findViewById(R.id.saveBtn);
-
-        // save task details to database
-        btnSave.setOnClickListener(new View.OnClickListener() {
+        delBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dbRef = FirebaseDatabase.getInstance().getReference().child("Task");
+                dbRef = FirebaseDatabase.getInstance().getReference();
+                Query query = dbRef.child("Task").orderByChild("id").equalTo(iId);
 
-                try {
-                    if (TextUtils.isEmpty(mTask.getText().toString()))
-                        Toast.makeText(getApplicationContext(), "Please enter a task", Toast.LENGTH_SHORT).show();
-                    else {
-                        taskModel.setId(taskID);
-                        taskModel.setTask(mTask.getText().toString().trim());
-                        taskModel.setDescription(mDescription.getText().toString().trim());
-                        taskModel.setPriority(priority);
-                        taskModel.setYear(year);
-                        taskModel.setMonth(month);
-                        taskModel.setDay(day);
-                        taskModel.setHourOfDay(hourOfDay);
-                        taskModel.setMinute(minute);
-                        taskModel.setRemindTime(remindTime);
-                        taskModel.setRemind(remind);
-                        taskModel.setArrayList(taskList);
-                        dbRef.push().setValue(taskModel);
+                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot delSnapshot: dataSnapshot.getChildren()) {
+                            delSnapshot.getRef().removeValue();
+                        }
 
-                        Toast.makeText(getApplicationContext(), "Data Saved Successfully", Toast.LENGTH_SHORT).show();
-                        clearControls();
+                        Toast.makeText(getApplicationContext(), "Task Deleted Successfully", Toast.LENGTH_SHORT).show();
 
                         Context context = v.getContext();
                         Intent intent = new Intent(context, MainActivity.class);
                         context.startActivity(intent);
                     }
-                } catch (NumberFormatException e) {
-                    Toast.makeText(getApplicationContext(), "Invalid Number", Toast.LENGTH_SHORT).show();
-                }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        Log.e(TAG, "onCancelled", databaseError.toException());
+                    }
+                });
+            }
+        });
+
+        btnSave = findViewById(R.id.saveBtn);
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dbRef = FirebaseDatabase.getInstance().getReference().child("Task");
+
+                final String imTask = mTask.getText().toString().trim();
+                final String imDes = mDescription.getText().toString().trim();
+                final String imPri = priority;
+
+                // update database values
+                Query query = dbRef.orderByChild("task").equalTo(iTask);
+                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for (DataSnapshot dataSnap : dataSnapshot.getChildren()) {
+                            dataSnap.getRef().child("task").setValue(imTask);
+                            dataSnap.getRef().child("description").setValue(imDes);
+                            dataSnap.getRef().child("priority").setValue(imPri);
+
+                            dataSnap.getRef().child("day").setValue(iDay);
+                            dataSnap.getRef().child("month").setValue(iMonth);
+                            dataSnap.getRef().child("year").setValue(iYear);
+                            dataSnap.getRef().child("hourOfDay").setValue(iHourOfDay);
+                            dataSnap.getRef().child("minute").setValue(iMinute);
+                            dataSnap.getRef().child("remind").setValue(iRemind);
+                            dataSnap.getRef().child("remindTime").setValue(iRemindTime);
+                        }
+
+                        Toast.makeText(EditTaskActivity.this, "Task Updated Successfully", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(EditTaskActivity.this, MainActivity.class));
+                        finish();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
             }
         });
 
 
         bottomSheetDialog = new BottomSheetDialog(this);
+
         createDialog();
 
         subBtn.setOnClickListener(new View.OnClickListener() {
@@ -165,6 +214,7 @@ public class AddTaskActivity extends AppCompatActivity {
         int height = WindowManager.LayoutParams.WRAP_CONTENT;
 
         bottomSheetDialog.getWindow().setLayout(width, height);
+
     }
 
     // https://stackoverflow.com/a/63654043
@@ -176,21 +226,19 @@ public class AddTaskActivity extends AppCompatActivity {
                 public void onActivityResult(ActivityResult result) {
                     if (result.getResultCode() == Activity.RESULT_OK) {
                         Intent data = result.getData();
-                        year = data.getIntExtra("year", 2022);
-                        month = data.getIntExtra("month", 10);
-                        day = data.getIntExtra("day", 1);
+                        iYear = data.getIntExtra("year", 2022);
+                        iMonth = data.getIntExtra("month", 10);
+                        iDay = data.getIntExtra("day", 1);
 
-                        hourOfDay = data.getIntExtra("hour", 1);
-                        minute = data.getIntExtra("minute", 1);
+                        iHourOfDay = data.getIntExtra("hour", 1);
+                        iMinute = data.getIntExtra("minute", 1);
 
-                        remindTime = data.getStringExtra("remindTime");
-                        remind = data.getStringExtra("remind");
+                        iRemindTime = data.getStringExtra("remindTime");
+                        iRemind = data.getStringExtra("remind");
                     }
                 }
             });
 
-
-    // open bottomSheetDialog and insert sub tasks
     @SuppressLint("InflateParams")
     private void createDialog() {
         View view = getLayoutInflater().inflate(R.layout.sub_task_dialog, null, false);
@@ -218,7 +266,6 @@ public class AddTaskActivity extends AppCompatActivity {
         bottomSheetDialog.setContentView(view);
     }
 
-    // call priority spinner
     private void initPrioritySpinner() {
         Log.d(TAG, "initPrioritySpinner: started");
         ArrayAdapter<CharSequence> spinAdapter = ArrayAdapter.createFromResource(this, R.array.priority, android.R.layout.simple_spinner_dropdown_item);
@@ -243,5 +290,4 @@ public class AddTaskActivity extends AppCompatActivity {
             }
         });
     }
-
 }

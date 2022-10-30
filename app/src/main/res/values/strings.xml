@@ -46,8 +46,8 @@
     <string name="cancel">Cancel</string>
     <string name="done">Done</string>
 
-    <string name="set_time">⏰ Set Time 12:00</string>
-    <string name="set_reminder">🔔 Set Reminder 5 mins early</string>
+    <string name="set_time">⏰ Set Time</string>
+    <string name="set_reminder">🔔 Set Reminder</string>
     <string name="remind">Remind</string>
     <string name="set">Set</string>
     <string name="hint_time">10</string>
@@ -69,12 +69,12 @@
     </string-array>
 
     <string-array name="remind">
-        <item>min</item>
+        <item>mins</item>
         <item>hours</item>
         <item>days</item>
     </string-array>
-    
-    
+
+
     <!-- Strings for the Pomodoro Timer -->
     <string name="focus_timer">Focus timer</string>
     <string name="stopwatch">Stopwatch</string>
@@ -95,10 +95,10 @@
         <item>Todo Task 5</item>
     </string-array>
     <string name="pomodoro_settings">Pomodoro Settings</string>
-    <string name="short_break_duration">Short break duration</string>
+    <string name="short_break_duration">Break Duration</string>
     <string name="short_break_duration_hint">5</string>
     <string name="timeUnits">minutes</string>
-    <string name="short_focus_duration">Short focus duration</string>
+    <string name="short_focus_duration">Focus duration</string>
     <string name="short_focus_duration_hint">25</string>
     <string name="long_focus_duration_hint">45</string>
     <string name="long_focus_duration">Long focus duration</string>
@@ -119,4 +119,10 @@
     <string name="monthly_pomodoro_report">Monthly Pomodoro Report</string>
     <string name="save">Save</string>
     <string name="reset">Reset</string>
+    <string name="datepick">Select date</string>
+    <string name="ResumeButtonText">Resume Timer</string>
+    <string name="PauseButtonText">Pause Timer</string>
+    <string name="StarButtonText">Start Timer</string>
+    <string name="flip_to_start_the_timer">Flip to start the timer</string>
+    <string name="pomodoro_breaktimer">Break Timer</string>
 </resources>
