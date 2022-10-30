@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/rich_black"
     android:orientation="vertical"
     tools:context=".Fragments.MonthlyPomodoroReport">
@@ -102,9 +103,44 @@
         </LinearLayout>
     </LinearLayout>
 
-    <FrameLayout
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_margin="10dp"
-        android:background="@color/white"></FrameLayout>
+        android:layout_height="560dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:paddingLeft="16sp"
+        android:paddingRight="16sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/barCard"
+            android:layout_width="match_parent"
+            android:layout_height="300sp"
+            android:layout_gravity="center_horizontal"
+            app:cardCornerRadius="15sp"
+            tools:ignore="MissingConstraints">
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/bar_chart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10sp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="10sp"
+                android:layout_marginBottom="10sp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/compText"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:gravity="center"
+                android:text="@string/monthly_pomodoro_report"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
 </LinearLayout>
