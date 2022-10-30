@@ -3,7 +3,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/layoutFocusTimer"
+    android:id="@+id/layoutStopwatch"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/rich_black"
@@ -71,15 +71,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ProgressBar
-        android:id="@+id/progressBarTimerAction"
-        style="?android:attr/progressBarStyle"
+    <ImageView
+        android:id="@+id/ringImage"
+        android:src="@drawable/ringcircle"
         android:layout_width="347dp"
         android:layout_height="330dp"
         android:layout_marginStart="70dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="70dp"
-        android:indeterminateTint="@color/metallic_seaweed"
         app:layout_constraintBottom_toTopOf="@+id/buttonStartTimer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,10 +92,10 @@
         android:text="@string/default_timer_value"
         android:textColor="@color/white"
         android:textSize="60sp"
-        app:layout_constraintBottom_toBottomOf="@+id/progressBarTimerAction"
-        app:layout_constraintEnd_toEndOf="@+id/progressBarTimerAction"
-        app:layout_constraintStart_toStartOf="@+id/progressBarTimerAction"
-        app:layout_constraintTop_toTopOf="@+id/progressBarTimerAction" />
+        app:layout_constraintBottom_toBottomOf="@+id/ringImage"
+        app:layout_constraintEnd_toEndOf="@+id/ringImage"
+        app:layout_constraintStart_toStartOf="@+id/ringImage"
+        app:layout_constraintTop_toTopOf="@+id/ringImage" />
 
     <Button
         android:id="@+id/buttonBreakTimer"
