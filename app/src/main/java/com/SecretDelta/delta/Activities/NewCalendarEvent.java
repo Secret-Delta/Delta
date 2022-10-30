@@ -34,7 +34,7 @@ public class NewCalendarEvent extends AppCompatActivity {
     private int year, month, day, hourOfDayFrom, minuteFrom, hourOfDayTo, minuteTo;
     private EditText  eventName, eventDescription;
     private TextView dateTxt, fromTime, toTime, eventTitle;
-    private ImageButton btnDate, backBtn;
+    private ImageButton btnDate, backBtn, delBtn;
     private Button btnSave;
     private LinearLayout layoutFrom, layoutTo;
     private CalEventModel calendarModel;
@@ -66,8 +66,18 @@ public class NewCalendarEvent extends AppCompatActivity {
 
         calendarModel = new CalEventModel();
 
+        //eventTitle.setText((CharSequence) eventName);
+
         backBtn = findViewById(R.id.backButton);
         backBtn.setOnClickListener(v -> finish());
+
+        delBtn = findViewById(R.id.deleteButton);
+        delBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         //DatePicker
         btnDate.setOnClickListener(new View.OnClickListener() {

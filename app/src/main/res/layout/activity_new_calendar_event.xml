@@ -20,6 +20,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
                 android:orientation="horizontal">
 
                 <ImageButton
@@ -35,16 +36,28 @@
 
                 <TextView
                     android:id="@+id/txtEventTitle"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="3dp"
                     android:layout_marginStart="10dp"
                     android:text="New Event"
-                    android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="25sp"
                     android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/deleteButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginBottom="0dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    app:srcCompat="@drawable/ic_baseline_delete_24" />
 
             </LinearLayout>
 
@@ -240,16 +253,15 @@
                     android:layout_width="282dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="55dp"
-                    android:layout_marginTop="3dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginEnd="44dp"
                     android:background="@drawable/text_fields_cal"
                     android:ems="10"
                     android:gravity="start|top"
                     android:hint="@string/add_description"
                     android:inputType="textMultiLine"
-                    android:minHeight="48dp"
                     android:paddingStart="10dp"
-                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
                     android:textColor="@color/black"
                     android:textColorHint="@color/light_gray" />
 
