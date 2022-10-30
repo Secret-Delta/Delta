@@ -86,7 +86,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerPomodoroReports"
-            android:name="com.SecretDelta.delta.Fragments.YearlyPomodoroReport"
+            android:name="com.SecretDelta.delta.Fragments.DailyPomodoroReport"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 

@@ -1,5 +1,7 @@
 package com.SecretDelta.delta.Fragments;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -10,20 +12,24 @@ import androidx.fragment.app.Fragment;
 
 import android.os.CountDownTimer;
 import android.view.LayoutInflater;
+import android.view.SoundEffectConstants;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.SecretDelta.delta.Activities.BreakTimer;
 import com.SecretDelta.delta.R;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import java.util.Locale;
 
-public class FocusTimer extends Fragment implements SensorEventListener {
+public class FocusTimer extends Fragment implements SensorEventListener, AdapterView.OnItemSelectedListener {
 
     private static final long START_TIME_IN_MILLIS = 10000;
 
@@ -37,12 +43,10 @@ public class FocusTimer extends Fragment implements SensorEventListener {
     private long timeLeftInMillis = START_TIME_IN_MILLIS;
     private float rotationLeft = 360;
 
-    private SwitchMaterial flippedSwitch;
-    private boolean flippedOn;
+    private SwitchMaterial flippedSwitch, musicSwitch;
+    private boolean flippedOn, musicOn;
 
     private SensorManager sensorManager;
-    private float[] gravity = new float[3];
-    private long lastUpdate;
 
 
     @Override
@@ -57,6 +61,7 @@ public class FocusTimer extends Fragment implements SensorEventListener {
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
 
         countdownText = v.findViewById(R.id.textViewDefaultTime);
         startButton = v.findViewById(R.id.buttonStartTimer);
@@ -65,9 +70,9 @@ public class FocusTimer extends Fragment implements SensorEventListener {
         flipText = v.findViewById(R.id.textViewFlipMode);
 
         sensorManager = (SensorManager) getActivity().getSystemService(getActivity().SENSOR_SERVICE);
-        lastUpdate = System.currentTimeMillis();
+
         flippedSwitch = v.findViewById(R.id.switchFlipMode);
-        SwitchMaterial musicSwitch = v.findViewById(R.id.switchMusic);
+        musicSwitch = v.findViewById(R.id.switchMusic);
 
 
         startButton.setOnClickListener(new View.OnClickListener() {
@@ -87,6 +92,8 @@ public class FocusTimer extends Fragment implements SensorEventListener {
                 if (timerRunning) {
                     stopTimer();
                 }
+                Intent intent = new Intent(getActivity(), BreakTimer.class);
+                startActivity(intent);
             }
         });
 
@@ -106,6 +113,13 @@ public class FocusTimer extends Fragment implements SensorEventListener {
             }
         });
 
+        musicSwitch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                musicOn = musicSwitch.isChecked();
+            }
+        });
+
         updateCountDownText();
         return v;
     }
@@ -116,7 +130,10 @@ public class FocusTimer extends Fragment implements SensorEventListener {
             public void onTick(long millisUntilFinished) {
                 timeLeftInMillis = millisUntilFinished;
                 updateCountDownText();
-                rotationLeft = 360 - imageView.getRotation();
+                rotationLeft = 360 * ((float)timeLeftInMillis / START_TIME_IN_MILLIS);
+                if(musicOn) {
+                    countdownText.playSoundEffect(SoundEffectConstants.CLICK);
+                }
             }
 
             @Override
@@ -128,9 +145,11 @@ public class FocusTimer extends Fragment implements SensorEventListener {
                 rotationLeft = 360;
                 updateCountDownText();
                 stopRotateImage(imageView);
+                Toast.makeText(getContext(), "Great! You made it", Toast.LENGTH_LONG).show();
             }
         }.start();
 
+        Toast.makeText(getContext(), "Focus on your task", Toast.LENGTH_LONG).show();
         timerRunning = true;
         rotateImage(imageView, rotationLeft, timeLeftInMillis);
         startButton.setText(R.string.PauseButtonText);
@@ -144,12 +163,14 @@ public class FocusTimer extends Fragment implements SensorEventListener {
         startButton.setText(R.string.ResumeButtonText);
         startButton.setBackgroundColor(getResources().getColor(R.color.candy_pink));
         pauseRotateImage(imageView);
+        Toast.makeText(getContext(), "Get back to your work", Toast.LENGTH_LONG).show();
     }
 
     private void stopTimer() {
         countDownTimer.cancel();
         timerRunning = false;
         stopRotateImage(imageView);
+        Toast.makeText(getContext(), "End of pomodoro session", Toast.LENGTH_SHORT).show();
     }
 
     private void updateCountDownText() {
@@ -184,7 +205,7 @@ public class FocusTimer extends Fragment implements SensorEventListener {
     }
 
     private void getAccelerometer(SensorEvent sensorEvent) {
-        gravity = sensorEvent.values;
+        float[] gravity = sensorEvent.values;
         // Movement
         float x = gravity[0];
         float y = gravity[1];
@@ -222,8 +243,17 @@ public class FocusTimer extends Fragment implements SensorEventListener {
     }
 
 
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        String choice = adapterView.getItemAtPosition(i).toString();
+        ((TextView) view).setTextColor(getResources().getColor(R.color.white));
+        ((TextView) view).setTextSize(18);
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
 
 
-
-
+    }
 }

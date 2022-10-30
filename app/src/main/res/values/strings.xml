@@ -73,8 +73,8 @@
         <item>hours</item>
         <item>days</item>
     </string-array>
-    
-    
+
+
     <!-- Strings for the Pomodoro Timer -->
     <string name="focus_timer">Focus timer</string>
     <string name="stopwatch">Stopwatch</string>
@@ -123,4 +123,5 @@
     <string name="PauseButtonText">Pause Timer</string>
     <string name="StarButtonText">Start Timer</string>
     <string name="flip_to_start_the_timer">Flip to start the timer</string>
+    <string name="pomodoro_breaktimer">Break Timer</string>
 </resources>
