@@ -26,7 +26,7 @@ public class MonthlyPomodoroReport extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_daily_pomodoro_report, container, false);
+        View view = inflater.inflate(R.layout.fragment_monthly_pomodoro_report, container, false);
 
         barChart = view.findViewById(R.id.bar_chart);
 
@@ -35,38 +35,38 @@ public class MonthlyPomodoroReport extends Fragment {
 
         ArrayList<BarEntry> values = new ArrayList<>();
 
-        values.add(new BarEntry(0, 56));
-        values.add(new BarEntry(1, 78));
-        values.add(new BarEntry(2, 68));
-        values.add(new BarEntry(3, 45));
-        values.add(new BarEntry(4, 35));
-        values.add(new BarEntry(5, 10));
-        values.add(new BarEntry(6, 60));
-        values.add(new BarEntry(7, 80));
-        values.add(new BarEntry(8, 70));
-        values.add(new BarEntry(9, 40));
-        values.add(new BarEntry(10, 30));
-        values.add(new BarEntry(11, 20));
-        values.add(new BarEntry(12, 50));
-        values.add(new BarEntry(13, 70));
-        values.add(new BarEntry(14, 60));
-        values.add(new BarEntry(15, 120));
-        values.add(new BarEntry(16, 30));
-        values.add(new BarEntry(17, 20));
-        values.add(new BarEntry(18, 50));
-        values.add(new BarEntry(19, 70));
-        values.add(new BarEntry(20, 60));
-        values.add(new BarEntry(21, 40));
-        values.add(new BarEntry(22, 30));
-        values.add(new BarEntry(23, 20));
-        values.add(new BarEntry(24, 50));
-        values.add(new BarEntry(25, 70));
-        values.add(new BarEntry(26, 60));
-        values.add(new BarEntry(27, 40));
-        values.add(new BarEntry(28, 30));
-        values.add(new BarEntry(29, 20));
-        values.add(new BarEntry(30, 50));
-        values.add(new BarEntry(31, 70));
+        values.add(new BarEntry(0, 0));
+        values.add(new BarEntry(1, 0));
+        values.add(new BarEntry(2, 0));
+        values.add(new BarEntry(3, 0));
+        values.add(new BarEntry(4, 0));
+        values.add(new BarEntry(5, 0));
+        values.add(new BarEntry(6, 0));
+        values.add(new BarEntry(7, 0));
+        values.add(new BarEntry(8, 0));
+        values.add(new BarEntry(9, 0));
+        values.add(new BarEntry(10, 0));
+        values.add(new BarEntry(11, 0));
+        values.add(new BarEntry(12, 0));
+        values.add(new BarEntry(13, 0));
+        values.add(new BarEntry(14, 0));
+        values.add(new BarEntry(15, 0));
+        values.add(new BarEntry(16, 0));
+        values.add(new BarEntry(17, 0));
+        values.add(new BarEntry(18, 0));
+        values.add(new BarEntry(19, 0));
+        values.add(new BarEntry(20, 0));
+        values.add(new BarEntry(21, 0));
+        values.add(new BarEntry(22, 0));
+        values.add(new BarEntry(23, 0));
+        values.add(new BarEntry(24, 0));
+        values.add(new BarEntry(25, 0));
+        values.add(new BarEntry(26, 0));
+        values.add(new BarEntry(27, 0));
+        values.add(new BarEntry(28, 0));
+        values.add(new BarEntry(29, 90));
+        values.add(new BarEntry(30, 100));
+        values.add(new BarEntry(31, 0));
 
 
         BarDataSet dataSet = new BarDataSet(values, "Hours");
