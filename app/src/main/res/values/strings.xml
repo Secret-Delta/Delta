@@ -88,11 +88,9 @@
     <string name="break_timer">Break Timer</string>
     <string name="skip_break">Skip Break</string>
     <string-array name="arrayChooseFocus">
-        <item>Todo Task 1</item>
-        <item>Todo Task 2</item>
-        <item>Todo Task 3</item>
-        <item>Todo Task 4</item>
-        <item>Todo Task 5</item>
+        <item>🎯Mobile application project</item>
+        <item>Trip</item>
+        <item>Activities</item>
     </string-array>
     <string name="pomodoro_settings">Pomodoro Settings</string>
     <string name="short_break_duration">Break Duration</string>

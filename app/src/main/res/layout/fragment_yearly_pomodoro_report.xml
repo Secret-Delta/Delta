@@ -46,9 +46,10 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/totalFocusTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1800"
+                    android:text="3.1"
                     android:textColor="@color/white"
                     android:textSize="40sp" />
 
@@ -85,9 +86,10 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/totalBreakTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="560"
+                    android:text="0.7"
                     android:textColor="@color/white"
                     android:textSize="40sp" />
 
