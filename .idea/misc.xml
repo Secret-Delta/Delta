@@ -8,7 +8,8 @@
         <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/activity_event_view_recycler.xml" value="0.25" />
         <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/activity_new_calendar_event.xml" value="0.264" />
-        <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
+        <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/activity_sign_in.xml" value="0.25" />
+        <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/activity_sign_up.xml" value="0.2" />
         <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/activity_user_profile.xml" value="0.25" />
         <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/add_task_recycler.xml" value="0.25" />
         <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/calendar_event.xml" value="0.25" />
@@ -95,14 +96,6 @@
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/menu/nav_menu.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/menu/pomodoro_menu.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/menu/task_menu.xml" value="0.25" />
-        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta2/app/src/main/res/layout/activity_pomodoro_settings.xml" value="0.264" />
-        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta2/app/src/main/res/layout/fragment_daily_pomodoro_report.xml" value="0.25" />
-        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta2/app/src/main/res/layout/fragment_focus_timer.xml" value="0.11203703703703703" />
-        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta2/app/src/main/res/layout/fragment_habit.xml" value="0.11203703703703703" />
-        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta2/app/src/main/res/layout/fragment_monthly_pomodoro_report.xml" value="0.25" />
-        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta2/app/src/main/res/layout/fragment_stopwatch.xml" value="0.11203703703703703" />
-        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta2/app/src/main/res/layout/fragment_weekly_pomodoro_report.xml" value="0.25" />
-        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta2/app/src/main/res/layout/fragment_yearly_pomodoro_report.xml" value="0.25" />
       </map>
     </option>
   </component>

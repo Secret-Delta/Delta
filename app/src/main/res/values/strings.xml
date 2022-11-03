@@ -123,4 +123,5 @@
     <string name="StarButtonText">Start Timer</string>
     <string name="flip_to_start_the_timer">Flip to start the timer</string>
     <string name="pomodoro_breaktimer">Break Timer</string>
+    <string name="enter_name">Enter Name</string>
 </resources>
