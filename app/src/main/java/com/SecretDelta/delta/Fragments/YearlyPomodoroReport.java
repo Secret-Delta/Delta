@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.SecretDelta.delta.R;
 import com.github.mikephil.charting.charts.BarChart;
@@ -24,10 +25,13 @@ public class YearlyPomodoroReport extends Fragment {
 
     private BarChart barChart;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_daily_pomodoro_report, container, false);
+        View view = inflater.inflate(R.layout.fragment_yearly_pomodoro_report, container, false);
+
+        TextView textView = view.findViewById(R.id.totalBreakTime);
 
         barChart = view.findViewById(R.id.bar_chart);
 
@@ -36,18 +40,18 @@ public class YearlyPomodoroReport extends Fragment {
 
         ArrayList<BarEntry> values = new ArrayList<>();
 
-        values.add(new BarEntry(0, 56));
-        values.add(new BarEntry(1, 78));
-        values.add(new BarEntry(2, 68));
-        values.add(new BarEntry(3, 45));
-        values.add(new BarEntry(4, 35));
-        values.add(new BarEntry(5, 10));
-        values.add(new BarEntry(6, 60));
-        values.add(new BarEntry(7, 80));
-        values.add(new BarEntry(8, 70));
-        values.add(new BarEntry(9, 40));
-        values.add(new BarEntry(10, 30));
-        values.add(new BarEntry(11, 20));
+        values.add(new BarEntry(0, 0));
+        values.add(new BarEntry(1, 0));
+        values.add(new BarEntry(2, 0));
+        values.add(new BarEntry(3, 0));
+        values.add(new BarEntry(4, 0));
+        values.add(new BarEntry(5, 0));
+        values.add(new BarEntry(6, 0));
+        values.add(new BarEntry(7, 0));
+        values.add(new BarEntry(8, 0));
+        values.add(new BarEntry(9, 190));
+        values.add(new BarEntry(10, 0));
+        values.add(new BarEntry(11, 0));
 
 
         BarDataSet dataSet = new BarDataSet(values, "Hours");

@@ -27,7 +27,7 @@ public class WeeklyPomodoroReport extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_daily_pomodoro_report, container, false);
+        View view = inflater.inflate(R.layout.fragment_weekly_pomodoro_report, container, false);
 
         barChart = view.findViewById(R.id.bar_chart);
 
@@ -36,13 +36,13 @@ public class WeeklyPomodoroReport extends Fragment {
 
         ArrayList<BarEntry> values = new ArrayList<>();
 
-        values.add(new BarEntry(0, 56));
-        values.add(new BarEntry(1, 78));
-        values.add(new BarEntry(2, 68));
-        values.add(new BarEntry(3, 45));
-        values.add(new BarEntry(4, 35));
-        values.add(new BarEntry(5, 10));
-        values.add(new BarEntry(6, 60));
+        values.add(new BarEntry(0, 0));
+        values.add(new BarEntry(1, 0));
+        values.add(new BarEntry(2, 0));
+        values.add(new BarEntry(3, 0));
+        values.add(new BarEntry(4, 0));
+        values.add(new BarEntry(5, 90));
+        values.add(new BarEntry(6, 100));
 
         BarDataSet dataSet = new BarDataSet(values, "Hours");
         dataSet.setDrawValues(false);

@@ -1,5 +1,6 @@
 package com.SecretDelta.delta.Activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -11,13 +12,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.SecretDelta.delta.Models.PomoSettings;
 import com.SecretDelta.delta.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Locale;
 
 public class BreakTimer extends AppCompatActivity {
 
-    private static final long START_TIME_IN_MILLIS = 10000;
+    private static final long START_TIME_IN_MILLIS = 60000;
 
     private TextView countdownText;
     private Button startButton;
@@ -29,6 +36,8 @@ public class BreakTimer extends AppCompatActivity {
     private long timeLeftInMillis = START_TIME_IN_MILLIS;
     private float rotationLeft = 360;
 
+    private DatabaseReference databaseReference2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +48,21 @@ public class BreakTimer extends AppCompatActivity {
         startButton = findViewById(R.id.buttonStartTimer);
         imageView = findViewById(R.id.ringImage);
         backBtn = findViewById(R.id.backButton);
+
+        databaseReference2 = FirebaseDatabase.getInstance().getReference().child("PomoSettings").child("-NFcq_TqZQBjI6caLLBI");
+
+        //get values from database
+        databaseReference2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                PomoSettings pomodoroSettings = snapshot.getValue(PomoSettings.class);
+                long timerLength = (Long.parseLong(pomodoroSettings.getShortBreakLength())) * 60000;
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
 
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,12 +110,10 @@ public class BreakTimer extends AppCompatActivity {
     }
 
     private void stopTimer() {
-        if(timerRunning) {
-            countDownTimer.cancel();
-            timerRunning = false;
-            stopRotateImage(imageView);
-            Toast.makeText(BreakTimer.this, "Break is over! Get back to work", Toast.LENGTH_LONG).show();
-        }
+        countDownTimer.cancel();
+        timerRunning = false;
+        stopRotateImage(imageView);
+        Toast.makeText(BreakTimer.this, "Break is over! Get back to work", Toast.LENGTH_LONG).show();
     }
 
     private void updateCountDownText() {
