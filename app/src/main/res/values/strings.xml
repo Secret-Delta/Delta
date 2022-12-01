@@ -34,7 +34,7 @@
     <string name="agree_to_terms_and_conditions">Agree to Terms and Conditions</string>
     <string name="your_achievements">Your Achievements</string>
     <string name="emailAcc">Email</string>
-
+    <string name="enter_name">Enter Name</string>
 
     <!-- Task Manager -->
     <string name="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit, tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit, quia.</string>
@@ -127,5 +127,4 @@
     <string name="StarButtonText">Start Timer</string>
     <string name="flip_to_start_the_timer">Flip to start the timer</string>
     <string name="pomodoro_breaktimer">Break Timer</string>
-
 </resources>
