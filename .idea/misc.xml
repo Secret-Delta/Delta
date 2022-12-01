@@ -3,6 +3,51 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/drawable-v24/ic_baseline_add_24.xml" value="0.1" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.173" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/drawable/baseline_calendar_24.xml" value="0.373" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/drawable/baseline_check_list.xml" value="0.173" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/drawable/baseline_edit_calendar.xml" value="0.173" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/drawable/baseline_priority_24.xml" value="0.173" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/drawable/calendar_background.xml" value="0.127" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/drawable/edit.xml" value="0.2645" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/drawable/habit_container.xml" value="0.172" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.173" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.173" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/drawable/ic_baseline_plus_24.xml" value="0.173" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/drawable/ic_launcher_background.xml" value="0.173" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/drawable/rounded_shape.xml" value="0.173" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/drawable/selector.xml" value="0.173" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/drawable/signcontainer.xml" value="0.173" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/font/lexend.xml" value="0.27395833333333336" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/font/lexend_medium.xml" value="0.1" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/font/lexend_semibold.xml" value="0.1" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/layout/activity_daily_habit.xml" value="0.1" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/layout/activity_edit_event.xml" value="0.1640625" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/layout/activity_edit_habit.xml" value="0.1640625" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/layout/activity_main.xml" value="0.1640625" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/layout/activity_new_calendar_event.xml" value="0.1640625" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/layout/activity_pomodoro_reports.xml" value="0.1640625" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/layout/activity_pomodoro_settings.xml" value="0.1640625" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/layout/activity_sign_in.xml" value="0.1640625" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/layout/activity_sign_up.xml" value="0.1640625" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/layout/activity_user_profile.xml" value="0.1640625" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/layout/add_task_recycler.xml" value="0.3723958333333333" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/layout/fragment_break_timer.xml" value="0.1640625" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/layout/fragment_calendar.xml" value="0.20175438596491227" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/layout/fragment_daily_pomodoro_report.xml" value="0.3723958333333333" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/layout/fragment_habit.xml" value="0.264" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/layout/fragment_home_habit.xml" value="0.19427083333333334" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/layout/fragment_monthly_pomodoro_report.xml" value="0.3723958333333333" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/layout/fragment_stopwatch.xml" value="0.1640625" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/layout/fragment_task.xml" value="0.3723958333333333" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/layout/fragment_weekly_pomodoro_report.xml" value="0.1640625" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/layout/main_recyclerview_layout.xml" value="0.1640625" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/layout/set_reminder_layout.xml" value="0.1640625" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/layout/sub_task_dialog.xml" value="0.1640625" />
+        <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/layout/task_calendar.xml" value="0.1640625" />
+
         <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/drawable/calendar_background.xml" value="0.1" />
         <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/activity_edit_event.xml" value="0.25" />
         <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/activity_event_view_recycler.xml" value="0.25" />
@@ -19,6 +64,7 @@
         <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/main_recyclerview_layout.xml" value="0.25" />
         <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/set_reminder_layout.xml" value="0.25" />
         <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/task_calendar.xml" value="0.2" />
+
         <entry key="..\:/Users/Navod/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_spinner_dropdown_item.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta v3/app/src/main/res/layout/add_task_recycler.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta v3/app/src/main/res/layout/new_task.xml" value="0.25" />

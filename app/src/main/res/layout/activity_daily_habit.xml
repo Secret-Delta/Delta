@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.DailyHabitActivity"
+    android:background="@color/oxford_blue"
+   >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="20dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/habit_name_text_view"
+            android:text="Habit Name"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/light_gray"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/habit_name_edit_text"
+            />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/habit_name_edit_text"
+            android:textColor="@color/light_gray"
+            android:background="@null"
+            android:hint="Habit name"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/habit_name_text_view"
+            app:layout_constraintBottom_toTopOf="@id/habit_frequency_text"
+            android:layout_marginVertical="12dp"
+
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/habit_frequency_text"
+            android:text="Habit Frequency"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/light_gray"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/habit_name_edit_text"
+            app:layout_constraintBottom_toTopOf="@id/frequency_type_linear_layout"
+            android:layout_marginVertical="12dp"
+
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/frequency_type_linear_layout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/habit_frequency_text"
+            android:layout_marginVertical="12dp"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/daily_card_label"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/weekly_card_label"
+                    android:backgroundTint="@color/candy_pink"
+                    style="@style/cardViewCornerRadius"
+                    >
+                    <TextView
+                        android:textColor="@color/light_gray"
+                        style="@style/frequencyText"
+                        android:text="Daily"
+                        />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/weekly_card_label"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/daily_card_label"
+                    app:layout_constraintRight_toRightOf="@id/monthly_card_label"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:backgroundTint="@color/candy_pink"
+                    style="@style/cardViewCornerRadius"
+                    >
+                    <TextView
+                        style="@style/frequencyText"
+                        android:text="Weekly"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/monthly_card_label"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/weekly_card_label"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    style="@style/cardViewCornerRadius"
+                    android:backgroundTint="@color/candy_pink"
+                    >
+                    <TextView
+                        android:text="Monthly"
+                        style="@style/frequencyText"
+                        />
+
+                </androidx.cardview.widget.CardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:id="@+id/frequency_description_layout"
+            app:layout_constraintTop_toTopOf="@id/frequency_type_linear_layout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frequency_description_layout"
+        app:layout_constraintBottom_toTopOf="@+id/days_spinner"
+        android:text="Goal Days"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/light_gray"
+        android:id="@+id/goal_days_text"
+        />
+
+        <Spinner
+            android:layout_marginVertical="12dp"
+            android:layout_width="125dp"
+            android:layout_height="30dp"
+            android:id="@+id/days_spinner"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/goal_days_text"
+            android:spinnerMode="dropdown"
+            android:backgroundTint="@color/candy_pink"
+            />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/days_spinner"
+            android:text="Remind me at: "
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/light_gray"
+            android:id="@+id/remind_me_at_tim"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/candy_pink"
+            android:text="+  Add time"
+            android:id="@+id/add_time_btn"
+            app:layout_constraintBottom_toTopOf="@+id/save_delete_constraint_layout"
+            app:layout_constraintTop_toBottomOf="@id/remind_me_at_tim"
+            app:layout_constraintLeft_toLeftOf="parent"
+            />
+        
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/save_delete_constraint_layout"
+            app:layout_constraintTop_toBottomOf="@id/add_time_btn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="20dp"
+            >
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/delete_habit_btn"
+                android:src="@drawable/ic_baseline_delete_24"
+                android:backgroundTint="@color/oxford_blue"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/save_habit_btn"
+                />
+            
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save"
+                android:textStyle="bold"
+                android:id="@+id/save_habit_btn"
+                android:backgroundTint="@color/metallic_seaweed"
+                app:layout_constraintLeft_toRightOf="@+id/delete_habit_btn"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
