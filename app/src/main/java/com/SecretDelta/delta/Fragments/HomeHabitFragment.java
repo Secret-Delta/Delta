@@ -1,4 +1,4 @@
-package com.SecretDelta.delta;
+package com.SecretDelta.delta.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,6 +18,7 @@ import com.SecretDelta.delta.Activities.DailyHabitActivity;
 import com.SecretDelta.delta.Adapters.HabitListAdapter;
 import com.SecretDelta.delta.Interfaces.StartActivityInterface;
 import com.SecretDelta.delta.Models.Habit;
+import com.SecretDelta.delta.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
