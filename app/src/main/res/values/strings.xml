@@ -34,7 +34,7 @@
     <string name="agree_to_terms_and_conditions">Agree to Terms and Conditions</string>
     <string name="your_achievements">Your Achievements</string>
     <string name="emailAcc">Email</string>
-
+    <string name="enter_name">Enter Name</string>
 
     <!-- Task Manager -->
     <string name="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit, tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit, quia.</string>
@@ -88,11 +88,9 @@
     <string name="break_timer">Break Timer</string>
     <string name="skip_break">Skip Break</string>
     <string-array name="arrayChooseFocus">
-        <item>Todo Task 1</item>
-        <item>Todo Task 2</item>
-        <item>Todo Task 3</item>
-        <item>Todo Task 4</item>
-        <item>Todo Task 5</item>
+        <item>🎯Mobile application project</item>
+        <item>Trip</item>
+        <item>Activities</item>
     </string-array>
     <string name="pomodoro_settings">Pomodoro Settings</string>
     <string name="short_break_duration">Break Duration</string>
@@ -119,6 +117,10 @@
     <string name="monthly_pomodoro_report">Monthly Pomodoro Report</string>
     <string name="save">Save</string>
     <string name="reset">Reset</string>
+
+    <string name="meat" />
+    <string name="send" />
+    <string name="message" />
     <string name="datepick">Select date</string>
     <string name="ResumeButtonText">Resume Timer</string>
     <string name="PauseButtonText">Pause Timer</string>

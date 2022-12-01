@@ -3,6 +3,9 @@
 
     <style name="AppBackground" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:background">@color/rich_black</item>
+
+
+
     </style>
 
 </resources>

@@ -8,17 +8,15 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 
 import com.SecretDelta.delta.Fragments.CalendarFragment;
-import com.SecretDelta.delta.Fragments.HabitFragment;
 import com.SecretDelta.delta.Fragments.PomodoroFragment;
 import com.SecretDelta.delta.Fragments.TaskFragment;
+import com.SecretDelta.delta.Fragments.HomeHabitFragment;
 import com.SecretDelta.delta.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
-import com.SecretDelta.delta.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -30,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     CalendarFragment calendarFragment = new CalendarFragment();
     TaskFragment taskFragment = new TaskFragment();
     PomodoroFragment pomodoroFragment = new PomodoroFragment();
-    HabitFragment habitFragment = new HabitFragment();
+    HomeHabitFragment habitFragment = new HomeHabitFragment();
 
     @SuppressLint("NonConstantResourceId")
     @Override

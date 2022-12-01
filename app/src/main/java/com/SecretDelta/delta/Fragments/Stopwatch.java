@@ -24,8 +24,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.SecretDelta.delta.Activities.BreakTimer;
+import com.SecretDelta.delta.Models.PomodoroSession;
 import com.SecretDelta.delta.R;
 import com.google.android.material.switchmaterial.SwitchMaterial;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 public class Stopwatch extends Fragment implements SensorEventListener, AdapterView.OnItemSelectedListener {
@@ -44,6 +50,9 @@ public class Stopwatch extends Fragment implements SensorEventListener, AdapterV
     private boolean flippedOn, musicOn;
 
     private SensorManager sensorManager;
+
+    private DatabaseReference dbRef;
+    private PomodoroSession pomodoroSession;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -115,6 +124,7 @@ public class Stopwatch extends Fragment implements SensorEventListener, AdapterV
                 if(musicOn) {
                     chronometer.playSoundEffect(SoundEffectConstants.CLICK);
                 }
+
             }
         });
 
@@ -154,6 +164,7 @@ public class Stopwatch extends Fragment implements SensorEventListener, AdapterV
     public void stopChronometer() {
         if(running) {
             chronometer.stop();
+            long timeWhenStopped = SystemClock.elapsedRealtime() - chronometer.getBase();
             chronometer.setBase(SystemClock.elapsedRealtime());
             pauseOffset = 0;
             running = false;
@@ -161,6 +172,17 @@ public class Stopwatch extends Fragment implements SensorEventListener, AdapterV
             startButton.setBackgroundColor(getResources().getColor(R.color.candy_pink));
             StopRotateImage(imageView);
             Toast.makeText(getContext(), "End of pomodoro session", Toast.LENGTH_SHORT).show();
+            dbRef = FirebaseDatabase.getInstance().getReference("PomodoroSession");
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+            SimpleDateFormat formatter2 = new SimpleDateFormat("HH");
+            Date date = new Date();
+            String dateStr = formatter.format(date);
+            String timeStr = formatter2.format(date);
+            pomodoroSession = new PomodoroSession();
+            pomodoroSession.setFocusTime(timeWhenStopped);
+            pomodoroSession.setDate(dateStr);
+            pomodoroSession.setTimes(timeStr);
+            dbRef.push().setValue(pomodoroSession);
         }
     }
 
