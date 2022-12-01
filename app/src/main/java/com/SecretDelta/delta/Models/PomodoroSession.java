@@ -4,7 +4,6 @@ public class PomodoroSession {
     private long focusTime;
     private String date;
     private String time;
-    private String focus;
 
     public PomodoroSession() {
 
@@ -34,11 +33,4 @@ public class PomodoroSession {
         this.time = time;
     }
 
-    public String getFocus() {
-        return focus;
-    }
-
-    public void setFocus(String focus) {
-        this.focus = focus;
-    }
 }

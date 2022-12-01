@@ -8,6 +8,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.os.CountDownTimer;
@@ -24,14 +25,24 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.SecretDelta.delta.Activities.BreakTimer;
+import com.SecretDelta.delta.Activities.PomodoroSettings;
+import com.SecretDelta.delta.Models.PomoSettings;
+import com.SecretDelta.delta.Models.PomodoroSession;
 import com.SecretDelta.delta.R;
 import com.google.android.material.switchmaterial.SwitchMaterial;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Locale;
 
 public class FocusTimer extends Fragment implements SensorEventListener, AdapterView.OnItemSelectedListener {
 
-    private static final long START_TIME_IN_MILLIS = 10000;
+    private static final long START_TIME_IN_MILLIS = 60000;
 
     private TextView countdownText;
     private TextView flipText;
@@ -48,6 +59,9 @@ public class FocusTimer extends Fragment implements SensorEventListener, Adapter
 
     private SensorManager sensorManager;
 
+    private DatabaseReference dbRef, databaseReference2;
+    private PomodoroSession pomodoroSession;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -62,6 +76,21 @@ public class FocusTimer extends Fragment implements SensorEventListener, Adapter
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
+
+        databaseReference2 = FirebaseDatabase.getInstance().getReference().child("PomoSettings").child("-NFcq_TqZQBjI6caLLBI");
+
+        //get values from database
+        databaseReference2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                PomoSettings pomodoroSettings = snapshot.getValue(PomoSettings.class);
+                long timerLength = (Long.parseLong(pomodoroSettings.getPomodoroLength())) * 60000;
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
 
         countdownText = v.findViewById(R.id.textViewDefaultTime);
         startButton = v.findViewById(R.id.buttonStartTimer);
@@ -146,6 +175,21 @@ public class FocusTimer extends Fragment implements SensorEventListener, Adapter
                 updateCountDownText();
                 stopRotateImage(imageView);
                 Toast.makeText(getContext(), "Great! You made it", Toast.LENGTH_LONG).show();
+
+                dbRef = FirebaseDatabase.getInstance().getReference("PomodoroSession");
+                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                SimpleDateFormat formatter2 = new SimpleDateFormat("HH");
+                Date date = new Date();
+                String dateStr = formatter.format(date);
+                String timeStr = formatter2.format(date);
+
+                pomodoroSession = new PomodoroSession();
+                pomodoroSession.setFocusTime(START_TIME_IN_MILLIS);
+                pomodoroSession.setDate(dateStr);
+                pomodoroSession.setTimes(timeStr);
+
+                dbRef.push().setValue(pomodoroSession);
+
             }
         }.start();
 
@@ -170,7 +214,7 @@ public class FocusTimer extends Fragment implements SensorEventListener, Adapter
         countDownTimer.cancel();
         timerRunning = false;
         stopRotateImage(imageView);
-        Toast.makeText(getContext(), "End of pomodoro session", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "You lost all your progress", Toast.LENGTH_SHORT).show();
     }
 
     private void updateCountDownText() {
