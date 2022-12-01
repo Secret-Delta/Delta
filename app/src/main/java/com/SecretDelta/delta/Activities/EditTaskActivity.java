@@ -106,8 +106,7 @@ public class EditTaskActivity extends AppCompatActivity {
         mTask = findViewById(R.id.taskName);
         mDescription = findViewById(R.id.description);
 
-//        priority = spinner.getSelectedItem().toString();
-
+        // getting valued from task recyclerview
         Bundle intent = getIntent().getExtras();
         if (intent != null) {
             iId = intent.getString("mId");
@@ -167,6 +166,7 @@ public class EditTaskActivity extends AppCompatActivity {
                 final String imDes = mDescription.getText().toString().trim();
                 final String imPri = priority;
 
+                // update database values
                 Query query = dbRef.orderByChild("task").equalTo(iTask);
                 query.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override

@@ -88,17 +88,15 @@
     <string name="break_timer">Break Timer</string>
     <string name="skip_break">Skip Break</string>
     <string-array name="arrayChooseFocus">
-        <item>Todo Task 1</item>
-        <item>Todo Task 2</item>
-        <item>Todo Task 3</item>
-        <item>Todo Task 4</item>
-        <item>Todo Task 5</item>
+        <item>🎯Mobile application project</item>
+        <item>Trip</item>
+        <item>Activities</item>
     </string-array>
     <string name="pomodoro_settings">Pomodoro Settings</string>
-    <string name="short_break_duration">Short break duration</string>
+    <string name="short_break_duration">Break Duration</string>
     <string name="short_break_duration_hint">5</string>
     <string name="timeUnits">minutes</string>
-    <string name="short_focus_duration">Short focus duration</string>
+    <string name="short_focus_duration">Focus duration</string>
     <string name="short_focus_duration_hint">25</string>
     <string name="long_focus_duration_hint">45</string>
     <string name="long_focus_duration">Long focus duration</string>
@@ -119,7 +117,15 @@
     <string name="monthly_pomodoro_report">Monthly Pomodoro Report</string>
     <string name="save">Save</string>
     <string name="reset">Reset</string>
+
     <string name="meat" />
     <string name="send" />
     <string name="message" />
+    <string name="datepick">Select date</string>
+    <string name="ResumeButtonText">Resume Timer</string>
+    <string name="PauseButtonText">Pause Timer</string>
+    <string name="StarButtonText">Start Timer</string>
+    <string name="flip_to_start_the_timer">Flip to start the timer</string>
+    <string name="pomodoro_breaktimer">Break Timer</string>
+
 </resources>

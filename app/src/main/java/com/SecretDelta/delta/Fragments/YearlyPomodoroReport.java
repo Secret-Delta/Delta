@@ -7,60 +7,92 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.SecretDelta.delta.R;
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.formatter.ValueFormatter;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link YearlyPomodoroReport#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+
 public class YearlyPomodoroReport extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private BarChart barChart;
 
-    public YearlyPomodoroReport() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment YearlyPomodoroReport.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static YearlyPomodoroReport newInstance(String param1, String param2) {
-        YearlyPomodoroReport fragment = new YearlyPomodoroReport();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_yearly_pomodoro_report, container, false);
+        View view = inflater.inflate(R.layout.fragment_yearly_pomodoro_report, container, false);
+
+        TextView textView = view.findViewById(R.id.totalBreakTime);
+
+        barChart = view.findViewById(R.id.bar_chart);
+
+        barChart.getDescription().setEnabled(false);
+        barChart.getLegend().setEnabled(false);
+
+        ArrayList<BarEntry> values = new ArrayList<>();
+
+        values.add(new BarEntry(0, 0));
+        values.add(new BarEntry(1, 0));
+        values.add(new BarEntry(2, 0));
+        values.add(new BarEntry(3, 0));
+        values.add(new BarEntry(4, 0));
+        values.add(new BarEntry(5, 0));
+        values.add(new BarEntry(6, 0));
+        values.add(new BarEntry(7, 0));
+        values.add(new BarEntry(8, 0));
+        values.add(new BarEntry(9, 190));
+        values.add(new BarEntry(10, 0));
+        values.add(new BarEntry(11, 0));
+
+
+        BarDataSet dataSet = new BarDataSet(values, "Hours");
+        dataSet.setDrawValues(false);
+        dataSet.setColor(getResources().getColor(R.color.metallic_seaweed));
+
+        BarData data = new BarData(dataSet);
+        data.setBarWidth(0.6f);
+
+        barChart.setData(data);
+        barChart.animateXY(2000, 2000);
+        barChart.invalidate();
+
+        YAxis yAxisRight = barChart.getAxisRight();
+        yAxisRight.setEnabled(false);
+
+        ArrayList<String> xLabels = new ArrayList<>();
+
+        xLabels.add("Jan");
+        xLabels.add("Feb");
+        xLabels.add("Mar");
+        xLabels.add("Apr");
+        xLabels.add("May");
+        xLabels.add("Jun");
+        xLabels.add("Jul");
+        xLabels.add("Aug");
+        xLabels.add("Sep");
+        xLabels.add("Oct");
+        xLabels.add("Nov");
+        xLabels.add("Dec");
+
+        XAxis xAxis = barChart.getXAxis();
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+
+        xAxis.setValueFormatter(new ValueFormatter() {
+            @Override
+            public String getFormattedValue(float value) {
+                return xLabels.get((int) value);
+            }
+        });
+
+        return view;
     }
 }

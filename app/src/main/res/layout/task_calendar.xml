@@ -12,7 +12,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="wrap_content"
-        android:layout_height="480dp"
+        android:layout_height="510dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginHorizontal="16dp"
         android:layout_marginVertical="8dp"
@@ -22,7 +22,7 @@
         <CalendarView
             android:id="@+id/taskCalendar"
             android:layout_width="match_parent"
-            android:layout_height="309dp" />
+            android:layout_height="match_parent" />
 
         <LinearLayout
             android:layout_width="270sp"

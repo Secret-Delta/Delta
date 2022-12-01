@@ -68,7 +68,7 @@
                 android:textSize="15sp" />
 
             <EditText
-                android:id="@+id/editShortFocusDuration"
+                android:id="@+id/editFocusDuration"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:autofillHints="25"
@@ -106,86 +106,13 @@
                 android:textSize="15sp" />
 
             <EditText
-                android:id="@+id/editShortBreakDuration"
+
+                android:id="@+id/editBreakDuration"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:autofillHints="5"
                 android:ems="10"
                 android:hint="@string/short_break_duration_hint"
-                android:inputType="number"
-                android:textAlignment="center"
-                android:textColorHint="@color/white"
-                android:textSize="15sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:text="@string/timeUnits"
-                android:textColor="@color/white"
-                android:textSize="15sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
-                android:text="@string/long_focus_duration"
-                android:textColor="@color/white"
-                android:textSize="15sp" />
-
-            <EditText
-                android:id="@+id/editLongFocusDuration"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:autofillHints="45"
-                android:ems="10"
-                android:hint="@string/long_focus_duration_hint"
-                android:inputType="number"
-                android:textAlignment="center"
-                android:textColorHint="@color/white"
-                android:textSize="15sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:text="@string/timeUnits"
-                android:textColor="@color/white"
-                android:textSize="15sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
-                android:text="@string/long_break_duration"
-                android:textColor="@color/white"
-                android:textSize="15sp" />
-
-            <EditText
-                android:id="@+id/editTextPomodoroLength"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:autofillHints="15"
-                android:ems="10"
-                android:hint="@string/long_break_duration_hint"
                 android:inputType="number"
                 android:textAlignment="center"
                 android:textColorHint="@color/white"

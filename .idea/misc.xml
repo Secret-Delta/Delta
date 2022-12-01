@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+
         <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/drawable-v24/ic_baseline_add_24.xml" value="0.1" />
         <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.173" />
         <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/drawable/baseline_calendar_24.xml" value="0.373" />
@@ -46,6 +47,23 @@
         <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/layout/set_reminder_layout.xml" value="0.1640625" />
         <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/layout/sub_task_dialog.xml" value="0.1640625" />
         <entry key="..\:/Documents/SLIIT/2nd Year/semester 2/MAD/HabitTracker/app/src/main/res/layout/task_calendar.xml" value="0.1640625" />
+
+        <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/drawable/calendar_background.xml" value="0.1" />
+        <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/activity_edit_event.xml" value="0.25" />
+        <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/activity_event_view_recycler.xml" value="0.25" />
+        <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/activity_new_calendar_event.xml" value="0.264" />
+        <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
+        <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/activity_user_profile.xml" value="0.25" />
+        <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/add_task_recycler.xml" value="0.25" />
+        <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/calendar_event.xml" value="0.25" />
+        <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/eventviewrecycler.xml" value="0.25" />
+        <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/fragment_calendar.xml" value="0.2" />
+        <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/fragment_task.xml" value="0.25" />
+        <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/main_recyclerview_layout.xml" value="0.25" />
+        <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/set_reminder_layout.xml" value="0.25" />
+        <entry key="..\:/SLIIT/2nd Year/2nd Semester/MAD/Assignments/Delta/app/src/main/res/layout/task_calendar.xml" value="0.2" />
+
         <entry key="..\:/Users/Navod/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_spinner_dropdown_item.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta v3/app/src/main/res/layout/add_task_recycler.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta v3/app/src/main/res/layout/new_task.xml" value="0.25" />
@@ -123,6 +141,14 @@
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/menu/nav_menu.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/menu/pomodoro_menu.xml" value="0.25" />
         <entry key="..\:/Users/Navod/StudioProjects/Delta/app/src/main/res/menu/task_menu.xml" value="0.25" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta2/app/src/main/res/layout/activity_pomodoro_settings.xml" value="0.264" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta2/app/src/main/res/layout/fragment_daily_pomodoro_report.xml" value="0.25" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta2/app/src/main/res/layout/fragment_focus_timer.xml" value="0.11203703703703703" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta2/app/src/main/res/layout/fragment_habit.xml" value="0.11203703703703703" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta2/app/src/main/res/layout/fragment_monthly_pomodoro_report.xml" value="0.25" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta2/app/src/main/res/layout/fragment_stopwatch.xml" value="0.11203703703703703" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta2/app/src/main/res/layout/fragment_weekly_pomodoro_report.xml" value="0.25" />
+        <entry key="..\:/Users/sachi/AndroidStudioProjects/Delta2/app/src/main/res/layout/fragment_yearly_pomodoro_report.xml" value="0.25" />
       </map>
     </option>
   </component>

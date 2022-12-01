@@ -1,18 +1,26 @@
 package com.SecretDelta.delta.Activities;
 
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.SecretDelta.delta.R;
+import com.SecretDelta.delta.databinding.ActivityMainBinding;
 
+import java.util.Calendar;
 import java.util.Locale;
 
 public class CalendarPopup extends Activity {
@@ -21,7 +29,11 @@ public class CalendarPopup extends Activity {
     private Button setTimeBtn, setRemindBtn, cancelBtn, doneBtn;
     private TextView timeText, remindText;
     private int hour, minute, Day, Year, Month;
-    private String currentDate, receiveRemindTime, receiveRemind, reminder;
+    private String currentDate, receiveRemindTime, receiveRemind, reminder, aTask;
+    private ActivityMainBinding binding;
+    private Calendar calendar;
+    private AlarmManager alarmManager;
+    private PendingIntent pendingIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +53,8 @@ public class CalendarPopup extends Activity {
         Year = intent.getIntExtra("pYear", 2022);
         Month = intent.getIntExtra("pMonth", 1);
         Day = intent.getIntExtra("pDay", 1);
+
+        aTask = intent.getStringExtra("aTask");
 
         // Calendar view
         int width = WindowManager.LayoutParams.WRAP_CONTENT;
@@ -102,6 +116,18 @@ public class CalendarPopup extends Activity {
         doneBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                createNotificationChannel();
+
+                calendar = Calendar.getInstance();
+
+                calendar.set(Calendar.HOUR_OF_DAY, hour);
+                calendar.set(Calendar.MINUTE, minute);
+                calendar.set(Calendar.SECOND, 0);
+                calendar.set(Calendar.MILLISECOND, 0);
+
+                setAlarm();
+
                 Intent intent = new Intent();
 
                 intent.putExtra("year", Year);
@@ -114,9 +140,11 @@ public class CalendarPopup extends Activity {
                 intent.putExtra("remindTime", receiveRemindTime);
                 intent.putExtra("remind", receiveRemind);
                 setResult(RESULT_OK, intent);
+
                 finish();
             }
         });
+
     }
 
 
@@ -140,6 +168,7 @@ public class CalendarPopup extends Activity {
         }
     }
 
+    // pop up TimePickerDialog
     public void popTime(View view) {
         TimePickerDialog.OnTimeSetListener onTimeSetListener = (timePicker, hourOfDay, minutes) -> {
             hour = hourOfDay;
@@ -150,6 +179,39 @@ public class CalendarPopup extends Activity {
 
         TimePickerDialog timePickerDialog = new TimePickerDialog(this, onTimeSetListener, hour, minute, true);
         timePickerDialog.show();
+
+    }
+
+    // set task reminder
+    private void setAlarm() {
+        alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+
+        Intent intent = new Intent(this, TaskRemindReceiver.class);
+        intent.putExtra("aTask", aTask);
+        pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
+
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, 2210,
+                AlarmManager.INTERVAL_DAY, pendingIntent);
+
+        Toast.makeText(this, "Reminder set Successfully", Toast.LENGTH_SHORT).show();
+
+    }
+
+
+    // create notification for task
+    private void createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "Reminder";
+            String description = "";
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel channel = new NotificationChannel("foxandroid", name, importance);
+            channel.setDescription(description);
+
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+
+        }
+
 
     }
 }

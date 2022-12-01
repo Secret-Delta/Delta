@@ -46,6 +46,7 @@ public class AddTaskActivity extends AppCompatActivity {
     private TaskModel taskModel;
     private String priority, remindTime, remind;
     private int year, month, day, hourOfDay, minute;
+    private String speechText;
 
     AddTaskAdapter addTaskAdapter;
 
@@ -83,11 +84,15 @@ public class AddTaskActivity extends AppCompatActivity {
             }
         });
 
+        mTask = findViewById(R.id.taskName);
+        mDescription = findViewById(R.id.description);
+
         calendarBtn = findViewById(R.id.calendarBtn);
         calendarBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AddTaskActivity.this, CalendarPopup.class);
+                intent.putExtra("aTask", mTask.getText().toString().trim());
                 ActivityResultLauncher.launch(intent);
             }
         });
@@ -97,13 +102,18 @@ public class AddTaskActivity extends AppCompatActivity {
         spinner = findViewById(R.id.prioritySpinner);
         initPrioritySpinner();
 
-        mTask = findViewById(R.id.taskName);
-        mDescription = findViewById(R.id.description);
+        Bundle intent = getIntent().getExtras();
+        if (intent != null) {
+            speechText = intent.getString("speechText");
+
+            mTask.setText(speechText);
+        }
 
 //        priority = spinner.getSelectedItem().toString();
 
         btnSave = findViewById(R.id.saveBtn);
 
+        // save task details to database
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -180,6 +190,7 @@ public class AddTaskActivity extends AppCompatActivity {
             });
 
 
+    // open bottomSheetDialog and insert sub tasks
     @SuppressLint("InflateParams")
     private void createDialog() {
         View view = getLayoutInflater().inflate(R.layout.sub_task_dialog, null, false);
@@ -207,6 +218,7 @@ public class AddTaskActivity extends AppCompatActivity {
         bottomSheetDialog.setContentView(view);
     }
 
+    // call priority spinner
     private void initPrioritySpinner() {
         Log.d(TAG, "initPrioritySpinner: started");
         ArrayAdapter<CharSequence> spinAdapter = ArrayAdapter.createFromResource(this, R.array.priority, android.R.layout.simple_spinner_dropdown_item);
