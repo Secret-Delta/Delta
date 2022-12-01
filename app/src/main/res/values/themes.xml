@@ -35,4 +35,17 @@
         <item name="android:windowCloseOnTouchOutside">true</item>
         <item name="colorPrimaryDark">@android:color/transparent</item>
     </style>
+
+    <style name="cardViewCornerRadius">
+        <item name="cardCornerRadius">50dp</item>
+        <item name="backgroundTint">@color/candy_pink</item>
+    </style>
+
+    <style name="frequencyText">
+    <item name="android:textColor">@color/light_gray</item>
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginHorizontal" tools:targetApi="o">14dp</item>
+    <item name="android:layout_marginVertical" tools:targetApi="o">8dp</item>
+    </style>
 </resources>

@@ -15,6 +15,7 @@ import com.SecretDelta.delta.Fragments.CalendarFragment;
 import com.SecretDelta.delta.Fragments.HabitFragment;
 import com.SecretDelta.delta.Fragments.PomodoroFragment;
 import com.SecretDelta.delta.Fragments.TaskFragment;
+import com.SecretDelta.delta.HomeHabitFragment;
 import com.SecretDelta.delta.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     CalendarFragment calendarFragment = new CalendarFragment();
     TaskFragment taskFragment = new TaskFragment();
     PomodoroFragment pomodoroFragment = new PomodoroFragment();
-    HabitFragment habitFragment = new HabitFragment();
+    HomeHabitFragment habitFragment = new HomeHabitFragment();
 
     @SuppressLint("NonConstantResourceId")
     @Override

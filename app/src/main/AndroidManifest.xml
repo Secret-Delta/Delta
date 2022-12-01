@@ -20,7 +20,6 @@
         <activity
             android:name=".EventViewRecycler"
             android:exported="false" />
-            
         <activity
             android:name=".Activities.MainActivity"
             android:exported="true"
@@ -86,6 +85,15 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:name=".Activities.DailyHabitActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
     </application>
 
 </manifest>
